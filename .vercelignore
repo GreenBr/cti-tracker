@@ -1,0 +1,5 @@
+# Static hosting only: upload the exported site, nothing else (prevents FastAPI auto-detection).
+*
+!site
+!site/**
+!vercel.json
