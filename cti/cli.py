@@ -130,6 +130,17 @@ def datasette(ctx, port, metadata_path):
     subprocess.run(cmd, check=False)
 
 
+@main.command()
+@click.option("--out", "out_dir", type=click.Path(path_type=Path), default=ROOT / "site", show_default=True)
+@click.pass_context
+def export(ctx, out_dir):
+    """Export the public site (no article bodies) as static HTML for Vercel/any static host."""
+    from cti.export import export_site
+
+    stats = export_site(ctx.obj["db_path"], out_dir, log=click.echo)
+    click.echo(f"exported {stats['pages']} pages ({stats['routes']} routes x {stats['locales']} locales) to {out_dir}")
+
+
 TRANSLATIONS = ROOT / "cti" / "translations"
 POT = TRANSLATIONS / "messages.pot"
 

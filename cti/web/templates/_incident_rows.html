@@ -7,7 +7,7 @@
   </tr></thead>
   <tbody>
   {% for i in rows %}
-  <tr>
+  <tr data-direction="{{ i.direction }}" data-country="{{ i.victim_country or '' }}" data-sector="{{ i.victim_sector or '' }}" data-actor="{{ i.actor_id or '' }}" data-text="{{ (i.title ~ ' ' ~ (i.summary or ''))|lower }}">
     <td class="muted">{{ (i.reported_at or "")[:10] }}</td>
     <td><a href="/incidents/{{ i.id }}">{{ i.title }}</a></td>
     <td><span class="tag {{ i.direction }}">{{ enum_label("direction", i.direction) }}</span></td>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cti-tracker VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-08-30 22:31+0800\n"
+"POT-Creation-Date: 2026-08-31 04:53+0800\n"
 "PO-Revision-Date: 2026-08-30 22:31+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hans_CN\n"
@@ -178,6 +178,14 @@ msgstr "语言"
 msgid "Apply"
 msgstr "应用"
 
+msgid "Summaries and metadata only; follow the source link for the original article."
+msgstr "本站仅收录摘要与元数据；原文请通过来源链接访问。"
+
+msgid ""
+"MITRE ATT&CK® is a registered trademark of The MITRE Corporation. ATT&CK content used with "
+"attribution."
+msgstr "MITRE ATT&CK® 是 The MITRE Corporation 的注册商标；ATT&CK 内容按署名要求使用。"
+
 msgid "Raw data (Datasette)"
 msgstr "原始数据（Datasette）"
 
@@ -210,6 +218,9 @@ msgstr "全部行业"
 
 msgid "All actors"
 msgstr "全部组织"
+
+msgid "Search incidents"
+msgstr "搜索事件"
 
 msgid "Search title, summary or article text"
 msgstr "搜索标题、摘要或文章正文"

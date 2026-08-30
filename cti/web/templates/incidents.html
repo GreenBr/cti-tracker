@@ -2,6 +2,27 @@
 {% block title %}{{ _("Incidents") }}{% endblock %}
 {% block content %}
 <h1>{{ _("Incidents") }}</h1>
+{% if public_mode %}
+<div class="filters" id="cfilters">
+  <select data-key="direction" aria-label="{{ _('Direction') }}">
+    <option value="">{{ _("All directions") }}</option>
+    {% for d in ["from_cn", "to_cn", "unclear"] %}<option value="{{ d }}">{{ enum_label("direction", d) }}</option>{% endfor %}
+  </select>
+  <select data-key="country" aria-label="{{ _('Victim country') }}">
+    <option value="">{{ _("All countries") }}</option>
+    {% for c in options.countries %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+  </select>
+  <select data-key="sector" aria-label="{{ _('Victim sector') }}">
+    <option value="">{{ _("All sectors") }}</option>
+    {% for s in options.sectors %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
+  </select>
+  <select data-key="actor" aria-label="{{ _('Actor') }}">
+    <option value="">{{ _("All actors") }}</option>
+    {% for a in options.actors %}<option value="{{ a.id }}">{{ a.canonical_name }}</option>{% endfor %}
+  </select>
+  <input type="search" data-key="text" placeholder="{{ _('Search incidents') }}">
+</div>
+{% else %}
 <form class="filters" method="get" action="/incidents">
   <input type="hidden" name="lang" value="{{ current_locale_code() }}">
   <select name="direction" aria-label="{{ _('Direction') }}">
@@ -24,15 +45,40 @@
   <button type="submit">{{ _("Filter") }}</button>
   <a href="/incidents">{{ _("Reset") }}</a>
 </form>
+{% endif %}
 <p class="muted">{% trans n=total|number %}{{ n }} incidents{% endtrans %}</p>
 {% if incidents %}{% with rows=incidents, show_actor=True %}{% include "_incident_rows.html" %}{% endwith %}
 {% else %}<p class="empty">{{ _("No incidents match these filters.") }}</p>{% endif %}
 {% set pages = ((total - 1) // per_page) + 1 if total else 1 %}
-{% if pages > 1 %}
+{% if pages > 1 and not public_mode %}
 <div class="pager">
   {% if page > 1 %}<a href="?{{ request.query_params|replace_param('page', page - 1) }}">{{ _("Previous") }}</a>{% endif %}
   <span class="muted">{% trans page=page, pages=pages %}Page {{ page }} of {{ pages }}{% endtrans %}</span>
   {% if page < pages %}<a href="?{{ request.query_params|replace_param('page', page + 1) }}">{{ _("Next") }}</a>{% endif %}
 </div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{% if public_mode %}
+<script>
+(function () {
+  const box = document.getElementById("cfilters"); if (!box) return;
+  const controls = box.querySelectorAll("[data-key]");
+  const rows = document.querySelectorAll("tbody tr[data-direction]");
+  function apply() {
+    const want = {};
+    controls.forEach(c => { want[c.dataset.key] = c.value.trim().toLowerCase(); });
+    rows.forEach(tr => {
+      let show = true;
+      for (const k of ["direction", "country", "sector", "actor"])
+        if (want[k] && (tr.dataset[k] || "").toLowerCase() !== want[k]) show = false;
+      if (want.text && !(tr.dataset.text || "").includes(want.text)) show = false;
+      tr.style.display = show ? "" : "none";
+    });
+  }
+  controls.forEach(c => { c.addEventListener("change", apply); c.addEventListener("input", apply); });
+})();
+</script>
 {% endif %}
 {% endblock %}

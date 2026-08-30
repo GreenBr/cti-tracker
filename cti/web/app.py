@@ -20,11 +20,11 @@ TEMPLATES_DIR = HERE / "templates"
 STATIC_DIR = HERE / "static"
 
 
-def _templates() -> Jinja2Templates:
+def _templates(public: bool) -> Jinja2Templates:
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
     configure_jinja_env(env)
     env.globals.update({"enum_label": i18n.enum_label, "locale_choices": i18n.locale_choices,
-                        "current_locale_code": i18n.current_locale_code})
+                        "current_locale_code": i18n.current_locale_code, "public_mode": public})
     env.filters["replace_param"] = _replace_param
     return Jinja2Templates(env=env)
 
@@ -35,12 +35,13 @@ def _replace_param(params, key: str, value) -> str:
     return urlencode(items)
 
 
-def create_app(db_path: Path) -> FastAPI:
+def create_app(db_path: Path, public: bool = False) -> FastAPI:
+    """public=True: shareable mode - no article bodies, attribution footer, client-side filtering (used by export)."""
     i18n.load_catalogs()
     app = FastAPI(title="CTI Tracker")
     i18n.add_locale_middleware(app)
     app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
-    templates = _templates()
+    templates = _templates(public)
 
     def conn() -> sqlite3.Connection:
         c = db.connect(db_path)
@@ -80,10 +81,11 @@ def create_app(db_path: Path) -> FastAPI:
     def incidents(request: Request, direction: str | None = None, country: str | None = None,
                   sector: str | None = None, actor: int | None = None, q: str | None = None, page: int = 1):
         c = conn()
+        per_page = 100000 if public else 50
         rows, total = queries.incidents(c, direction=direction or None, country=country or None,
                                         sector=sector or None, actor_id=actor or None, q=(q or "").strip() or None,
-                                        page=max(page, 1))
-        return render(request, "incidents.html", incidents=rows, total=total, page=max(page, 1), per_page=50,
+                                        page=max(page, 1), per_page=per_page)
+        return render(request, "incidents.html", incidents=rows, total=total, page=max(page, 1), per_page=per_page,
                       options=queries.filter_options(c),
                       filters={"direction": direction or "", "country": country or "", "sector": sector or "",
                                "actor": actor or "", "q": q or ""})
@@ -101,6 +103,8 @@ def create_app(db_path: Path) -> FastAPI:
         a = queries.article(c, article_id)
         if not a:
             raise HTTPException(404)
+        if public:
+            a["text"] = None
         return render(request, "article.html", article=a, incidents=queries.article_incidents(c, article_id),
                       actors=queries.article_actors(c, article_id))
 

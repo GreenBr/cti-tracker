@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cti-tracker VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-08-30 22:31+0800\n"
+"POT-Creation-Date: 2026-08-31 04:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -179,6 +179,16 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
+msgid ""
+"Summaries and metadata only; follow the source link for the original "
+"article."
+msgstr ""
+
+msgid ""
+"MITRE ATT&CK® is a registered trademark of The MITRE Corporation. ATT&CK "
+"content used with attribution."
+msgstr ""
+
 msgid "Raw data (Datasette)"
 msgstr ""
 
@@ -210,6 +220,9 @@ msgid "All sectors"
 msgstr ""
 
 msgid "All actors"
+msgstr ""
+
+msgid "Search incidents"
 msgstr ""
 
 msgid "Search title, summary or article text"

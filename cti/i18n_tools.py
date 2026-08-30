@@ -10,10 +10,16 @@ from opencc import OpenCC
 def generate_zh_tw(src_po: Path, dst_po: Path, config: str = "s2twp") -> int:
     """Convert every translated msgstr in the zh_CN catalog to Traditional (Taiwan phrasing).
 
-    Untranslated entries stay empty; existing zh_TW entries are overwritten (the zh_CN catalog is the source of truth
-    for the automatic pass; manual fixes belong in zh_TW after review and are preserved only if you re-run with care).
+    Reviewed translations are preserved: if the destination catalog exists, entries it already translates are kept
+    verbatim and only missing/empty ones are filled from the OpenCC conversion.
     """
     cc = OpenCC(config)
+    existing: dict = {}
+    if dst_po.exists():
+        with open(dst_po, "rb") as f:
+            for msg in read_po(f, locale="zh_TW"):
+                if msg.id and msg.string:
+                    existing[msg.id] = msg.string
     with open(src_po, "rb") as f:
         catalog = read_po(f, locale="zh_CN")
     catalog.locale = "zh_TW"
@@ -22,7 +28,9 @@ def generate_zh_tw(src_po: Path, dst_po: Path, config: str = "s2twp") -> int:
     for msg in catalog:
         if not msg.id:
             continue
-        if isinstance(msg.string, (list, tuple)):
+        if msg.id in existing:
+            msg.string = existing[msg.id]
+        elif isinstance(msg.string, (list, tuple)):
             msg.string = tuple(cc.convert(s) if s else s for s in msg.string)
         elif msg.string:
             msg.string = cc.convert(msg.string)

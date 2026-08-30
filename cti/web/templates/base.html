@@ -15,6 +15,16 @@
     <a href="/actors">{{ _("Actors") }}</a>
     <a href="/trends">{{ _("Trends") }}</a>
   </nav>
+  {% if public_mode %}
+  <div class="lang">
+    <label for="lang">{{ _("Language") }}</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      {% for code, name in locale_choices() %}
+      <option value="{{ code }}" {% if code == current_locale_code() %}selected{% endif %}>{{ name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  {% else %}
   <form class="lang" method="get" action="{{ request.url.path }}">
     {% for k, v in request.query_params.items() if k != 'lang' %}<input type="hidden" name="{{ k }}" value="{{ v }}">{% endfor %}
     <label for="lang">{{ _("Language") }}</label>
@@ -25,11 +35,17 @@
     </select>
     <noscript><button type="submit">{{ _("Apply") }}</button></noscript>
   </form>
+  {% endif %}
 </header>
 <main>
 {% block content %}{% endblock %}
 </main>
-<footer><a href="http://127.0.0.1:8002/">{{ _("Raw data (Datasette)") }}</a></footer>
+<footer>
+{% if public_mode %}
+<p>{{ _("Summaries and metadata only; follow the source link for the original article.") }}</p>
+<p>{{ _("MITRE ATT&CK® is a registered trademark of The MITRE Corporation. ATT&CK content used with attribution.") }}</p>
+{% else %}<a href="http://127.0.0.1:8002/">{{ _("Raw data (Datasette)") }}</a>{% endif %}
+</footer>
 {% block scripts %}{% endblock %}
 </body>
 </html>

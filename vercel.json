@@ -1,0 +1,6 @@
+{
+  "outputDirectory": "site",
+  "buildCommand": null,
+  "cleanUrls": true,
+  "redirects": [{ "source": "/", "destination": "/en/", "permanent": false }]
+}

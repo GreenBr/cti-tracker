@@ -39,6 +39,13 @@ Stack: FastAPI + Jinja2 (`jinja2.ext.i18n`), starlette-babel (locale negotiation
 - `prompts/extract.md` — extraction instructions
 - `schema/extract.json` — output contract
 
+## Publishing (Vercel, static)
+```bash
+.venv/bin/cti export        # renders the public site (all locales, no article bodies) into site/
+git add site && git commit -m "data: refresh" && git push   # Vercel redeploys on push
+```
+The exported site is the **public mode**: incident summaries and metadata only — article full text never leaves your machine (copyright), with MITRE ATT&CK attribution in the footer. One-time setup: import the GitHub repo at vercel.com/new (framework: Other; output directory: `site`; no build command).
+
 ## Tests
 `.venv/bin/pytest` — no network, no real `claude`.
 
