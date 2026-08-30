@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Today</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+    <a href="/en/about">About</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>About</h1>
+
+<h2>What this site is</h2>
+<p>An automatically updated tracker of cyber attack activity related to the People&#39;s Republic of China, in both directions: campaigns by China-attributed threat actors, and attacks against targets inside China. It is a personal research tool; nothing here is original attribution research.</p>
+
+<h2>How it works</h2>
+<ol class="steps">
+  <li><strong>Fetch</strong> — the pipeline pulls the latest articles from public security sources (vendor research blogs, government advisories, security news) via RSS, in English and Chinese.</li>
+  <li><strong>Filter</strong> — articles are pre-screened by keywords: the names and aliases of China-attributed groups imported from MITRE ATT&amp;CK, plus geographic terms. Matching articles become candidates.</li>
+  <li><strong>Extract</strong> — each candidate article is read by an LLM, which records every attack it describes in a fixed schema: actor, victim country and sector, date, direction, MITRE ATT&amp;CK techniques, and a confidence level. Malformed answers are rejected, and irrelevant articles yield no incidents.</li>
+  <li><strong>Publish</strong> — the database is rendered into this static site in three languages. Every incident links back to the article it came from.</li>
+</ol>
+
+<h2>Current data</h2>
+<section class="tiles">
+  <div class="tile"><span class="n">405</span><span class="l">Articles</span></div>
+  <div class="tile"><span class="n">53</span><span class="l">Candidates</span></div>
+  <div class="tile"><span class="n">10</span><span class="l">Incidents</span></div>
+  <div class="tile"><span class="n">54</span><span class="l">Actors</span></div>
+</section>
+<dl>
+  <dt>Last fetch</dt><dd>Aug 30, 2026, 1:44:18 PM</dd>
+  <dt>Last extraction</dt><dd>Aug 30, 2026, 9:00:23 PM</dd>
+  <dt>Page generated</dt><dd>Aug 30, 2026, 9:38:11 PM</dd>
+</dl>
+
+<h2>Reading the data</h2>
+<p>This site aggregates public reporting. Every claim carries the confidence its source stated, and should be checked against the linked original before being relied on. Coverage is only as good as the source list: Chinese-language sources are currently under-represented, so the &#34;against China&#34; direction is sparse.</p>
+
+<h2>Content policy</h2>
+<p>Only titles, metadata and our own short summaries are published here. Full article text is never republished; follow the source links for the originals.</p>
+
+<p><a href="https://github.com/GreenBr/cti-tracker">Source code and data pipeline on GitHub</a></p>
+
+</main>
+<footer>
+<p class="stamp">
+Data updated Aug 30, 2026, 1:44:18 PM
+ · Page generated Aug 30, 2026, 9:38:11 PM
+</p>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+
+</body>
+</html>

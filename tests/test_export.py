@@ -31,6 +31,7 @@ def test_export_renders_all_locales_and_rewrites_links(dbfile, tmp_path):
     for loc in ["en", "zh_CN", "zh_TW"]:
         assert (out / loc / "index.html").exists()
         assert (out / loc / "incidents" / "index.html").exists()
+        assert (out / loc / "about" / "index.html").exists()
         assert (out / loc / "actors" / "1" / "index.html").exists()
     html = (out / "zh_TW" / "incidents" / "index.html").read_text()
     assert "來自中國" in html

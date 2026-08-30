@@ -23,7 +23,7 @@ def _rewrite(html: str, locale: str) -> str:
 
 
 def _routes(conn) -> list[str]:
-    routes = ["/", "/incidents", "/actors", "/trends"]
+    routes = ["/", "/incidents", "/actors", "/trends", "/about"]
     routes += [f"/actors/{r[0]}" for r in conn.execute("SELECT id FROM actors ORDER BY id")]
     routes += [f"/incidents/{r[0]}" for r in conn.execute("SELECT id FROM incidents ORDER BY id")]
     routes += [f"/articles/{r[0]}" for r in conn.execute(

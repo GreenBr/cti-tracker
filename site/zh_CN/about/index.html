@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于 · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/zh_CN/">CTI Tracker</a>
+  <nav>
+    <a href="/zh_CN/">今日</a>
+    <a href="/zh_CN/incidents">事件</a>
+    <a href="/zh_CN/actors">攻击组织</a>
+    <a href="/zh_CN/trends">趋势</a>
+    <a href="/zh_CN/about">关于</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">语言</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" >English</option>
+      
+      <option value="zh_CN" selected>中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>关于</h1>
+
+<h2>这是什么网站</h2>
+<p>一个自动更新的追踪站，收录与中华人民共和国相关的网络攻击活动，覆盖两个方向：被归因于中国的攻击组织的对外行动，以及针对中国境内目标的攻击。这是个人研究工具，站内没有任何原创归因研究。</p>
+
+<h2>运作方式</h2>
+<ol class="steps">
+  <li><strong>抓取</strong> — 管线通过 RSS 从公开安全来源（厂商研究博客、政府通告、安全新闻）拉取最新文章，中英文都有。</li>
+  <li><strong>粗筛</strong> — 按关键词预筛文章：从 MITRE ATT&amp;CK 导入的中国系组织名称与别名，加上地域词。命中的文章成为候选。</li>
+  <li><strong>提取</strong> — 每篇候选文章由大语言模型阅读，把文中描述的每起攻击按固定结构记录：攻击组织、受害国家与行业、日期、方向、MITRE ATT&amp;CK 技术编号、置信度。格式不合规的回答会被拒绝；与主题无关的文章不产生任何事件。</li>
+  <li><strong>发布</strong> — 数据库被渲染成这个三语静态网站。每起事件都能链接回它的来源文章。</li>
+</ol>
+
+<h2>当前数据</h2>
+<section class="tiles">
+  <div class="tile"><span class="n">405</span><span class="l">文章</span></div>
+  <div class="tile"><span class="n">53</span><span class="l">候选文章</span></div>
+  <div class="tile"><span class="n">10</span><span class="l">事件</span></div>
+  <div class="tile"><span class="n">54</span><span class="l">攻击组织</span></div>
+</section>
+<dl>
+  <dt>最近抓取</dt><dd>2026年8月30日 13:44:18</dd>
+  <dt>最近提取</dt><dd>2026年8月30日 21:00:23</dd>
+  <dt>页面生成时间</dt><dd>2026年8月30日 21:38:12</dd>
+</dl>
+
+<h2>如何解读数据</h2>
+<p>本站是公开报道的聚合。每条结论都标注来源给出的置信度，采信前请点开原文核对。覆盖面取决于来源清单：目前中文来源偏少，因此&#34;针对中国&#34;方向的数据较稀疏。</p>
+
+<h2>内容政策</h2>
+<p>本站只发布标题、元数据和我们自己撰写的简短摘要，绝不转载文章全文；原文请通过来源链接查看。</p>
+
+<p><a href="https://github.com/GreenBr/cti-tracker">源代码与数据管线（GitHub）</a></p>
+
+</main>
+<footer>
+<p class="stamp">
+数据更新于 2026年8月30日 13:44:18
+ · 页面生成于 2026年8月30日 21:38:12
+</p>
+
+<p>本站仅收录摘要与元数据；原文请通过来源链接访问。</p>
+<p>MITRE ATT&amp;CK® 是 The MITRE Corporation 的注册商标；ATT&amp;CK 内容按署名要求使用。</p>
+
+</footer>
+
+</body>
+</html>
