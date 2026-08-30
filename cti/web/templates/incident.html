@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ incident.title }}{% endblock %}
+{% block content %}
+<h1>{{ incident.title }}</h1>
+<p><span class="tag {{ incident.direction }}">{{ enum_label("direction", incident.direction) }}</span>
+   <span class="muted">{{ _("Confidence") }}: {{ enum_label("confidence", incident.confidence) }}</span></p>
+<p>{{ incident.summary }}</p>
+<dl>
+  <dt>{{ _("Actor") }}</dt><dd>{% if incident.actor_id %}<a href="/actors/{{ incident.actor_id }}">{{ incident.actor }}</a>{% else %}{{ _("Unattributed") }}{% endif %}</dd>
+  <dt>{{ _("Occurred") }}</dt><dd>{{ incident.occurred_at or _("Not stated") }}</dd>
+  <dt>{{ _("Reported") }}</dt><dd>{{ (incident.reported_at or "")[:10] }}</dd>
+  <dt>{{ _("Victim country") }}</dt><dd>{{ incident.victim_country or "—" }}</dd>
+  <dt>{{ _("Victim sector") }}</dt><dd>{{ incident.victim_sector or "—" }}</dd>
+  <dt>{{ _("TTPs") }}</dt><dd>{% for t in incident.ttps %}<a href="https://attack.mitre.org/techniques/{{ t.technique_id|replace('.', '/') }}/">{{ t.technique_id }}</a> {{ t.technique_name or "" }}{% if not loop.last %}, {% endif %}{% else %}—{% endfor %}</dd>
+  <dt>{{ _("Source") }}</dt><dd><a href="/articles/{{ incident.article_id }}">{{ incident.article_title }}</a> · <a href="{{ incident.article_url }}" rel="noopener">{{ _("Original") }}</a></dd>
+</dl>
+{% endblock %}

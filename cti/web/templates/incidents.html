@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Incidents") }}{% endblock %}
+{% block content %}
+<h1>{{ _("Incidents") }}</h1>
+<form class="filters" method="get" action="/incidents">
+  <input type="hidden" name="lang" value="{{ current_locale_code() }}">
+  <select name="direction" aria-label="{{ _('Direction') }}">
+    <option value="">{{ _("All directions") }}</option>
+    {% for d in ["from_cn", "to_cn", "unclear"] %}<option value="{{ d }}" {% if filters.direction == d %}selected{% endif %}>{{ enum_label("direction", d) }}</option>{% endfor %}
+  </select>
+  <select name="country" aria-label="{{ _('Victim country') }}">
+    <option value="">{{ _("All countries") }}</option>
+    {% for c in options.countries %}<option value="{{ c }}" {% if filters.country == c %}selected{% endif %}>{{ c }}</option>{% endfor %}
+  </select>
+  <select name="sector" aria-label="{{ _('Victim sector') }}">
+    <option value="">{{ _("All sectors") }}</option>
+    {% for s in options.sectors %}<option value="{{ s }}" {% if filters.sector == s %}selected{% endif %}>{{ s }}</option>{% endfor %}
+  </select>
+  <select name="actor" aria-label="{{ _('Actor') }}">
+    <option value="">{{ _("All actors") }}</option>
+    {% for a in options.actors %}<option value="{{ a.id }}" {% if filters.actor|string == a.id|string %}selected{% endif %}>{{ a.canonical_name }}</option>{% endfor %}
+  </select>
+  <input type="search" name="q" value="{{ filters.q }}" placeholder="{{ _('Search title, summary or article text') }}">
+  <button type="submit">{{ _("Filter") }}</button>
+  <a href="/incidents">{{ _("Reset") }}</a>
+</form>
+<p class="muted">{% trans n=total|number %}{{ n }} incidents{% endtrans %}</p>
+{% if incidents %}{% with rows=incidents, show_actor=True %}{% include "_incident_rows.html" %}{% endwith %}
+{% else %}<p class="empty">{{ _("No incidents match these filters.") }}</p>{% endif %}
+{% set pages = ((total - 1) // per_page) + 1 if total else 1 %}
+{% if pages > 1 %}
+<div class="pager">
+  {% if page > 1 %}<a href="?{{ request.query_params|replace_param('page', page - 1) }}">{{ _("Previous") }}</a>{% endif %}
+  <span class="muted">{% trans page=page, pages=pages %}Page {{ page }} of {{ pages }}{% endtrans %}</span>
+  {% if page < pages %}<a href="?{{ request.query_params|replace_param('page', page + 1) }}">{{ _("Next") }}</a>{% endif %}
+</div>
+{% endif %}
+{% endblock %}

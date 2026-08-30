@@ -1,5 +1,5 @@
-:root{--bg:#f7f7f8;--fg:#1b1d21;--muted:#6b7280;--line:#e3e5e8;--card:#fff;--accent:#2563eb;--from:#b45309;--to:#0f766e;--unclear:#6b7280;--failed:#b91c1c;--done:#15803d;--pending:#6b7280}
-@media(prefers-color-scheme:dark){:root{--bg:#121417;--fg:#e6e7ea;--muted:#9aa0a6;--line:#2a2e34;--card:#1a1d22;--accent:#60a5fa}}
+:root{--bg:#f7f7f8;--fg:#1b1d21;--muted:#6b7280;--line:#e3e5e8;--card:#fff;--accent:#2563eb;--from:#2a78d6;--to:#eb6834;--unclear:#1baf7a;--failed:#b91c1c;--done:#15803d;--pending:#6b7280}
+@media(prefers-color-scheme:dark){:root{--bg:#121417;--fg:#e6e7ea;--muted:#9aa0a6;--line:#2a2e34;--card:#1a1d22;--accent:#60a5fa;--from:#3987e5;--to:#d95926;--unclear:#199e70}}
 *{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--fg)}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 header.top{display:flex;align-items:center;gap:1.5rem;padding:.75rem 1.25rem;border-bottom:1px solid var(--line);background:var(--card)}

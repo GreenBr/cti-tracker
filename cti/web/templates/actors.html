@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Actors") }}{% endblock %}
+{% block content %}
+<h1>{{ _("Actors") }}</h1>
+<p class="muted">{{ _("China-attributed groups seeded from MITRE ATT&CK, plus any actor named in extracted reports.") }}</p>
+<table>
+  <thead><tr><th>{{ _("Name") }}</th><th>{{ _("Aliases") }}</th><th>{{ _("MITRE ID") }}</th><th>{{ _("Incidents") }}</th><th>{{ _("Last reported") }}</th></tr></thead>
+  <tbody>
+  {% for a in actors %}
+  <tr>
+    <td><a href="/actors/{{ a.id }}">{{ a.canonical_name }}</a></td>
+    <td class="muted">{{ a.aliases|join(", ") }}</td>
+    <td>{% if a.mitre_id %}<a href="https://attack.mitre.org/groups/{{ a.mitre_id }}/">{{ a.mitre_id }}</a>{% endif %}</td>
+    <td>{{ a.incident_count|number }}</td>
+    <td class="muted">{{ (a.last_reported or "")[:10] }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

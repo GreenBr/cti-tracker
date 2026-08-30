@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Trends") }}{% endblock %}
+{% block content %}
+<h1>{{ _("Trends") }}</h1>
+<div class="charts viz-root" data-palette="#2a78d6,#eb6834,#1baf7a">
+  <div class="chart"><h3>{{ _("Incidents per month") }}</h3><canvas id="c-month" height="220"></canvas>
+    <details><summary>{{ _("Table view") }}</summary><table><thead><tr><th>{{ _("Month") }}</th><th>{{ _("Count") }}</th></tr></thead><tbody>
+    {% for r in charts.per_month %}<tr><td>{{ r.month }}</td><td>{{ r.n }}</td></tr>{% endfor %}</tbody></table></details></div>
+  <div class="chart"><h3>{{ _("Direction share") }}</h3><canvas id="c-dir" height="220"></canvas>
+    <details><summary>{{ _("Table view") }}</summary><table><thead><tr><th>{{ _("Direction") }}</th><th>{{ _("Count") }}</th></tr></thead><tbody>
+    {% for r in charts.direction %}<tr><td>{{ r.label }}</td><td>{{ r.n }}</td></tr>{% endfor %}</tbody></table></details></div>
+  <div class="chart"><h3>{{ _("Top victim sectors") }}</h3><canvas id="c-sec" height="220"></canvas>
+    <details><summary>{{ _("Table view") }}</summary><table><thead><tr><th>{{ _("Sector") }}</th><th>{{ _("Count") }}</th></tr></thead><tbody>
+    {% for r in charts.sectors %}<tr><td>{{ r.sector }}</td><td>{{ r.n }}</td></tr>{% endfor %}</tbody></table></details></div>
+  <div class="chart"><h3>{{ _("Top TTPs") }}</h3><canvas id="c-ttp" height="220"></canvas>
+    <details><summary>{{ _("Table view") }}</summary><table><thead><tr><th>{{ _("Technique") }}</th><th>{{ _("Count") }}</th></tr></thead><tbody>
+    {% for r in charts.ttps %}<tr><td>{{ r.technique_id }} {{ r.technique_name or "" }}</td><td>{{ r.n }}</td></tr>{% endfor %}</tbody></table></details></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/vendor/chart.umd.js"></script>
+<script id="chart-data" type="application/json">{{ charts_json|safe }}</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById("chart-data").textContent);
+  const dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const ink = dark ? "#c3c2b7" : "#52514e", grid = dark ? "#2a2e34" : "#e3e5e8";
+  const seq = dark ? "#3987e5" : "#2a78d6";                       // single-hue magnitude
+  const cat = dark ? ["#3987e5", "#d95926", "#199e70"] : ["#2a78d6", "#eb6834", "#1baf7a"]; // fixed slots 1-3
+  Chart.defaults.color = ink; Chart.defaults.borderColor = grid; Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
+  const base = (horizontal) => ({ responsive: true, indexAxis: horizontal ? "y" : "x",
+    plugins: { legend: { display: false } },
+    scales: { x: { grid: { display: horizontal }, ticks: { precision: 0 } }, y: { grid: { display: !horizontal }, ticks: { precision: 0 } } } });
+  const bar = (id, labels, data, colors, horizontal) => new Chart(document.getElementById(id), {
+    type: "bar", data: { labels, datasets: [{ data, backgroundColor: colors, borderRadius: 4, borderSkipped: "start", barThickness: 18 }] },
+    options: base(horizontal) });
+  bar("c-month", D.per_month.map(r => r.month), D.per_month.map(r => r.n), seq, false);
+  bar("c-dir", D.direction.map(r => r.label), D.direction.map(r => r.n), cat, true);
+  bar("c-sec", D.sectors.map(r => r.sector), D.sectors.map(r => r.n), seq, true);
+  bar("c-ttp", D.ttps.map(r => r.technique_id + " " + (r.technique_name || "")), D.ttps.map(r => r.n), seq, true);
+})();
+</script>
+{% endblock %}

@@ -52,3 +52,46 @@ def test_accept_language_negotiation(client):
 def test_switcher_offers_native_names(client):
     r = client.get("/")
     assert "中文 (简体)" in r.text and "中文 (繁體)" in r.text and ">English<" in r.text
+
+
+def test_actors_list_and_profile(client):
+    r = client.get("/actors")
+    assert r.status_code == 200 and "APT41" in r.text and "UNC9999" in r.text
+    r = client.get("/actors/1")
+    assert r.status_code == 200
+    assert "APT41 spearphishing" in r.text and "T1566.001" in r.text and "semiconductor" in r.text
+    assert client.get("/actors/999").status_code == 404
+
+
+def test_incidents_filters_and_search(client):
+    assert client.get("/incidents").status_code == 200
+    r = client.get("/incidents?direction=to_cn")
+    assert "Shanghai research institute" in r.text and "APT41 spearphishing" not in r.text
+    r = client.get("/incidents?actor=1")
+    assert "APT41 spearphishing" in r.text and "Shanghai research institute" not in r.text
+    r = client.get("/incidents?q=guam")  # FTS over article text
+    assert "APT41 spearphishing" in r.text and "2 incidents" in r.text
+    r = client.get("/incidents?q=nomatchxyz")
+    assert "No incidents match" in r.text
+
+
+def test_incident_and_article_pages(client):
+    r = client.get("/incidents/1")
+    assert r.status_code == 200 and "T1059.001" in r.text and "/articles/1" in r.text
+    r = client.get("/articles/1")
+    assert r.status_code == 200 and "living off the land" in r.text and "Volt Typhoon report" in r.text
+    assert "APT41 spearphishing" in r.text  # incidents extracted from this article
+    assert client.get("/articles/99").status_code == 404
+
+
+def test_trends_page_embeds_chart_data(client):
+    r = client.get("/trends")
+    assert r.status_code == 200 and "/static/vendor/chart.umd.js" in r.text
+    assert '"direction"' in r.text and '"from_cn"' in r.text and "2026-08" in r.text
+    assert client.get("/static/vendor/chart.umd.js").status_code == 200
+
+
+def test_enum_labels_translate_when_catalog_present(client):
+    # Before catalogs exist, labels fall back to English msgids.
+    r = client.get("/incidents?lang=zh_TW")
+    assert "From China" in r.text or "來自中國" in r.text

@@ -1,0 +1,21 @@
+{# expects: rows (list of incidents with .actor, .article_id), show_actor (bool) #}
+<table>
+  <thead><tr>
+    <th>{{ _("Reported") }}</th><th>{{ _("Title") }}</th><th>{{ _("Direction") }}</th>
+    {% if show_actor %}<th>{{ _("Actor") }}</th>{% endif %}
+    <th>{{ _("Victim") }}</th><th>{{ _("Confidence") }}</th><th>{{ _("Source") }}</th>
+  </tr></thead>
+  <tbody>
+  {% for i in rows %}
+  <tr>
+    <td class="muted">{{ (i.reported_at or "")[:10] }}</td>
+    <td><a href="/incidents/{{ i.id }}">{{ i.title }}</a></td>
+    <td><span class="tag {{ i.direction }}">{{ enum_label("direction", i.direction) }}</span></td>
+    {% if show_actor %}<td>{% if i.actor_id %}<a href="/actors/{{ i.actor_id }}">{{ i.actor }}</a>{% else %}—{% endif %}</td>{% endif %}
+    <td>{{ i.victim_country or "" }} {{ i.victim_sector or "" }}</td>
+    <td>{{ enum_label("confidence", i.confidence) }}</td>
+    <td><a href="/articles/{{ i.article_id }}">{{ _("Article") }}</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>

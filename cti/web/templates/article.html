@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block content %}
+<h1>{{ article.title }}</h1>
+<dl>
+  <dt>{{ _("Source") }}</dt><dd>{{ article.source_name }} · {{ enum_label("source_type", article.source_type) }} · <a href="{{ article.url }}" rel="noopener">{{ _("Original") }}</a></dd>
+  <dt>{{ _("Published") }}</dt><dd>{{ (article.published_at or "")[:10] or "—" }}</dd>
+  <dt>{{ _("Fetched") }}</dt><dd>{{ (article.fetched_at or "")[:10] }}</dd>
+  <dt>{{ _("Relevance") }}</dt><dd>{{ enum_label("relevance", article.relevance) }}</dd>
+  <dt>{{ _("Extraction") }}</dt><dd><span class="tag {{ article.extract_status }}">{{ enum_label("extract_status", article.extract_status) }}</span>{% if article.extract_error %} <span class="muted">{{ article.extract_error }}</span>{% endif %}</dd>
+  {% if actors %}<dt>{{ _("Actors mentioned") }}</dt><dd>{% for a in actors %}<a href="/actors/{{ a.id }}">{{ a.canonical_name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
+</dl>
+<h2>{{ _("Incidents extracted from this article") }}</h2>
+{% if incidents %}{% with rows=incidents, show_actor=True %}{% include "_incident_rows.html" %}{% endwith %}
+{% else %}<p class="empty">{{ _("None.") }}</p>{% endif %}
+<h2>{{ _("Article text") }}</h2>
+<article class="body">{{ article.text or "" }}</article>
+{% endblock %}

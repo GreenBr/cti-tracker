@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}{{ actor.canonical_name }}{% endblock %}
+{% block content %}
+<h1>{{ actor.canonical_name }}</h1>
+<dl>
+  <dt>{{ _("Aliases") }}</dt><dd>{{ actor.aliases|join(", ") or "—" }}</dd>
+  <dt>{{ _("MITRE ID") }}</dt><dd>{% if actor.mitre_id %}<a href="https://attack.mitre.org/groups/{{ actor.mitre_id }}/">{{ actor.mitre_id }}</a>{% else %}—{% endif %}</dd>
+  <dt>{{ _("Attributed country") }}</dt><dd>{{ actor.attributed_country or "—" }}</dd>
+</dl>
+{% if actor.description %}<p>{{ actor.description }}</p>{% endif %}
+
+<h2>{{ _("Incidents") }} ({{ incidents|length }})</h2>
+{% if incidents %}{% with rows=incidents, show_actor=False %}{% include "_incident_rows.html" %}{% endwith %}
+{% else %}<p class="empty">{{ _("No incidents recorded for this actor yet.") }}</p>{% endif %}
+
+<div class="charts">
+  <div class="chart">
+    <h3>{{ _("TTP frequency") }}</h3>
+    {% if ttps %}<table><thead><tr><th>{{ _("Technique") }}</th><th>{{ _("Count") }}</th></tr></thead><tbody>
+    {% for t in ttps %}<tr><td><a href="https://attack.mitre.org/techniques/{{ t.technique_id|replace('.', '/') }}/">{{ t.technique_id }}</a> {{ t.technique_name or "" }}</td><td>{{ t.n }}</td></tr>{% endfor %}
+    </tbody></table>{% else %}<p class="empty">{{ _("No TTPs recorded.") }}</p>{% endif %}
+  </div>
+  <div class="chart">
+    <h3>{{ _("Victim sectors") }}</h3>
+    {% if sectors %}<table><thead><tr><th>{{ _("Sector") }}</th><th>{{ _("Count") }}</th></tr></thead><tbody>
+    {% for s in sectors %}<tr><td>{{ s.sector or _("(unknown)") }}</td><td>{{ s.n }}</td></tr>{% endfor %}
+    </tbody></table>{% else %}<p class="empty">{{ _("No sectors recorded.") }}</p>{% endif %}
+  </div>
+</div>
+{% endblock %}
