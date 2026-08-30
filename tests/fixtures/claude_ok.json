@@ -1,0 +1,28 @@
+{
+  "relevant": true,
+  "actors_mentioned": [{"name": "APT41", "aliases_in_text": ["Brass Typhoon"]}, {"name": "UNC9999", "aliases_in_text": []}],
+  "incidents": [
+    {
+      "title": "APT41 spearphishing against Taiwanese semiconductor firms",
+      "summary": "APT41 sent malicious attachments to engineers at several Taiwanese chip makers in August 2026.",
+      "occurred_at": "2026-08",
+      "direction": "from_cn",
+      "actor": "Brass Typhoon",
+      "victim_country": "TW",
+      "victim_sector": "semiconductor",
+      "confidence": "high",
+      "ttps": [{"id": "T1566.001", "name": "Spearphishing Attachment"}, {"id": "T1059.001", "name": "PowerShell"}]
+    },
+    {
+      "title": "Unattributed intrusion at a Shanghai research institute",
+      "summary": "A research institute in Shanghai reported an intrusion by an unidentified foreign actor.",
+      "occurred_at": null,
+      "direction": "to_cn",
+      "actor": null,
+      "victim_country": "CN",
+      "victim_sector": "education",
+      "confidence": "medium",
+      "ttps": []
+    }
+  ]
+}

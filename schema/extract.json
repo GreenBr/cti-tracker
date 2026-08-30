@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["relevant", "actors_mentioned", "incidents"],
+  "properties": {
+    "relevant": {"type": "boolean"},
+    "actors_mentioned": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "aliases_in_text"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "aliases_in_text": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "incidents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "summary", "occurred_at", "direction", "actor", "victim_country", "victim_sector", "confidence", "ttps"],
+        "properties": {
+          "title": {"type": "string", "minLength": 1},
+          "summary": {"type": "string"},
+          "occurred_at": {"type": ["string", "null"], "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$"},
+          "direction": {"type": "string", "enum": ["from_cn", "to_cn", "unclear"]},
+          "actor": {"type": ["string", "null"]},
+          "victim_country": {"type": ["string", "null"], "pattern": "^[A-Z]{2}$"},
+          "victim_sector": {"type": ["string", "null"]},
+          "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+          "ttps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "name"],
+              "properties": {
+                "id": {"type": "string", "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"},
+                "name": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
