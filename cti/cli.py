@@ -58,10 +58,14 @@ def init(ctx, mitre_file, sources_path, actors_out):
                                             mitre_id=g["mitre_id"], description=g["description"])
         created += int(was_new)
     n_sources = 0
+    urls = []
     for s in load_sources(sources_path):
         db.upsert_source(conn, s["name"], s["url"], s["lang"], s["type"], s.get("enabled", True))
+        urls.append(s["url"])
         n_sources += 1
-    click.echo(f"actors: {len(groups)} china-attributed ({created} new); sources synced: {n_sources}")
+    stale = db.disable_sources_not_in(conn, urls)
+    click.echo(f"actors: {len(groups)} china-attributed ({created} new); sources synced: {n_sources}"
+               + (f"; stale disabled: {stale}" if stale else ""))
 
 
 @main.command("fetch")

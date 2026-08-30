@@ -108,6 +108,14 @@ def upsert_source(conn, name: str, url: str, lang: str, type: str, enabled: bool
     return conn.execute("SELECT id FROM sources WHERE url=?", (url,)).fetchone()["id"]
 
 
+def disable_sources_not_in(conn, urls: list[str]) -> int:
+    """Disable sources whose url is no longer listed (e.g. URL changed in sources.yaml)."""
+    placeholders = ",".join("?" * len(urls)) or "''"
+    cur = conn.execute(f"UPDATE sources SET enabled=0 WHERE enabled=1 AND url NOT IN ({placeholders})", urls)
+    conn.commit()
+    return cur.rowcount
+
+
 def insert_article(conn, *, source_id: int, url: str, title: str | None, published_at: str | None,
                    lang: str | None, text: str | None, relevance: str) -> int | None:
     cur = conn.execute(

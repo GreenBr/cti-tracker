@@ -56,3 +56,18 @@ def test_init_command_seeds_actors_and_sources(tmp_path):
     assert result.exit_code == 0
     assert conn.execute("select count(*) from actors").fetchone()[0] == 1
     assert json.loads((tmp_path / "actors.json").read_text())[0]["name"] == "APT41"
+
+
+def test_init_disables_sources_removed_from_yaml(tmp_path):
+    src = tmp_path / "sources.yaml"
+    dbfile = tmp_path / "cti.db"
+    base = ["--db", str(dbfile), "init", "--mitre-file", str(FIX), "--sources", str(src),
+            "--actors-out", str(tmp_path / "actors.json")]
+    src.write_text("sources:\n  - {name: A, url: https://a/old, lang: en, type: news}\n")
+    assert CliRunner().invoke(main, base).exit_code == 0
+    src.write_text("sources:\n  - {name: A, url: https://a/new, lang: en, type: news}\n")
+    result = CliRunner().invoke(main, base)
+    assert result.exit_code == 0 and "stale disabled: 1" in result.output
+    conn = db.connect(dbfile)
+    rows = {r["url"]: r["enabled"] for r in conn.execute("select url, enabled from sources")}
+    assert rows == {"https://a/old": 0, "https://a/new": 1}
