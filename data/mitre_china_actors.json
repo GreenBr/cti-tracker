@@ -1,0 +1,473 @@
+[
+  {
+    "name": "APT1",
+    "aliases": [
+      "Comment Crew",
+      "Comment Group",
+      "Comment Panda"
+    ],
+    "mitre_id": "G0006",
+    "description": "[APT1](https://attack.mitre.org/groups/G0006) is a Chinese threat group that has been attributed to the 2nd Bureau of the People’s Liberation Army (PLA) General Staff Department’s (GSD) 3rd Department, commonly known by its Military Unit Cover Designator (MUCD) as Unit 61398. (Citation: Mandiant APT1)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "APT12",
+    "aliases": [
+      "DNSCALC",
+      "DynCalc",
+      "IXESHE",
+      "Numbered Panda"
+    ],
+    "mitre_id": "G0005",
+    "description": "[APT12](https://attack.mitre.org/groups/G0005) is a threat group that has been attributed to China. The group has targeted a variety of victims including but not limited to media outlets, high-tech companies, and multiple governments.(Citation: Meyers Numbered Panda)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "APT16",
+    "aliases": [],
+    "mitre_id": "G0023",
+    "description": "[APT16](https://attack.mitre.org/groups/G0023) is a China-based threat group that has launched spearphishing campaigns targeting Japanese and Taiwanese organizations. (Citation: FireEye EPS Awakens Part 2)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "APT17",
+    "aliases": [
+      "Deputy Dog"
+    ],
+    "mitre_id": "G0025",
+    "description": "[APT17](https://attack.mitre.org/groups/G0025) is a China-based threat group that has conducted network intrusions against U.S. government entities, the defense industry, law firms, information technology companies, mining companies, and non-government organizations. (Citation: FireEye APT17)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "APT19",
+    "aliases": [
+      "C0d0so0",
+      "Codoso",
+      "Codoso Team",
+      "Sunshop Group"
+    ],
+    "mitre_id": "G0073",
+    "description": "[APT19](https://attack.mitre.org/groups/G0073) is a Chinese-based threat group that has targeted a variety of industries, including defense, finance, energy, pharmaceutical, telecommunications, high tech, education, manufacturing, and legal services. In 2017, a phishing campaign was used to target seven law and investment firms. (Citation: FireEye APT19) Some analysts track [APT19](https://attack.mitre.org/groups/G0073) and [Deep Panda](https://attack.mitre.org/groups/G0009) as the same group, but it is unclear from open source information if the groups are the same. (Citation: ICIT China's Espionage Jul 2016) (Citation: FireEye APT Groups) (Citation: Unit 42 C0d0so0 Jan 2016)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "APT3",
+    "aliases": [
+      "Buckeye",
+      "Gothic Panda",
+      "Pirpi",
+      "TG-0110",
+      "Threat Group-0110",
+      "UPS Team"
+    ],
+    "mitre_id": "G0022",
+    "description": "[APT3](https://attack.mitre.org/groups/G0022) is a China-based threat group that researchers have attributed to China's Ministry of State Security.(Citation: FireEye Clandestine Wolf)(Citation: Recorded Future APT3 May 2017) This group is responsible for the campaigns known as Operation Clandestine Fox, Operation Clandestine Wolf, and Operation Double Tap.(Citation: FireEye Clandestine Wolf)(Citation: FireEye Operation Double Tap) As of June 2015, the group appears to have shifted from targeting primarily US victims to primarily political organizations in Hong Kong.(Citation: Symantec Buckeye)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "APT30",
+    "aliases": [],
+    "mitre_id": "G0013",
+    "description": "[APT30](https://attack.mitre.org/groups/G0013) is a threat group suspected to be associated with the Chinese government. While [Naikon](https://attack.mitre.org/groups/G0019) shares some characteristics with [APT30](https://attack.mitre.org/groups/G0013), the two groups do not appear to be exact matches.(Citation: FireEye APT30)(Citation: Baumgartner Golovkin Naikon 2015)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "APT41",
+    "aliases": [
+      "BARIUM",
+      "Brass Typhoon",
+      "Wicked Panda"
+    ],
+    "mitre_id": "G0096",
+    "description": "[APT41](https://attack.mitre.org/groups/G0096) is a threat group that researchers have assessed as Chinese state-sponsored espionage group that also conducts financially-motivated operations. Active since at least 2012, [APT41](https://attack.mitre.org/groups/G0096) has been observed targeting various industries, including but not limited to healthcare, telecom, technology, finance, education, retail and video game industries in 14 countries.(Citation: apt41_mandiant) Notable behaviors include using a wide range of malware and tools to complete mission objectives. [APT41](https://attack.mitre.org/groups/G0096) overlaps at least partially with public reporting on groups including BARIUM and [Winnti Group](https://attack.mitre.org/groups/G0044).(Citation: FireEye APT41 Aug 2019)(Citation: Group IB APT 41 June 2021)\n",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "APT5",
+    "aliases": [
+      "BRONZE FLEETWOOD",
+      "Keyhole Panda",
+      "MANGANESE",
+      "Mulberry Typhoon",
+      "UNC2630"
+    ],
+    "mitre_id": "G1023",
+    "description": "[APT5](https://attack.mitre.org/groups/G1023) is a China-based espionage actor that has been active since at least 2007 primarily targeting the telecommunications, aerospace, and defense industries throughout the U.S., Europe, and Asia. [APT5](https://attack.mitre.org/groups/G1023) has displayed advanced tradecraft and significant interest in compromising networking devices and their underlying software including through the use of zero-day exploits.(Citation: NSA APT5 Citrix Threat Hunting December 2022)(Citation: Microsoft East Asia Threats September 2023)(Citation: Mandiant Pulse Secure Zero-Day April 2021)(Citation: Mandiant Pulse Secure Update May 2021)(Citation: FireEye Southeast Asia Threat Landscape March 2015)(Citation: Mandiant Advanced Persistent Threats)  ",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Aoqin Dragon",
+    "aliases": [],
+    "mitre_id": "G1007",
+    "description": "[Aoqin Dragon](https://attack.mitre.org/groups/G1007) is a suspected Chinese cyber espionage threat group that has been active since at least 2013. [Aoqin Dragon](https://attack.mitre.org/groups/G1007) has primarily targeted government, education, and telecommunication organizations in Australia, Cambodia, Hong Kong, Singapore, and Vietnam. Security researchers noted a potential association between [Aoqin Dragon](https://attack.mitre.org/groups/G1007) and UNC94, based on malware, infrastructure, and targets.(Citation: SentinelOne Aoqin Dragon June 2022)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Aquatic Panda",
+    "aliases": [],
+    "mitre_id": "G0143",
+    "description": "[Aquatic Panda](https://attack.mitre.org/groups/G0143) is a suspected China-based threat group with a dual mission of intelligence collection and industrial espionage. Active since at least May 2020, [Aquatic Panda](https://attack.mitre.org/groups/G0143) has primarily targeted entities in the telecommunications, technology, and government sectors.(Citation: CrowdStrike AQUATIC PANDA December 2021)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Axiom",
+    "aliases": [
+      "Group 72"
+    ],
+    "mitre_id": "G0001",
+    "description": "[Axiom](https://attack.mitre.org/groups/G0001) is a suspected Chinese cyber espionage group that has targeted the aerospace, defense, government, manufacturing, and media sectors since at least 2008. Some reporting suggests a degree of overlap between [Axiom](https://attack.mitre.org/groups/G0001) and [Winnti Group](https://attack.mitre.org/groups/G0044) but the two groups appear to be distinct based on differences in reporting on TTPs and targeting.(Citation: Kaspersky Winnti April 2013)(Citation: Kaspersky Winnti June 2015)(Citation: Novetta Winnti April 2015)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "BRONZE BUTLER",
+    "aliases": [
+      "REDBALDKNIGHT",
+      "Tick"
+    ],
+    "mitre_id": "G0060",
+    "description": "[BRONZE BUTLER](https://attack.mitre.org/groups/G0060) is a cyber espionage group with likely Chinese origins that has been active since at least 2008. The group primarily targets Japanese organizations, particularly those in government, biotechnology, electronics manufacturing, and industrial chemistry.(Citation: Trend Micro Daserf Nov 2017)(Citation: Secureworks BRONZE BUTLER Oct 2017)(Citation: Trend Micro Tick November 2019)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "BlackTech",
+    "aliases": [
+      "Palmerworm"
+    ],
+    "mitre_id": "G0098",
+    "description": "[BlackTech](https://attack.mitre.org/groups/G0098) is a suspected Chinese cyber espionage group that has primarily targeted organizations in East Asia--particularly Taiwan, Japan, and Hong Kong--and the US since at least 2013. [BlackTech](https://attack.mitre.org/groups/G0098) has used a combination of custom malware, dual-use tools, and living off the land tactics to compromise media, construction, engineering, electronics, and financial company networks.(Citation: TrendMicro BlackTech June 2017)(Citation: Symantec Palmerworm Sep 2020)(Citation: Reuters Taiwan BlackTech August 2020)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Chimera",
+    "aliases": [],
+    "mitre_id": "G0114",
+    "description": "[Chimera](https://attack.mitre.org/groups/G0114) is a suspected China-based threat group that has been active since at least 2018 targeting the semiconductor industry in Taiwan as well as data from the airline industry.(Citation: Cycraft Chimera April 2020)(Citation: NCC Group Chimera January 2021)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Cinnamon Tempest",
+    "aliases": [
+      "BRONZE STARLIGHT",
+      "DEV-0401",
+      "Emperor Dragonfly"
+    ],
+    "mitre_id": "G1021",
+    "description": "[Cinnamon Tempest](https://attack.mitre.org/groups/G1021) is a China-based threat group that has been active since at least 2021 deploying multiple strains of ransomware based on the leaked [Babuk](https://attack.mitre.org/software/S0638) source code. [Cinnamon Tempest](https://attack.mitre.org/groups/G1021) does not operate their ransomware on an affiliate model or purchase access but appears to act independently in all stages of the attack lifecycle. Based on victimology, the short lifespan of each ransomware variant, and use of malware attributed to government-sponsored threat groups, [Cinnamon Tempest](https://attack.mitre.org/groups/G1021) may be motivated by intellectual property theft or cyberespionage rather than financial gain.(Citation: Microsoft Ransomware as a Service)(Citation: Microsoft Threat Actor Naming July 2023)(Citation: Trend Micro Cheerscrypt May 2022)(Citation: SecureWorks BRONZE STARLIGHT Ransomware Operations June 2022)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Daggerfly",
+    "aliases": [
+      "BRONZE HIGHLAND",
+      "Evasive Panda"
+    ],
+    "mitre_id": "G1034",
+    "description": "[Daggerfly](https://attack.mitre.org/groups/G1034) is a People's Republic of China-linked APT entity active since at least 2012. [Daggerfly](https://attack.mitre.org/groups/G1034) has targeted individuals, government and NGO entities, and telecommunication companies in Asia and Africa. [Daggerfly](https://attack.mitre.org/groups/G1034) is associated with exclusive use of [MgBot](https://attack.mitre.org/software/S1146) malware and is noted for several potential supply chain infection campaigns.(Citation: Symantec Daggerfly 2023)(Citation: ESET EvasivePanda 2023)(Citation: Symantec Daggerfly 2024)(Citation: ESET EvasivePanda 2024)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Deep Panda",
+    "aliases": [
+      "Black Vine",
+      "KungFu Kittens",
+      "PinkPanther",
+      "Shell Crew",
+      "WebMasters"
+    ],
+    "mitre_id": "G0009",
+    "description": "[Deep Panda](https://attack.mitre.org/groups/G0009) is a suspected Chinese threat group known to target many industries, including government, defense, financial, and telecommunications. (Citation: Alperovitch 2014) The intrusion into healthcare company Anthem has been attributed to [Deep Panda](https://attack.mitre.org/groups/G0009). (Citation: ThreatConnect Anthem) This group is also known as Shell Crew, WebMasters, KungFu Kittens, and PinkPanther. (Citation: RSA Shell Crew) [Deep Panda](https://attack.mitre.org/groups/G0009) also appears to be known as Black Vine based on the attribution of both group names to the Anthem intrusion. (Citation: Symantec Black Vine) Some analysts track [Deep Panda](https://attack.mitre.org/groups/G0009) and [APT19](https://attack.mitre.org/groups/G0073) as the same group, but it is unclear from open source information if the groups are the same. (Citation: ICIT China's Espionage Jul 2016)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Earth Lusca",
+    "aliases": [
+      "CHROMIUM",
+      "Charcoal Typhoon",
+      "ControlX",
+      "TAG-22"
+    ],
+    "mitre_id": "G1006",
+    "description": "[Earth Lusca](https://attack.mitre.org/groups/G1006) is a suspected China-based cyber espionage group that has been active since at least April 2019. [Earth Lusca](https://attack.mitre.org/groups/G1006) has targeted organizations in Australia, China, Hong Kong, Mongolia, Nepal, the Philippines, Taiwan, Thailand, Vietnam, the United Arab Emirates, Nigeria, Germany, France, and the United States. Targets included government institutions, news media outlets, gambling companies, educational institutions, COVID-19 research organizations, telecommunications companies, religious movements banned in China, and cryptocurrency trading platforms; security researchers assess some [Earth Lusca](https://attack.mitre.org/groups/G1006) operations may be financially motivated.(Citation: TrendMicro EarthLusca 2022)\n\n[Earth Lusca](https://attack.mitre.org/groups/G1006) has used malware commonly used by other Chinese threat groups, including [APT41](https://attack.mitre.org/groups/G0096) and the [Winnti Group](https://attack.mitre.org/groups/G0044) cluster, however security researchers assess [Earth Lusca](https://attack.mitre.org/groups/G1006)'s techniques and infrastructure are separate.(Citation: TrendMicro EarthLusca 2022)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Elderwood",
+    "aliases": [
+      "Beijing Group",
+      "Elderwood Gang",
+      "Sneaky Panda"
+    ],
+    "mitre_id": "G0066",
+    "description": "[Elderwood](https://attack.mitre.org/groups/G0066) is a suspected Chinese cyber espionage group that was reportedly responsible for the 2009 Google intrusion known as Operation Aurora. (Citation: Security Affairs Elderwood Sept 2012) The group has targeted defense organizations, supply chain manufacturers, human rights and nongovernmental organizations (NGOs), and IT service providers. (Citation: Symantec Elderwood Sept 2012) (Citation: CSM Elderwood Sept 2012)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "GALLIUM",
+    "aliases": [
+      "Granite Typhoon"
+    ],
+    "mitre_id": "G0093",
+    "description": "[GALLIUM](https://attack.mitre.org/groups/G0093) is a cyberespionage group that has been active since at least 2012, primarily targeting telecommunications companies, financial institutions, and government entities in Afghanistan, Australia, Belgium, Cambodia, Malaysia, Mozambique, the Philippines, Russia, and Vietnam. This group is particularly known for launching Operation Soft Cell, a long-term campaign targeting telecommunications providers.(Citation: Cybereason Soft Cell June 2019) Security researchers have identified [GALLIUM](https://attack.mitre.org/groups/G0093) as a likely Chinese state-sponsored group, based in part on tools used and TTPs commonly associated with Chinese threat actors.(Citation: Cybereason Soft Cell June 2019)(Citation: Microsoft GALLIUM December 2019)(Citation: Unit 42 PingPull Jun 2022)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "HAFNIUM",
+    "aliases": [
+      "Operation Exchange Marauder",
+      "Silk Typhoon"
+    ],
+    "mitre_id": "G0125",
+    "description": "[HAFNIUM](https://attack.mitre.org/groups/G0125) is a likely state-sponsored cyber espionage group operating out of China that has been active since at least January 2021. [HAFNIUM](https://attack.mitre.org/groups/G0125) primarily targets entities in the US across a number of industry sectors, including infectious disease researchers, law firms, higher education institutions, defense contractors, policy think tanks, and NGOs. [HAFNIUM](https://attack.mitre.org/groups/G0125) has targeted remote management tools and cloud software for intial access and has demonstrated an ability to quickly operationalize exploits for identified vulnerabilities in edge devices.(Citation: Microsoft HAFNIUM March 2020)(Citation: Volexity Exchange Marauder March 2021)(Citation: Microsoft Silk Typhoon MAR 2025)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "IndigoZebra",
+    "aliases": [],
+    "mitre_id": "G0136",
+    "description": "[IndigoZebra](https://attack.mitre.org/groups/G0136) is a suspected Chinese cyber espionage group that has been targeting Central Asian governments since at least 2014.(Citation: HackerNews IndigoZebra July 2021)(Citation: Checkpoint IndigoZebra July 2021)(Citation: Securelist APT Trends Q2 2017)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Ke3chang",
+    "aliases": [
+      "APT15",
+      "GREF",
+      "Mirage",
+      "NICKEL",
+      "Nylon Typhoon",
+      "Playful Dragon",
+      "RoyalAPT",
+      "Vixen Panda"
+    ],
+    "mitre_id": "G0004",
+    "description": "[Ke3chang](https://attack.mitre.org/groups/G0004) is a threat group attributed to actors operating out of China. [Ke3chang](https://attack.mitre.org/groups/G0004) has targeted oil, government, diplomatic, military, and NGOs in Central and South America, the Caribbean, Europe, and North America since at least 2010.(Citation: Mandiant Operation Ke3chang November 2014)(Citation: NCC Group APT15 Alive and Strong)(Citation: APT15 Intezer June 2018)(Citation: Microsoft NICKEL December 2021)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Leviathan",
+    "aliases": [
+      "APT40",
+      "BRONZE MOHAWK",
+      "Gadolinium",
+      "Gingham Typhoon",
+      "Kryptonite Panda",
+      "MUDCARP",
+      "TEMP.Jumper",
+      "TEMP.Periscope"
+    ],
+    "mitre_id": "G0065",
+    "description": "[Leviathan](https://attack.mitre.org/groups/G0065) is a Chinese state-sponsored cyber espionage group that has been attributed to the Ministry of State Security's (MSS) Hainan State Security Department and an affiliated front company.(Citation: CISA AA21-200A APT40 July 2021) Active since at least 2009, [Leviathan](https://attack.mitre.org/groups/G0065) has targeted the following sectors: academia, aerospace/aviation, biomedical, defense industrial base, government, healthcare, manufacturing, maritime, and transportation across the US, Canada, Australia, Europe, the Middle East, and Southeast Asia.(Citation: CISA AA21-200A APT40 July 2021)(Citation: Proofpoint Leviathan Oct 2017)(Citation: FireEye Periscope March 2018)(Citation: CISA Leviathan 2024)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "LuminousMoth",
+    "aliases": [],
+    "mitre_id": "G1014",
+    "description": "[LuminousMoth](https://attack.mitre.org/groups/G1014) is a Chinese-speaking cyber espionage group that has been active since at least October 2020. [LuminousMoth](https://attack.mitre.org/groups/G1014) has targeted high-profile organizations, including government entities, in Myanmar, the Philippines, Thailand, and other parts of Southeast Asia. Some security researchers have concluded there is a connection between [LuminousMoth](https://attack.mitre.org/groups/G1014) and [Mustang Panda](https://attack.mitre.org/groups/G0129) based on similar targeting and TTPs, as well as network infrastructure overlaps.(Citation: Kaspersky LuminousMoth July 2021)(Citation: Bitdefender LuminousMoth July 2021)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "MirrorFace",
+    "aliases": [
+      "Earth Kasha"
+    ],
+    "mitre_id": "G1054",
+    "description": "[MirrorFace](https://attack.mitre.org/groups/G1054) is a People's Republic of China (PRC)-aligned cyberespionage actor believed to be a subgroup under the [menuPass](https://attack.mitre.org/groups/G0045) umbrella based on targeting, tools, and infrastructure overlaps. [MirrorFace](https://attack.mitre.org/groups/G1054) has been active since at least 2019, at first exclusively targeting Japanese organizations across the media, defense, diplomatic, financial, manufacturing, and academic sectors. Subsequent [MirrorFace](https://attack.mitre.org/groups/G1054) operations included targets in Central Europe and featured use of [LODEINFO](https://attack.mitre.org/software/S9020), [HiddenFace](https://attack.mitre.org/software/S9023), and [UPPERCUT](https://attack.mitre.org/software/S0275) malware.(Citation: Kaspersky LODEINFO OCT 2022)(Citation: Kaspersky LODEINFO Part II OCT 2022)(Citation: ESET MirrorFace DEC 2022)(Citation: JPCERT MirrorFace JUL 2024)(Citation: Trend Micro Earth Kasha NOV 2024)(Citation: Trend Micro Earth Kasha Updates APR 2025)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Moafee",
+    "aliases": [],
+    "mitre_id": "G0002",
+    "description": "[Moafee](https://attack.mitre.org/groups/G0002) is a threat group that appears to operate from the Guandong Province of China. Due to overlapping TTPs, including similar custom tools, Moafee is thought to have a direct or indirect relationship with the threat group [DragonOK](https://attack.mitre.org/groups/G0017). (Citation: Haq 2014)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Mofang",
+    "aliases": [],
+    "mitre_id": "G0103",
+    "description": "[Mofang](https://attack.mitre.org/groups/G0103) is a likely China-based cyber espionage group, named for its frequent practice of imitating a victim's infrastructure. This adversary has been observed since at least May 2012 conducting focused attacks against government and critical infrastructure in Myanmar, as well as several other countries and sectors including military, automobile, and weapons industries.(Citation: FOX-IT May 2016 Mofang)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Mustang Panda",
+    "aliases": [
+      "BRONZE PRESIDENT",
+      "CAMARO DRAGON",
+      "ClumsyToad",
+      "EARTH PRETA",
+      "FIREANT",
+      "HIVE0154",
+      "LUMINOUS MOTH",
+      "Red Lich",
+      "RedDelta",
+      "STATELY TAURUS",
+      "TA416",
+      "TANTALUM",
+      "TEMP.Hex",
+      "TWILL TYPHOON",
+      "UNC6384"
+    ],
+    "mitre_id": "G0129",
+    "description": "[Mustang Panda](https://attack.mitre.org/groups/G0129) is a China-based cyber espionage threat actor that has been conducting operations since at least 2012. [Mustang Panda](https://attack.mitre.org/groups/G0129) has been known to use tailored phishing lures and decoy documents to deliver malicious payloads.  [Mustang Panda](https://attack.mitre.org/groups/G0129) has targeted government, diplomatic, and non-governmental organizations, including think tanks, religious institutions, and research entities, across the United States, Europe, and Asia, with notable activity in Russia, Mongolia, Myanmar, Pakistan, and Vietnam. (Citation: BlackBerry MUSTANG PANDA October 2022)(Citation: Eset PlugX Korplug Mustang Panda March 2022)(Citation: Anomali MUSTANG PANDA October 2019)(Citation: Cisco Talos MUSTANG PANDA PLUGX PUBLOAD MAY 2022)(Citation: Secureworks BRONZE PRESIDENT December 2019)(Citation: DOJ Affidavit Search and Seizure PlugX December 2024)(Citation: EclecticIQ Mustang Panda PlugX)(Citation: ATTACKIQ MUSTANG PANDA TONESHELL March 2023)(Citation: Crowdstrike MUSTANG PANDA June 2018)(Citation: Palo Alto Networks, Unit 42)(Citation: Sophos PlugX September 2022)(Citation: Sophos Mustang Panda PLUGX)(Citation: Zscaler)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Naikon",
+    "aliases": [],
+    "mitre_id": "G0019",
+    "description": "[Naikon](https://attack.mitre.org/groups/G0019) is assessed to be a state-sponsored cyber espionage group attributed to the Chinese People’s Liberation Army’s (PLA) Chengdu Military Region Second Technical Reconnaissance Bureau (Military Unit Cover Designator 78020).(Citation: CameraShy) Active since at least 2010, [Naikon](https://attack.mitre.org/groups/G0019) has primarily conducted operations against government, military, and civil organizations in Southeast Asia, as well as against international bodies such as the United Nations Development Programme (UNDP) and the Association of Southeast Asian Nations (ASEAN).(Citation: CameraShy)(Citation: Baumgartner Naikon 2015) \n\nWhile [Naikon](https://attack.mitre.org/groups/G0019) shares some characteristics with [APT30](https://attack.mitre.org/groups/G0013), the two groups do not appear to be exact matches.(Citation: Baumgartner Golovkin Naikon 2015)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "PittyTiger",
+    "aliases": [],
+    "mitre_id": "G0011",
+    "description": "[PittyTiger](https://attack.mitre.org/groups/G0011) is a threat group believed to operate out of China that uses multiple different types of malware to maintain command and control.(Citation: Bizeul 2014)(Citation: Villeneuve 2014)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Putter Panda",
+    "aliases": [
+      "APT2",
+      "MSUpdater"
+    ],
+    "mitre_id": "G0024",
+    "description": "[Putter Panda](https://attack.mitre.org/groups/G0024) is a Chinese threat group that has been attributed to Unit 61486 of the 12th Bureau of the PLA’s 3rd General Staff Department (GSD). (Citation: CrowdStrike Putter Panda)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "RedEcho",
+    "aliases": [],
+    "mitre_id": "G1042",
+    "description": "[RedEcho](https://attack.mitre.org/groups/G1042) is a People’s Republic of China-related threat actor associated with long-running intrusions in Indian critical infrastructure entities. [RedEcho](https://attack.mitre.org/groups/G1042) overlaps with various other PRC-linked threat groups, such as [APT41](https://attack.mitre.org/groups/G0096), and is linked to [ShadowPad](https://attack.mitre.org/software/S0596) malware use through shared infrastructure.(Citation: RecordedFuture RedEcho 2021)(Citation: RecordedFuture RedEcho 2022)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Rocke",
+    "aliases": [],
+    "mitre_id": "G0106",
+    "description": "[Rocke](https://attack.mitre.org/groups/G0106) is an alleged Chinese-speaking adversary whose primary objective appeared to be cryptojacking, or stealing victim system resources for the purposes of mining cryptocurrency. The name [Rocke](https://attack.mitre.org/groups/G0106) comes from the email address \"rocke@live.cn\" used to create the wallet which held collected cryptocurrency. Researchers have detected overlaps between [Rocke](https://attack.mitre.org/groups/G0106) and the Iron Cybercrime Group, though this attribution has not been confirmed.(Citation: Talos Rocke August 2018)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Salt Typhoon",
+    "aliases": [],
+    "mitre_id": "G1045",
+    "description": "[Salt Typhoon](https://attack.mitre.org/groups/G1045) is a People's Republic of China (PRC) state-backed actor that has been active since at least 2019 and responsible for numerous compromises of network infrastructure at major U.S. telecommunication and internet service providers (ISP).(Citation: US Dept. of Treasury Salt Typhoon JAN 2025)(Citation: Cisco Salt Typhoon FEB 2025)\n",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Scarlet Mimic",
+    "aliases": [],
+    "mitre_id": "G0029",
+    "description": "[Scarlet Mimic](https://attack.mitre.org/groups/G0029) is a threat group that has targeted minority rights activists. This group has not been directly linked to a government source, but the group's motivations appear to overlap with those of the Chinese government. While there is some overlap between IP addresses used by [Scarlet Mimic](https://attack.mitre.org/groups/G0029) and [Putter Panda](https://attack.mitre.org/groups/G0024), it has not been concluded that the groups are the same. (Citation: Scarlet Mimic Jan 2016)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Suckfly",
+    "aliases": [],
+    "mitre_id": "G0039",
+    "description": "[Suckfly](https://attack.mitre.org/groups/G0039) is a China-based threat group that has been active since at least 2014. (Citation: Symantec Suckfly March 2016)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "TA459",
+    "aliases": [],
+    "mitre_id": "G0062",
+    "description": "[TA459](https://attack.mitre.org/groups/G0062) is a threat group believed to operate out of China that has targeted countries including Russia, Belarus, Mongolia, and others. (Citation: Proofpoint TA459 April 2017)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Threat Group-3390",
+    "aliases": [
+      "APT27",
+      "BRONZE UNION",
+      "Earth Smilodon",
+      "Emissary Panda",
+      "Iron Tiger",
+      "Linen Typhoon",
+      "LuckyMouse",
+      "TG-3390"
+    ],
+    "mitre_id": "G0027",
+    "description": "[Threat Group-3390](https://attack.mitre.org/groups/G0027) is a Chinese threat group that has extensively used strategic Web compromises to target victims.(Citation: Dell TG-3390) The group has been active since at least 2010 and has targeted organizations in the aerospace, government, defense, technology, energy, manufacturing and gambling/betting sectors.(Citation: SecureWorks BRONZE UNION June 2017)(Citation: Securelist LuckyMouse June 2018)(Citation: Trend Micro DRBControl February 2020)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Tonto Team",
+    "aliases": [
+      "BRONZE HUNTLEY",
+      "CactusPete",
+      "Earth Akhlut",
+      "Karma Panda"
+    ],
+    "mitre_id": "G0131",
+    "description": "[Tonto Team](https://attack.mitre.org/groups/G0131) is a suspected Chinese state-sponsored cyber espionage threat group that has primarily targeted South Korea, Japan, Taiwan, and the United States since at least 2009; by 2020 they expanded operations to include other Asian as well as Eastern European countries. [Tonto Team](https://attack.mitre.org/groups/G0131) has targeted government, military, energy, mining, financial, education, healthcare, and technology organizations, including through the Heartbeat Campaign (2009-2012) and Operation Bitter Biscuit (2017).(Citation: Kaspersky CactusPete Aug 2020)(Citation: ESET Exchange Mar 2021)(Citation: FireEye Chinese Espionage October 2019)(Citation: ARS Technica China Hack SK April 2017)(Citation: Trend Micro HeartBeat Campaign January 2013)(Citation: Talos Bisonal 10 Years March 2020)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "UNC3886",
+    "aliases": [],
+    "mitre_id": "G1048",
+    "description": "[UNC3886](https://attack.mitre.org/groups/G1048) is a China-nexus cyberespionage group that has been active since at least 2022, targeting defense, technology, and telecommunication organizations located in the United States and the Asia-Pacific-Japan (APJ) regions. [UNC3886](https://attack.mitre.org/groups/G1048) has displayed a deep understanding of edge devices and virtualization technologies through the exploitation of zero-day vulnerabilities and the use of novel malware families and utilities.(Citation: Mandiant Fortinet Zero Day)(Citation: Google Cloud Threat Intelligence VMWare ESXi Zero-Day 2023)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Volt Typhoon",
+    "aliases": [
+      "BRONZE SILHOUETTE",
+      "DEV-0391",
+      "DazedToad",
+      "Insidious Taurus",
+      "UNC3236",
+      "Vanguard Panda",
+      "Voltzite"
+    ],
+    "mitre_id": "G1017",
+    "description": "[Volt Typhoon](https://attack.mitre.org/groups/G1017) is a People's Republic of China (PRC) state-sponsored actor that has been active since at least 2021, primarily targeting critical infrastructure organizations in the US and its territories including Guam. [Volt Typhoon](https://attack.mitre.org/groups/G1017)'s targeting and pattern of behavior have been assessed as pre-positioning to enable lateral movement to operational technology (OT) assets for potential destructive or disruptive attacks. [Volt Typhoon](https://attack.mitre.org/groups/G1017) has emphasized stealth in operations using web shells, living-off-the-land (LOTL) binaries, hands on keyboard activities, and stolen credentials.(Citation: CISA AA24-038A PRC Critical Infrastructure February 2024)(Citation: Microsoft Volt Typhoon May 2023)(Citation: Joint Cybersecurity Advisory Volt Typhoon June 2023)(Citation: Secureworks BRONZE SILHOUETTE May 2023). The group has leveraged compromised SOHO routers to proxy command and control traffic and obscure its infrastructure, activity associated with the KV botnet.(Citation: DOJ KVBotnet 2024). \n\nReporting indicates a separate initial access cluster, SYLVANITE, has been observed exploiting internet-facing edge devices and transferring access to [Volt Typhoon](https://attack.mitre.org/groups/G1017), also tracked as VOLTZITE, for follow-on operations. (Citation: Dragos 2025 Year in Review)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "Winnti Group",
+    "aliases": [
+      "Blackfly"
+    ],
+    "mitre_id": "G0044",
+    "description": "[Winnti Group](https://attack.mitre.org/groups/G0044) is a threat group with Chinese origins that has been active since at least 2010. The group has heavily targeted the gaming industry, but it has also expanded the scope of its targeting.(Citation: Kaspersky Winnti April 2013)(Citation: Kaspersky Winnti June 2015)(Citation: Novetta Winnti April 2015) Some reporting suggests a number of other groups, including [Axiom](https://attack.mitre.org/groups/G0001), [APT17](https://attack.mitre.org/groups/G0025), and [Ke3chang](https://attack.mitre.org/groups/G0004), are closely linked to [Winnti Group](https://attack.mitre.org/groups/G0044).(Citation: 401 TRG Winnti Umbrella May 2018)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "ZIRCONIUM",
+    "aliases": [
+      "APT31",
+      "Violet Typhoon"
+    ],
+    "mitre_id": "G0128",
+    "description": "[ZIRCONIUM](https://attack.mitre.org/groups/G0128) is a threat group operating out of China, active since at least 2017, that has targeted individuals associated with the 2020 US presidential election and prominent leaders in the international affairs community.(Citation: Microsoft Targeting Elections September 2020)(Citation: Check Point APT31 February 2021)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "admin@338",
+    "aliases": [],
+    "mitre_id": "G0018",
+    "description": "[admin@338](https://attack.mitre.org/groups/G0018) is a China-based cyber threat group. It has previously used newsworthy events as lures to deliver malware and has primarily targeted organizations involved in financial, economic, and trade policy, typically using publicly available RATs such as [PoisonIvy](https://attack.mitre.org/software/S0012), as well as some non-public backdoors. (Citation: FireEye admin@338)",
+    "attributed_country": "CN"
+  },
+  {
+    "name": "menuPass",
+    "aliases": [
+      "APT10",
+      "BRONZE RIVERSIDE",
+      "CVNX",
+      "Cicada",
+      "HOGFISH",
+      "POTASSIUM",
+      "Red Apollo",
+      "Stone Panda"
+    ],
+    "mitre_id": "G0045",
+    "description": "[menuPass](https://attack.mitre.org/groups/G0045) is a threat group that has been active since at least 2006. Individual members of [menuPass](https://attack.mitre.org/groups/G0045) are known to have acted in association with the Chinese Ministry of State Security's (MSS) Tianjin State Security Bureau and worked for the Huaying Haitai Science and Technology Development Company.(Citation: DOJ APT10 Dec 2018)(Citation: District Court of NY APT10 Indictment December 2018)\n\n[menuPass](https://attack.mitre.org/groups/G0045) has targeted healthcare, defense, aerospace, finance, maritime, biotechnology, energy, and government sectors globally, with an emphasis on Japanese organizations. In 2016 and 2017, the group is known to have targeted managed IT service providers (MSPs), manufacturing and mining companies, and a university.(Citation: Palo Alto menuPass Feb 2017)(Citation: Crowdstrike CrowdCast Oct 2013)(Citation: FireEye Poison Ivy)(Citation: PWC Cloud Hopper April 2017)(Citation: FireEye APT10 April 2017)(Citation: DOJ APT10 Dec 2018)(Citation: District Court of NY APT10 Indictment December 2018)",
+    "attributed_country": "CN"
+  }
+]

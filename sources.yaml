@@ -1,0 +1,28 @@
+sources:
+  # --- English: vendor reports / gov advisories ---
+  - {name: "Google Threat Intelligence", url: "https://cloud.google.com/blog/topics/threat-intelligence/rss/", lang: en, type: vendor_report, enabled: true}
+  - {name: "Microsoft Security Blog", url: "https://www.microsoft.com/en-us/security/blog/feed/", lang: en, type: vendor_report, enabled: true}
+  - {name: "CrowdStrike Blog", url: "https://www.crowdstrike.com/blog/feed/", lang: en, type: vendor_report, enabled: true}
+  - {name: "Unit 42", url: "https://unit42.paloaltonetworks.com/feed/", lang: en, type: vendor_report, enabled: true}
+  - {name: "Recorded Future Insikt", url: "https://www.recordedfuture.com/feed", lang: en, type: vendor_report, enabled: true}
+  - {name: "CISA Advisories", url: "https://www.cisa.gov/cybersecurity-advisories/all.xml", lang: en, type: gov_advisory, enabled: true}
+  - {name: "ESET WeLiveSecurity", url: "https://www.welivesecurity.com/en/rss/feed/", lang: en, type: vendor_report, enabled: true}
+  - {name: "Trend Micro Research", url: "https://www.trendmicro.com/en_us/research.rss", lang: en, type: vendor_report, enabled: true}
+  - {name: "Check Point Research", url: "https://research.checkpoint.com/feed/", lang: en, type: vendor_report, enabled: true}
+  - {name: "SentinelOne Labs", url: "https://www.sentinelone.com/labs/feed/", lang: en, type: vendor_report, enabled: true}
+  # --- English: news ---
+  - {name: "The Record", url: "https://therecord.media/feed", lang: en, type: news, enabled: true}
+  - {name: "BleepingComputer", url: "https://www.bleepingcomputer.com/feed/", lang: en, type: news, enabled: true}
+  - {name: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews", lang: en, type: news, enabled: true}
+  - {name: "Krebs on Security", url: "https://krebsonsecurity.com/feed/", lang: en, type: news, enabled: true}
+  # --- Chinese: vendor reports ---
+  - {name: "奇安信威胁情报中心", url: "https://ti.qianxin.com/blog/rss/", lang: zh, type: vendor_report, enabled: true}
+  - {name: "微步在线", url: "https://x.threatbook.com/v5/rss", lang: zh, type: vendor_report, enabled: true}
+  - {name: "安天", url: "https://www.antiy.cn/rss.xml", lang: zh, type: vendor_report, enabled: true}
+  - {name: "360 威胁情报中心", url: "https://ti.360.net/rss", lang: zh, type: vendor_report, enabled: true}
+  - {name: "绿盟科技", url: "https://blog.nsfocus.net/feed/", lang: zh, type: vendor_report, enabled: true}
+  # --- Chinese: news / community / official ---
+  - {name: "安全客", url: "https://api.anquanke.com/data/v1/rss", lang: zh, type: news, enabled: true}
+  - {name: "FreeBuf", url: "https://www.freebuf.com/feed", lang: zh, type: news, enabled: true}
+  - {name: "CNCERT", url: "https://www.cert.org.cn/publish/main/rss.xml", lang: zh, type: gov_advisory, enabled: true}
+  - {name: "CVERC", url: "https://www.cverc.org.cn/rss.xml", lang: zh, type: gov_advisory, enabled: true}

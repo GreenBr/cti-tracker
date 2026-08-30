@@ -1,0 +1,32 @@
+{
+  "type": "bundle",
+  "id": "bundle--test",
+  "objects": [
+    {
+      "type": "intrusion-set",
+      "id": "intrusion-set--1",
+      "name": "APT41",
+      "aliases": ["APT41", "Wicked Panda", "Brass Typhoon"],
+      "description": "APT41 is a threat group that researchers have assessed as Chinese state-sponsored espionage group.",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "G0096"}]
+    },
+    {
+      "type": "intrusion-set",
+      "id": "intrusion-set--2",
+      "name": "APT28",
+      "aliases": ["APT28", "Fancy Bear"],
+      "description": "APT28 is a threat group attributed to Russia's GRU.",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "G0007"}]
+    },
+    {
+      "type": "intrusion-set",
+      "id": "intrusion-set--3",
+      "name": "Old China Group",
+      "aliases": ["Old China Group"],
+      "description": "A Chinese group.",
+      "revoked": true,
+      "external_references": [{"source_name": "mitre-attack", "external_id": "G9999"}]
+    },
+    {"type": "attack-pattern", "id": "attack-pattern--1", "name": "Phishing"}
+  ]
+}
