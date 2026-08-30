@@ -19,3 +19,4 @@ form.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}form.filte
 .chart{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.75rem}.chart h3{margin:0 0 .5rem;font-size:1rem}
 article.body{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1rem;max-height:60vh;overflow:auto}
 dl{display:grid;grid-template-columns:max-content 1fr;gap:.25rem 1rem}dt{color:var(--muted)}
+.stamp{font-size:.8rem}ol.steps li{margin:.5rem 0}
