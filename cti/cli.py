@@ -102,10 +102,24 @@ def extract_cmd(ctx, batch, limit, retry_failed, model, prompt_path, schema_path
 
 @main.command()
 @click.option("--port", default=8001, show_default=True)
+@click.option("--host", default="127.0.0.1", show_default=True)
+@click.pass_context
+def serve(ctx, port, host):
+    """Run the web UI (FastAPI + Uvicorn)."""
+    import uvicorn
+
+    from cti.web.app import create_app
+
+    click.echo(f"Open http://{host}:{port}/")
+    uvicorn.run(create_app(ctx.obj["db_path"]), host=host, port=port, log_level="warning")
+
+
+@main.command()
+@click.option("--port", default=8002, show_default=True)
 @click.option("--metadata", "metadata_path", type=click.Path(path_type=Path), default=DEFAULT_METADATA, show_default=True)
 @click.pass_context
-def serve(ctx, port, metadata_path):
-    """Run Datasette on the CTI database."""
+def datasette(ctx, port, metadata_path):
+    """Run Datasette on the CTI database (raw-data browsing fallback)."""
     db_path = ctx.obj["db_path"]
     conn = db.connect(db_path)
     db.init_schema(conn)
@@ -114,3 +128,54 @@ def serve(ctx, port, metadata_path):
            "--setting", "default_page_size", "50"]
     click.echo("Open http://127.0.0.1:%d/  (dashboard: /-/dashboards/trends)" % port)
     subprocess.run(cmd, check=False)
+
+
+TRANSLATIONS = ROOT / "cti" / "translations"
+POT = TRANSLATIONS / "messages.pot"
+
+
+@main.group()
+def i18n():
+    """Translation catalog workflow (Babel + OpenCC)."""
+
+
+def _pybabel(*args: str) -> None:
+    subprocess.run(["pybabel", *args], check=True, cwd=ROOT)
+
+
+@i18n.command("extract")
+def i18n_extract():
+    """Extract translatable strings into cti/translations/messages.pot."""
+    TRANSLATIONS.mkdir(parents=True, exist_ok=True)
+    _pybabel("extract", "-F", "babel.cfg", "-k", "gettext_lazy", "-k", "_", "--project", "cti-tracker",
+             "--no-location", "--sort-by-file", "-o", str(POT), ".")
+
+
+@i18n.command("init")
+@click.argument("locale")
+def i18n_init(locale):
+    """Create a new locale catalog from the .pot (e.g. zh_CN)."""
+    _pybabel("init", "-i", str(POT), "-d", str(TRANSLATIONS), "-l", locale)
+
+
+@i18n.command("update")
+def i18n_update():
+    """Merge new strings from the .pot into every existing catalog."""
+    _pybabel("update", "-i", str(POT), "-d", str(TRANSLATIONS))
+
+
+@i18n.command("compile")
+def i18n_compile():
+    """Compile .po -> .mo for all locales."""
+    _pybabel("compile", "-d", str(TRANSLATIONS), "--statistics")
+
+
+@i18n.command("gen-hant")
+def i18n_gen_hant():
+    """Generate zh_TW catalog from zh_CN with OpenCC (s2twp); review afterwards."""
+    from cti.i18n_tools import generate_zh_tw
+
+    src = TRANSLATIONS / "zh_CN" / "LC_MESSAGES" / "messages.po"
+    dst = TRANSLATIONS / "zh_TW" / "LC_MESSAGES" / "messages.po"
+    n = generate_zh_tw(src, dst)
+    click.echo(f"zh_TW: {n} messages written to {dst} (review before compile)")

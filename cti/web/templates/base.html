@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ language() }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{% endblock %} · {{ _("CTI Tracker") }}</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/">{{ _("CTI Tracker") }}</a>
+  <nav>
+    <a href="/">{{ _("Today") }}</a>
+    <a href="/incidents">{{ _("Incidents") }}</a>
+    <a href="/actors">{{ _("Actors") }}</a>
+    <a href="/trends">{{ _("Trends") }}</a>
+  </nav>
+  <form class="lang" method="get" action="{{ request.url.path }}">
+    {% for k, v in request.query_params.items() if k != 'lang' %}<input type="hidden" name="{{ k }}" value="{{ v }}">{% endfor %}
+    <label for="lang">{{ _("Language") }}</label>
+    <select id="lang" name="lang" onchange="this.form.submit()">
+      {% for code, name in locale_choices() %}
+      <option value="{{ code }}" {% if code == current_locale_code() %}selected{% endif %}>{{ name }}</option>
+      {% endfor %}
+    </select>
+    <noscript><button type="submit">{{ _("Apply") }}</button></noscript>
+  </form>
+</header>
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer><a href="http://127.0.0.1:8002/">{{ _("Raw data (Datasette)") }}</a></footer>
+{% block scripts %}{% endblock %}
+</body>
+</html>

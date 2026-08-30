@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Today") }}{% endblock %}
+{% block content %}
+<h1>{{ _("Today") }}</h1>
+<section class="tiles">
+  <div class="tile"><span class="n">{{ stats.articles|number }}</span><span class="l">{{ _("Articles") }}</span></div>
+  <div class="tile"><span class="n">{{ stats.candidates|number }}</span><span class="l">{{ _("Candidates") }}</span></div>
+  <div class="tile"><span class="n">{{ stats.incidents|number }}</span><span class="l">{{ _("Incidents") }}</span></div>
+  <div class="tile"><span class="n">{{ stats.actors|number }}</span><span class="l">{{ _("Actors") }}</span></div>
+</section>
+
+<h2>{{ _("New incidents today") }}</h2>
+{% if today.incidents %}
+<table>
+  <thead><tr><th>{{ _("Title") }}</th><th>{{ _("Direction") }}</th><th>{{ _("Actor") }}</th><th>{{ _("Source") }}</th></tr></thead>
+  <tbody>
+  {% for i in today.incidents %}
+  <tr>
+    <td><a href="/incidents/{{ i.id }}">{{ i.title }}</a></td>
+    <td><span class="tag {{ i.direction }}">{{ enum_label("direction", i.direction) }}</span></td>
+    <td>{{ i.actor or "—" }}</td>
+    <td><a href="/articles/{{ i.article_id }}">{{ _("Article") }}</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}<p class="empty">{{ _("No new incidents today.") }}</p>{% endif %}
+
+<h2>{{ _("Candidate articles fetched today") }}</h2>
+{% if today.articles %}
+<table>
+  <thead><tr><th>{{ _("Title") }}</th><th>{{ _("Source") }}</th><th>{{ _("Extraction") }}</th></tr></thead>
+  <tbody>
+  {% for a in today.articles %}
+  <tr>
+    <td><a href="/articles/{{ a.id }}">{{ a.title }}</a></td>
+    <td>{{ a.source }}</td>
+    <td><span class="tag {{ a.extract_status }}">{{ enum_label("extract_status", a.extract_status) }}</span></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}<p class="empty">{{ _("No candidate articles fetched today.") }}</p>{% endif %}
+{% endblock %}
