@@ -5,7 +5,7 @@ from pathlib import Path
 
 from babel import Locale
 from starlette_babel import (LocaleFromCookie, LocaleFromHeader, LocaleFromQuery, LocaleMiddleware, get_locale,
-                             gettext_lazy, load_messages_from_directories)
+                             get_translator, gettext_lazy, load_messages_from_directories)
 
 # gettext-style identifiers: they match what browsers send (zh-CN / zh-TW) so header negotiation is exact.
 SUPPORTED = ["en", "zh_CN", "zh_TW"]
@@ -73,6 +73,13 @@ def current_locale_code() -> str:
 def load_catalogs() -> None:
     TRANSLATIONS_DIR.mkdir(parents=True, exist_ok=True)
     load_messages_from_directories([TRANSLATIONS_DIR])
+    # The middleware hands templates a Babel Locale, whose str() is the expanded form (zh_CN -> zh_Hans_CN).
+    # Register each catalog under that identifier too, so the translator's exact-match lookup finds it.
+    translator = get_translator()
+    for code in SUPPORTED:
+        expanded = str(Locale.parse(code))
+        if expanded != code:
+            translator.add_translations(expanded, translator.get_translations(code))
 
 
 def add_locale_middleware(app) -> None:
