@@ -1,0 +1,15 @@
+# Pre-filter keywords (case-insensitive substring match on title + body).
+# Actor names/aliases are added automatically from the actors table.
+keywords:
+  - China
+  - Chinese
+  - PRC
+  - Beijing
+  - Typhoon
+  - 中国
+  - 我国
+  - 境外
+  - 境外黑客
+  - 美国国家安全局
+  - NSA
+  - CIA
