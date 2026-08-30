@@ -2,6 +2,7 @@
 
 日期 / Date: 2026-08-30
 状态 / Status: v1 设计已由 Bo 逐段确认 (approved section by section)
+修订 / Revision: 2026-08-30 新增 §13 多语言 Web 展示层(Bo 确认);§8 的 Datasette 降级为原始数据浏览备用
 
 ## 1. 目标 / Goal
 
@@ -146,9 +147,11 @@ v1 不做: Twitter/X、Telegram(无免费稳定抓取途径)。
 
 prompt 文件 `prompts/extract.md` 可直接编辑;`tests/fixtures/` 附 3–5 篇样本文章(含一篇无关、一篇中文报告、一篇多事件报告)及对应期望输出,用于回归。
 
-## 8. 仪表盘 / Dashboard
+## 8. Datasette 原始数据浏览(备用) / Datasette raw-data view (fallback)
 
-`cti serve [--port 8001]` 启动 Datasette 挂载 `data/cti.db`,读取 `metadata.yaml`。
+> 修订:主展示层改为 §13 的自建 Web UI。Datasette 保留为 `cti datasette [--port 8002]`,用于原始表浏览与 SQL 查询;以下配置照旧。
+
+`cti datasette [--port 8002]` 启动 Datasette 挂载 `data/cti.db`,读取 `metadata.yaml`。
 
 - 组织档案: `actors` 表页 + canned query `actor_profile(:actor)`—— 返回该组织事件列表、TTP 频次、受害行业分布(三个 query)。
 - 事件时间线: `incidents` 表默认 `reported_at desc`,facets: `direction`, `victim_country`, `victim_sector`, `actor_id`(通过 label_column 显示组织名), `confidence`。
@@ -208,5 +211,60 @@ prompt 文件 `prompts/extract.md` 可直接编辑;`tests/fixtures/` 附 3–5 �
 - Twitter/X、Telegram
 - 历史回填
 - IOC(IP/域名/哈希)提取
-- 自定义页面样式
 - 多用户 / 认证
+- 提取内容(title/summary)的翻译;Datasette 自身界面的翻译
+
+## 13. 多语言 Web 展示层 / i18n web UI (2026-08-30 增补)
+
+### 13.1 要求 / Requirements
+- 主语言英文;界面可在浏览器内切换 `en` / `zh_Hans` / `zh_Hant`。
+- i18n 必须使用主流、专业的现成工具链,**禁止手搓任何 i18n 组件**(目录格式、解析、协商、转换均用现成库)。
+- 只翻译界面字符串;提取出的 incident title/summary 保持英文。
+- 繁体目录由 OpenCC 从简体目录自动生成后人工审校,两份目录独立维护。
+
+### 13.2 技术选型 / Stack
+| 需求 | 工具 |
+|---|---|
+| Web 框架 | FastAPI + Uvicorn |
+| 模板 | Jinja2 + `jinja2.ext.i18n` |
+| 目录与工作流 | GNU gettext + Babel (`pybabel extract/init/update/compile`),`babel.cfg` 声明 python + jinja2 提取器 |
+| 语言协商 | `babel.negotiate_locale`;优先级 `?lang=` → cookie(`lang`,30 天)→ `Accept-Language` |
+| 日期格式 | `babel.dates.format_date` |
+| 简→繁 | OpenCC(`s2twp`),通过 `babel.messages.pofile` 读写 `.po`,只转换 `msgstr` |
+| 图表 | Chart.js(vendored 到 `cti/web/static/vendor/`),标签由服务端翻译后注入 |
+
+### 13.3 页面 / Pages
+| 路径 | 内容 |
+|---|---|
+| `/` | 今日新增(事件 + 候选文章)+ 统计数字(文章/候选/事件/组织) |
+| `/actors` | 组织列表(名称、别名、MITRE ID、事件数) |
+| `/actors/{id}` | 档案:别名、描述、事件列表、TTP 频次、受害行业分布 |
+| `/incidents` | 时间线;筛选 `direction` / `victim_country` / `victim_sector` / `actor` / `q`(FTS 关键词);按 `reported_at` 倒序,分页 50 |
+| `/trends` | 四图:按月事件数、方向占比、受害行业 Top 10、TTP Top 10 |
+| `/articles/{id}` | 原文正文、来源、外链、从该文提取的事件 |
+
+枚举显示名(`direction`、`confidence`、`relevance`、`extract_status`、`source.type`)经 gettext 翻译;存库值不变。
+
+### 13.4 命令 / Commands
+- `cti serve [--port 8001]`:启动 FastAPI UI(uvicorn)。
+- `cti datasette [--port 8002]`:原 Datasette。
+- `cti i18n extract | update | compile | gen-hant`:分别包装 `pybabel extract`、`pybabel update`、`pybabel compile`、OpenCC 生成 `zh_Hant`。
+
+### 13.5 文件 / Layout
+```
+babel.cfg
+cti/web/app.py            # FastAPI 应用、路由、locale 依赖
+cti/web/i18n.py           # 加载 Translations、协商、enum 标签
+cti/web/queries.py        # 各页面 SQL
+cti/web/templates/        # base.html + index/actors/actor/incidents/trends/article
+cti/web/static/           # style.css, vendor/chart.umd.js
+cti/translations/messages.pot
+cti/translations/{zh_Hans,zh_Hant}/LC_MESSAGES/messages.{po,mo}
+scripts/gen_zh_hant.py
+tests/test_web.py, tests/test_i18n.py
+```
+`.mo` 一并提交,保证 clone 后 `cti serve` 直接可用。
+
+### 13.6 测试 / Testing
+- `fastapi.testclient`:每页在三种语言下 200 且含该语言的页面标题;`?lang=zh_Hant` 设置 cookie 后后续请求生效;`/incidents?direction=to_cn` 只含该方向;`Accept-Language: zh-TW` 协商到 `zh_Hant`。
+- 目录完整性(机械化检查,缺译即失败):用 `babel.messages.pofile` 读取,断言 `zh_Hans`、`zh_Hant` 无空 `msgstr`、无 fuzzy,且 msgid 集合与 `messages.pot` 一致。

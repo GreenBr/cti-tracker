@@ -1779,3 +1779,42 @@ git commit -m "docs: README and post-smoke source adjustments"
 - **Spec coverage:** §1.3 four questions → Task 7 canned queries + facets + dashboard; §2 constraints → Global Constraints + Task 6 no-retry; §4 data model → Task 2 (all six tables, FTS, indexes); §5 sources → Task 3 `sources.yaml` + Task 7 verification; §6 pre-filter → Task 4 `keywords.yaml` + `classify`; §7 extraction → Tasks 5–6 (per-article call, 12k truncation, 180 s timeout, 3 s sleep, schema validation, failure marking, stats line); §8 dashboard → Task 7; §9 layout → File Structure; §10 error handling → Task 3 init error, Task 4 per-source try/except + summary fallback, Task 6 mark_failed; §11 testing → each task's tests + Task 1/8 smokes; §12 out of scope → nothing added.
 - **Placeholders:** none; every code step has full content. The `seen` guard in Task 6 Step 3 is described precisely and must be implemented as stated.
 - **Type consistency:** `db.get_or_create_actor` returns `(id, created)` everywhere; `fetch_source`/`fetch_all` stats keys match tests; `extract_pending` kwargs match CLI call; `parse_claude_output` handles the `structured_output` vs `result` ambiguity to be resolved in Task 1 Step 5.
+
+
+---
+
+# 增补:多语言 Web 展示层 / Addendum: i18n web UI (Tasks 9–12)
+
+Spec: §13. Execution: inline, direct, TDD per task. Global constraint added: **no hand-rolled i18n** — catalogs, parsing, negotiation, conversion all via Babel / gettext / OpenCC.
+
+### Task 9: Web skeleton + i18n infrastructure + `cti serve` / `cti datasette` / `cti i18n`
+
+**Files:** `pyproject.toml` (add fastapi, uvicorn, jinja2, babel, opencc-python-reimplemented; dev: httpx), `babel.cfg`, `cti/web/__init__.py`, `cti/web/i18n.py`, `cti/web/app.py`, `cti/web/templates/base.html`, `cti/web/templates/index.html`, `cti/web/static/style.css`, `cti/web/queries.py` (index queries only), `cti/cli.py`, `tests/test_web.py`
+
+**Interfaces:**
+- `i18n.SUPPORTED = ["en", "zh_Hans", "zh_Hant"]`, `i18n.DEFAULT = "en"`
+- `i18n.negotiate(query_lang, cookie_lang, accept_language_header) -> str` — wraps `babel.negotiate_locale`
+- `i18n.get_translations(locale) -> babel.support.Translations` (cached; `NullTranslations` for en)
+- `i18n.enum_label(kind, value, translations) -> str` for kinds `direction`, `confidence`, `relevance`, `extract_status`, `source_type`
+- `app.create_app(db_path: Path) -> FastAPI`; each request resolves locale, installs translations into the Jinja env via `jinja2.ext.i18n`, sets `lang` cookie when `?lang=` given
+- CLI: `serve` (uvicorn), `datasette` (old serve), `i18n extract|update|compile|gen-hant`
+
+**Steps:** write failing `tests/test_web.py` (index 200 in 3 locales, cookie set on `?lang=`, `Accept-Language: zh-TW` → zh_Hant); implement; run; commit.
+
+### Task 10: Pages — actors, actor detail, incidents (filters + FTS), article, trends (Chart.js)
+
+**Files:** `cti/web/queries.py`, `cti/web/app.py`, templates `actors.html`, `actor.html`, `incidents.html`, `article.html`, `trends.html`, `cti/web/static/vendor/chart.umd.js`, `tests/test_web.py`
+
+**Interfaces (queries.py):** `stats(conn)`, `new_today(conn)`, `actors(conn)`, `actor(conn, id)`, `actor_incidents(conn, id)`, `actor_ttps(conn, id)`, `actor_sectors(conn, id)`, `incidents(conn, *, direction, country, sector, actor_id, q, page, per_page=50) -> (rows, total)`, `filter_options(conn)`, `article(conn, id)`, `article_incidents(conn, id)`, `trend_per_month(conn)`, `trend_direction(conn)`, `trend_sectors(conn)`, `trend_ttps(conn)`
+
+**Steps:** seed a fixture DB in tests (2 actors, 3 incidents both directions, ttps); failing tests per page; implement; load `dataviz` skill before writing chart code; commit.
+
+### Task 11: Translation catalogs (Babel extract → zh_Hans → OpenCC zh_Hant → compile) + completeness tests
+
+**Files:** `cti/translations/messages.pot`, `cti/translations/zh_Hans/LC_MESSAGES/messages.po|mo`, `cti/translations/zh_Hant/LC_MESSAGES/messages.po|mo`, `scripts/gen_zh_hant.py`, `tests/test_i18n.py`
+
+**Steps:** `cti i18n extract`; `pybabel init -l zh_Hans`; fill zh_Hans msgstr; `cti i18n gen-hant` (OpenCC `s2twp` via `babel.messages.pofile`); review zh_Hant; `cti i18n compile`; tests: no empty/fuzzy msgstr in both catalogs, msgid sets equal to `.pot`; page tests assert translated titles; commit.
+
+### Task 12: README + smoke
+
+**Steps:** README sections for UI, language switch, i18n workflow; run `cti serve` outside sandbox and `curl` the six routes in three locales; commit.
