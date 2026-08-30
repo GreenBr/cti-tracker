@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cti-tracker VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-08-31 04:53+0800\n"
+"POT-Creation-Date: 2026-08-31 05:36+0800\n"
 "PO-Revision-Date: 2026-08-30 22:31+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_TW\n"
@@ -85,6 +85,102 @@ msgstr "置信度"
 msgid "Article"
 msgstr "文章"
 
+msgid "About"
+msgstr "關於"
+
+msgid "What this site is"
+msgstr "這是什麼網站"
+
+msgid ""
+"An automatically updated tracker of cyber attack activity related to the People's Republic of "
+"China, in both directions: campaigns by China-attributed threat actors, and attacks against "
+"targets inside China. It is a personal research tool; nothing here is original attribution "
+"research."
+msgstr "一個自動更新的追蹤站，收錄與中華人民共和國相關的網路攻擊活動，覆蓋兩個方向：被歸因於中國的攻擊組織的對外行動，以及針對中國境內目標的攻擊。這是個人研究工具，站內沒有任何原創歸因研究。"
+
+msgid "How it works"
+msgstr "運作方式"
+
+msgid "Fetch"
+msgstr "抓取"
+
+msgid ""
+"the pipeline pulls the latest articles from public security sources (vendor research blogs, "
+"government advisories, security news) via RSS, in English and Chinese."
+msgstr "管線透過 RSS 從公開安全來源（廠商研究部落格、政府通告、安全新聞）拉取最新文章，中英文都有。"
+
+msgid ""
+"articles are pre-screened by keywords: the names and aliases of China-attributed groups imported "
+"from MITRE ATT&CK, plus geographic terms. Matching articles become candidates."
+msgstr "按關鍵詞預篩文章：從 MITRE ATT&CK 匯入的中國系組織名稱與別名，加上地域詞。命中的文章成為候選。"
+
+msgid "Filter"
+msgstr "篩選"
+
+msgid "Extract"
+msgstr "提取"
+
+msgid ""
+"each candidate article is read by an LLM, which records every attack it describes in a fixed "
+"schema: actor, victim country and sector, date, direction, MITRE ATT&CK techniques, and a "
+"confidence level. Malformed answers are rejected, and irrelevant articles yield no incidents."
+msgstr ""
+"每篇候選文章由大語言模型閱讀，把文中描述的每起攻擊按固定結構記錄：攻擊組織、受害國家與行業、日期、方向、MITRE ATT&CK "
+"技術編號、置信度。格式不合規的回答會被拒絕；與主題無關的文章不產生任何事件。"
+
+msgid "Publish"
+msgstr "釋出"
+
+msgid ""
+"the database is rendered into this static site in three languages. Every incident links back to "
+"the article it came from."
+msgstr "資料庫被渲染成這個三語靜態網站。每起事件都能連結回它的來源文章。"
+
+msgid "Current data"
+msgstr "當前資料"
+
+msgid "Articles"
+msgstr "文章"
+
+msgid "Candidates"
+msgstr "候選文章"
+
+msgid "Incidents"
+msgstr "事件"
+
+msgid "Actors"
+msgstr "攻擊組織"
+
+msgid "Last fetch"
+msgstr "最近抓取"
+
+msgid "Last extraction"
+msgstr "最近提取"
+
+msgid "Page generated"
+msgstr "頁面生成時間"
+
+msgid "Reading the data"
+msgstr "如何解讀資料"
+
+msgid ""
+"This site aggregates public reporting. Every claim carries the confidence its source stated, and "
+"should be checked against the linked original before being relied on. Coverage is only as good as"
+" the source list: Chinese-language sources are currently under-represented, so the \"against "
+"China\" direction is sparse."
+msgstr "本站是公開報道的聚合。每條結論都標註來源給出的置信度，採信前請點開原文核對。覆蓋面取決於來源清單：目前中文來源偏少，因此\"針對中國\"方向的資料較稀疏。"
+
+msgid "Content policy"
+msgstr "內容政策"
+
+msgid ""
+"Only titles, metadata and our own short summaries are published here. Full article text is never "
+"republished; follow the source links for the originals."
+msgstr "本站只發布標題、後設資料和我們自己撰寫的簡短摘要，絕不轉載文章全文；原文請透過來源連結檢視。"
+
+msgid "Source code and data pipeline on GitHub"
+msgstr "原始碼與資料管線（GitHub）"
+
 msgid "Aliases"
 msgstr "別名"
 
@@ -93,9 +189,6 @@ msgstr "MITRE 編號"
 
 msgid "Attributed country"
 msgstr "歸因國家"
-
-msgid "Incidents"
-msgstr "事件"
 
 msgid "No incidents recorded for this actor yet."
 msgstr "該組織暫無事件記錄。"
@@ -123,9 +216,6 @@ msgstr "（未知）"
 
 msgid "No sectors recorded."
 msgstr "暫無行業記錄。"
-
-msgid "Actors"
-msgstr "攻擊組織"
 
 msgid "China-attributed groups seeded from MITRE ATT&CK, plus any actor named in extracted reports."
 msgstr "來自 MITRE ATT&CK 的中國系組織，以及提取報告中出現的其他組織。"
@@ -178,6 +268,14 @@ msgstr "語言"
 msgid "Apply"
 msgstr "應用"
 
+#, python-format
+msgid "Data updated %(d)s"
+msgstr "資料更新於 %(d)s"
+
+#, python-format
+msgid "Page generated %(d)s"
+msgstr "頁面生成於 %(d)s"
+
 msgid "Summaries and metadata only; follow the source link for the original article."
 msgstr "本站僅收錄摘要與後設資料；原文請透過來源連結檢視。"
 
@@ -225,9 +323,6 @@ msgstr "搜尋事件"
 msgid "Search title, summary or article text"
 msgstr "搜尋標題、摘要或文章正文"
 
-msgid "Filter"
-msgstr "篩選"
-
 msgid "Reset"
 msgstr "重置"
 
@@ -248,11 +343,13 @@ msgstr "第 %(page)s 頁，共 %(pages)s 頁"
 msgid "Next"
 msgstr "下一頁"
 
-msgid "Articles"
-msgstr "文章"
+#, python-format
+msgid "Last fetch: %(d)s"
+msgstr "最近抓取：%(d)s"
 
-msgid "Candidates"
-msgstr "候選文章"
+#, python-format
+msgid "Last extraction: %(d)s"
+msgstr "最近提取：%(d)s"
 
 msgid "New incidents today"
 msgstr "今日新增事件"

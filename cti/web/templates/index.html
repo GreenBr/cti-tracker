@@ -2,6 +2,10 @@
 {% block title %}{{ _("Today") }}{% endblock %}
 {% block content %}
 <h1>{{ _("Today") }}</h1>
+<p class="muted">
+{% if data_status.last_fetch %}{% trans d=data_status.last_fetch|datetime %}Last fetch: {{ d }}{% endtrans %}{% endif %}
+{% if data_status.last_extract %} · {% trans d=data_status.last_extract|datetime %}Last extraction: {{ d }}{% endtrans %}{% endif %}
+</p>
 <section class="tiles">
   <div class="tile"><span class="n">{{ stats.articles|number }}</span><span class="l">{{ _("Articles") }}</span></div>
   <div class="tile"><span class="n">{{ stats.candidates|number }}</span><span class="l">{{ _("Candidates") }}</span></div>

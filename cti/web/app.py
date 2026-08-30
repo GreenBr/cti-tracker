@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlencode
 
@@ -48,7 +49,16 @@ def create_app(db_path: Path, public: bool = False) -> FastAPI:
         db.init_schema(c)
         return c
 
+    def _iso(v):
+        try:
+            return datetime.fromisoformat(v) if v else None
+        except ValueError:
+            return None
+
     def render(request: Request, name: str, **ctx):
+        status = {k: _iso(v) for k, v in queries.data_status(conn()).items()}
+        status["generated"] = datetime.now(timezone.utc)
+        ctx["data_status"] = status
         return templates.TemplateResponse(request, name, ctx)
 
     @app.middleware("http")
@@ -63,6 +73,10 @@ def create_app(db_path: Path, public: bool = False) -> FastAPI:
     def index(request: Request):
         c = conn()
         return render(request, "index.html", stats=queries.stats(c), today=queries.new_today(c))
+
+    @app.get("/about")
+    def about(request: Request):
+        return render(request, "about.html", stats=queries.stats(conn()))
 
     @app.get("/actors")
     def actors(request: Request):

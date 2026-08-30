@@ -46,6 +46,14 @@ git add site && git commit -m "data: refresh" && git push   # Vercel redeploys o
 ```
 The exported site is the **public mode**: incident summaries and metadata only — article full text never leaves your machine (copyright), with MITRE ATT&CK attribution in the footer. One-time setup: import the GitHub repo at vercel.com/new (framework: Other; output directory: `site`; no build command).
 
+## Scheduled refresh (Windows Task Scheduler -> WSL)
+`scripts/daily.sh` runs fetch -> extract -> export -> push and logs to `data/daily.log`. Registered as a daily
+Windows scheduled task ("CTI Tracker Daily") so it runs even when WSL is idle, as long as the computer is on:
+```powershell
+schtasks /Create /TN "CTI Tracker Daily" /SC DAILY /ST 09:00 /TR "wsl.exe -d <distro> -- /home/brandon/repos/cti-tracker/scripts/daily.sh"
+schtasks /Delete /TN "CTI Tracker Daily"   # to remove
+```
+
 ## Tests
 `.venv/bin/pytest` — no network, no real `claude`.
 

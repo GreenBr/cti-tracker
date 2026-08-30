@@ -157,3 +157,11 @@ def trend_ttps(conn, limit: int = 10) -> list[dict]:
     return _rows(conn, """
         SELECT technique_id, technique_name, count(*) AS n FROM incident_ttps
         GROUP BY 1, 2 ORDER BY n DESC, 1 LIMIT ?""", (limit,))
+
+
+def data_status(conn) -> dict:
+    row = conn.execute("""
+        SELECT (SELECT max(fetched_at) FROM articles) AS last_fetch,
+               (SELECT max(extracted_at) FROM articles WHERE extract_status='done') AS last_extract,
+               (SELECT max(created_at) FROM incidents) AS last_incident""").fetchone()
+    return dict(row)

@@ -14,6 +14,7 @@
     <a href="/incidents">{{ _("Incidents") }}</a>
     <a href="/actors">{{ _("Actors") }}</a>
     <a href="/trends">{{ _("Trends") }}</a>
+    <a href="/about">{{ _("About") }}</a>
   </nav>
   {% if public_mode %}
   <div class="lang">
@@ -41,6 +42,10 @@
 {% block content %}{% endblock %}
 </main>
 <footer>
+<p class="stamp">
+{% if data_status.last_fetch %}{% trans d=data_status.last_fetch|datetime %}Data updated {{ d }}{% endtrans %}{% endif %}
+{% if data_status.generated %} · {% trans d=data_status.generated|datetime %}Page generated {{ d }}{% endtrans %}{% endif %}
+</p>
 {% if public_mode %}
 <p>{{ _("Summaries and metadata only; follow the source link for the original article.") }}</p>
 <p>{{ _("MITRE ATT&CK® is a registered trademark of The MITRE Corporation. ATT&CK content used with attribution.") }}</p>

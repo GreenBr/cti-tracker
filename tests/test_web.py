@@ -105,3 +105,17 @@ def test_pages_render_translated_in_each_locale(client):
 def test_parameterized_strings_translate(client):
     r = client.get("/incidents?lang=zh_CN")
     assert "共 2 起事件" in r.text
+
+
+def test_about_page_in_three_locales(client):
+    for code, needle in [("en", "How it works"), ("zh_CN", "运作方式"), ("zh_TW", "運作方式")]:
+        r = client.get(f"/about?lang={code}")
+        assert r.status_code == 200 and needle in r.text, code
+        assert "github.com/GreenBr/cti-tracker" in r.text
+
+
+def test_data_status_stamp_visible(client):
+    r = client.get("/")
+    assert "Last fetch: " in r.text and "Data updated " in r.text
+    r = client.get("/?lang=zh_CN")
+    assert "最近抓取：" in r.text

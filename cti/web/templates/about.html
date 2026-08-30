@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{{ _("About") }}{% endblock %}
+{% block content %}
+<h1>{{ _("About") }}</h1>
+
+<h2>{{ _("What this site is") }}</h2>
+<p>{{ _("An automatically updated tracker of cyber attack activity related to the People's Republic of China, in both directions: campaigns by China-attributed threat actors, and attacks against targets inside China. It is a personal research tool; nothing here is original attribution research.") }}</p>
+
+<h2>{{ _("How it works") }}</h2>
+<ol class="steps">
+  <li><strong>{{ _("Fetch") }}</strong> — {{ _("the pipeline pulls the latest articles from public security sources (vendor research blogs, government advisories, security news) via RSS, in English and Chinese.") }}</li>
+  <li><strong>{{ _("Filter") }}</strong> — {{ _("articles are pre-screened by keywords: the names and aliases of China-attributed groups imported from MITRE ATT&CK, plus geographic terms. Matching articles become candidates.") }}</li>
+  <li><strong>{{ _("Extract") }}</strong> — {{ _("each candidate article is read by an LLM, which records every attack it describes in a fixed schema: actor, victim country and sector, date, direction, MITRE ATT&CK techniques, and a confidence level. Malformed answers are rejected, and irrelevant articles yield no incidents.") }}</li>
+  <li><strong>{{ _("Publish") }}</strong> — {{ _("the database is rendered into this static site in three languages. Every incident links back to the article it came from.") }}</li>
+</ol>
+
+<h2>{{ _("Current data") }}</h2>
+<section class="tiles">
+  <div class="tile"><span class="n">{{ stats.articles|number }}</span><span class="l">{{ _("Articles") }}</span></div>
+  <div class="tile"><span class="n">{{ stats.candidates|number }}</span><span class="l">{{ _("Candidates") }}</span></div>
+  <div class="tile"><span class="n">{{ stats.incidents|number }}</span><span class="l">{{ _("Incidents") }}</span></div>
+  <div class="tile"><span class="n">{{ stats.actors|number }}</span><span class="l">{{ _("Actors") }}</span></div>
+</section>
+<dl>
+  <dt>{{ _("Last fetch") }}</dt><dd>{{ data_status.last_fetch|datetime if data_status.last_fetch else "—" }}</dd>
+  <dt>{{ _("Last extraction") }}</dt><dd>{{ data_status.last_extract|datetime if data_status.last_extract else "—" }}</dd>
+  <dt>{{ _("Page generated") }}</dt><dd>{{ data_status.generated|datetime }}</dd>
+</dl>
+
+<h2>{{ _("Reading the data") }}</h2>
+<p>{{ _("This site aggregates public reporting. Every claim carries the confidence its source stated, and should be checked against the linked original before being relied on. Coverage is only as good as the source list: Chinese-language sources are currently under-represented, so the \"against China\" direction is sparse.") }}</p>
+
+<h2>{{ _("Content policy") }}</h2>
+<p>{{ _("Only titles, metadata and our own short summaries are published here. Full article text is never republished; follow the source links for the originals.") }}</p>
+
+<p><a href="https://github.com/GreenBr/cti-tracker">{{ _("Source code and data pipeline on GitHub") }}</a></p>
+{% endblock %}

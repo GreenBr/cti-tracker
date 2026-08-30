@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cti-tracker VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-08-31 04:53+0800\n"
+"POT-Creation-Date: 2026-08-31 05:36+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,6 +84,105 @@ msgstr ""
 msgid "Article"
 msgstr ""
 
+msgid "About"
+msgstr ""
+
+msgid "What this site is"
+msgstr ""
+
+msgid ""
+"An automatically updated tracker of cyber attack activity related to the "
+"People's Republic of China, in both directions: campaigns by China-"
+"attributed threat actors, and attacks against targets inside China. It is"
+" a personal research tool; nothing here is original attribution research."
+msgstr ""
+
+msgid "How it works"
+msgstr ""
+
+msgid "Fetch"
+msgstr ""
+
+msgid ""
+"the pipeline pulls the latest articles from public security sources "
+"(vendor research blogs, government advisories, security news) via RSS, in"
+" English and Chinese."
+msgstr ""
+
+msgid ""
+"articles are pre-screened by keywords: the names and aliases of China-"
+"attributed groups imported from MITRE ATT&CK, plus geographic terms. "
+"Matching articles become candidates."
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Extract"
+msgstr ""
+
+msgid ""
+"each candidate article is read by an LLM, which records every attack it "
+"describes in a fixed schema: actor, victim country and sector, date, "
+"direction, MITRE ATT&CK techniques, and a confidence level. Malformed "
+"answers are rejected, and irrelevant articles yield no incidents."
+msgstr ""
+
+msgid "Publish"
+msgstr ""
+
+msgid ""
+"the database is rendered into this static site in three languages. Every "
+"incident links back to the article it came from."
+msgstr ""
+
+msgid "Current data"
+msgstr ""
+
+msgid "Articles"
+msgstr ""
+
+msgid "Candidates"
+msgstr ""
+
+msgid "Incidents"
+msgstr ""
+
+msgid "Actors"
+msgstr ""
+
+msgid "Last fetch"
+msgstr ""
+
+msgid "Last extraction"
+msgstr ""
+
+msgid "Page generated"
+msgstr ""
+
+msgid "Reading the data"
+msgstr ""
+
+msgid ""
+"This site aggregates public reporting. Every claim carries the confidence"
+" its source stated, and should be checked against the linked original "
+"before being relied on. Coverage is only as good as the source list: "
+"Chinese-language sources are currently under-represented, so the "
+"\"against China\" direction is sparse."
+msgstr ""
+
+msgid "Content policy"
+msgstr ""
+
+msgid ""
+"Only titles, metadata and our own short summaries are published here. "
+"Full article text is never republished; follow the source links for the "
+"originals."
+msgstr ""
+
+msgid "Source code and data pipeline on GitHub"
+msgstr ""
+
 msgid "Aliases"
 msgstr ""
 
@@ -91,9 +190,6 @@ msgid "MITRE ID"
 msgstr ""
 
 msgid "Attributed country"
-msgstr ""
-
-msgid "Incidents"
 msgstr ""
 
 msgid "No incidents recorded for this actor yet."
@@ -121,9 +217,6 @@ msgid "(unknown)"
 msgstr ""
 
 msgid "No sectors recorded."
-msgstr ""
-
-msgid "Actors"
 msgstr ""
 
 msgid ""
@@ -179,6 +272,14 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
+#, python-format
+msgid "Data updated %(d)s"
+msgstr ""
+
+#, python-format
+msgid "Page generated %(d)s"
+msgstr ""
+
 msgid ""
 "Summaries and metadata only; follow the source link for the original "
 "article."
@@ -228,9 +329,6 @@ msgstr ""
 msgid "Search title, summary or article text"
 msgstr ""
 
-msgid "Filter"
-msgstr ""
-
 msgid "Reset"
 msgstr ""
 
@@ -251,10 +349,12 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-msgid "Articles"
+#, python-format
+msgid "Last fetch: %(d)s"
 msgstr ""
 
-msgid "Candidates"
+#, python-format
+msgid "Last extraction: %(d)s"
 msgstr ""
 
 msgid "New incidents today"
