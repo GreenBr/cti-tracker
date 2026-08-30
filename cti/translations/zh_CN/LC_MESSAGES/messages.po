@@ -1,0 +1,275 @@
+# Chinese (Simplified, China) translations for cti-tracker.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the cti-tracker
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cti-tracker VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-08-30 22:31+0800\n"
+"PO-Revision-Date: 2026-08-30 22:31+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_Hans_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+msgid "From China (PRC-attributed actor)"
+msgstr "来自中国（归因于中国的攻击组织）"
+
+msgid "Against China (target inside PRC)"
+msgstr "针对中国（目标位于中国境内）"
+
+msgid "Unclear"
+msgstr "不明"
+
+msgid "High"
+msgstr "高"
+
+msgid "Medium"
+msgstr "中"
+
+msgid "Low"
+msgstr "低"
+
+msgid "Pending"
+msgstr "待处理"
+
+msgid "Candidate"
+msgstr "候选"
+
+msgid "Skipped"
+msgstr "已跳过"
+
+msgid "Done"
+msgstr "已完成"
+
+msgid "Failed"
+msgstr "失败"
+
+msgid "Vendor report"
+msgstr "厂商报告"
+
+msgid "News"
+msgstr "新闻"
+
+msgid "Government advisory"
+msgstr "政府通告"
+
+msgid "Reported"
+msgstr "报道日期"
+
+msgid "Direction"
+msgstr "方向"
+
+msgid "Title"
+msgstr "标题"
+
+msgid "Actor"
+msgstr "攻击组织"
+
+msgid "Victim"
+msgstr "受害者"
+
+msgid "Source"
+msgstr "来源"
+
+msgid "Confidence"
+msgstr "置信度"
+
+msgid "Article"
+msgstr "文章"
+
+msgid "Aliases"
+msgstr "别名"
+
+msgid "MITRE ID"
+msgstr "MITRE 编号"
+
+msgid "Attributed country"
+msgstr "归因国家"
+
+msgid "Incidents"
+msgstr "事件"
+
+msgid "No incidents recorded for this actor yet."
+msgstr "该组织暂无事件记录。"
+
+msgid "TTP frequency"
+msgstr "TTP 频次"
+
+msgid "Count"
+msgstr "数量"
+
+msgid "Technique"
+msgstr "技术"
+
+msgid "No TTPs recorded."
+msgstr "暂无 TTP 记录。"
+
+msgid "Victim sectors"
+msgstr "受害行业"
+
+msgid "Sector"
+msgstr "行业"
+
+msgid "(unknown)"
+msgstr "（未知）"
+
+msgid "No sectors recorded."
+msgstr "暂无行业记录。"
+
+msgid "Actors"
+msgstr "攻击组织"
+
+msgid "China-attributed groups seeded from MITRE ATT&CK, plus any actor named in extracted reports."
+msgstr "来自 MITRE ATT&CK 的中国系组织，以及提取报告中出现的其他组织。"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Last reported"
+msgstr "最近报道"
+
+msgid "Original"
+msgstr "原文"
+
+msgid "Published"
+msgstr "发布日期"
+
+msgid "Fetched"
+msgstr "抓取日期"
+
+msgid "Relevance"
+msgstr "相关性"
+
+msgid "Extraction"
+msgstr "提取状态"
+
+msgid "Actors mentioned"
+msgstr "提及的组织"
+
+msgid "Incidents extracted from this article"
+msgstr "从本文提取的事件"
+
+msgid "None."
+msgstr "无。"
+
+msgid "Article text"
+msgstr "文章正文"
+
+msgid "CTI Tracker"
+msgstr "CTI Tracker"
+
+msgid "Today"
+msgstr "今日"
+
+msgid "Trends"
+msgstr "趋势"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Apply"
+msgstr "应用"
+
+msgid "Raw data (Datasette)"
+msgstr "原始数据（Datasette）"
+
+msgid "Unattributed"
+msgstr "未归因"
+
+msgid "Occurred"
+msgstr "发生时间"
+
+msgid "Not stated"
+msgstr "未说明"
+
+msgid "Victim country"
+msgstr "受害国家"
+
+msgid "Victim sector"
+msgstr "受害行业"
+
+msgid "TTPs"
+msgstr "TTP"
+
+msgid "All directions"
+msgstr "全部方向"
+
+msgid "All countries"
+msgstr "全部国家"
+
+msgid "All sectors"
+msgstr "全部行业"
+
+msgid "All actors"
+msgstr "全部组织"
+
+msgid "Search title, summary or article text"
+msgstr "搜索标题、摘要或文章正文"
+
+msgid "Filter"
+msgstr "筛选"
+
+msgid "Reset"
+msgstr "重置"
+
+#, python-format
+msgid "%(n)s incidents"
+msgstr "共 %(n)s 起事件"
+
+msgid "No incidents match these filters."
+msgstr "没有符合筛选条件的事件。"
+
+msgid "Previous"
+msgstr "上一页"
+
+#, python-format
+msgid "Page %(page)s of %(pages)s"
+msgstr "第 %(page)s 页，共 %(pages)s 页"
+
+msgid "Next"
+msgstr "下一页"
+
+msgid "Articles"
+msgstr "文章"
+
+msgid "Candidates"
+msgstr "候选文章"
+
+msgid "New incidents today"
+msgstr "今日新增事件"
+
+msgid "No new incidents today."
+msgstr "今日没有新增事件。"
+
+msgid "Candidate articles fetched today"
+msgstr "今日抓取的候选文章"
+
+msgid "No candidate articles fetched today."
+msgstr "今日没有抓取到候选文章。"
+
+msgid "Incidents per month"
+msgstr "每月事件数"
+
+msgid "Month"
+msgstr "月份"
+
+msgid "Table view"
+msgstr "表格视图"
+
+msgid "Direction share"
+msgstr "方向占比"
+
+msgid "Top victim sectors"
+msgstr "受害行业 Top 10"
+
+msgid "Top TTPs"
+msgstr "TTP Top 10"
+

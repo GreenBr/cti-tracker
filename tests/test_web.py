@@ -91,7 +91,17 @@ def test_trends_page_embeds_chart_data(client):
     assert client.get("/static/vendor/chart.umd.js").status_code == 200
 
 
-def test_enum_labels_translate_when_catalog_present(client):
-    # Before catalogs exist, labels fall back to English msgids.
-    r = client.get("/incidents?lang=zh_TW")
-    assert "From China" in r.text or "來自中國" in r.text
+def test_pages_render_translated_in_each_locale(client):
+    expect = {"zh_CN": ("今日新增事件", "来自中国", "攻击组织", "趋势"),
+              "zh_TW": ("今日新增事件", "來自中國", "攻擊組織", "趨勢"),
+              "en": ("New incidents today", "From China", "Actors", "Trends")}
+    for code, (today, direction, actors, trends) in expect.items():
+        assert today in client.get(f"/?lang={code}").text, code
+        assert direction in client.get(f"/incidents?lang={code}").text, code
+        assert actors in client.get(f"/actors?lang={code}").text, code
+        assert trends in client.get(f"/trends?lang={code}").text, code
+
+
+def test_parameterized_strings_translate(client):
+    r = client.get("/incidents?lang=zh_CN")
+    assert "共 2 起事件" in r.text

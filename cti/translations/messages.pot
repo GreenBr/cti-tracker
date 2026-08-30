@@ -1,0 +1,276 @@
+# Translations template for cti-tracker.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the cti-tracker
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: cti-tracker VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-08-30 22:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+msgid "From China (PRC-attributed actor)"
+msgstr ""
+
+msgid "Against China (target inside PRC)"
+msgstr ""
+
+msgid "Unclear"
+msgstr ""
+
+msgid "High"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "Low"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Candidate"
+msgstr ""
+
+msgid "Skipped"
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "Vendor report"
+msgstr ""
+
+msgid "News"
+msgstr ""
+
+msgid "Government advisory"
+msgstr ""
+
+msgid "Reported"
+msgstr ""
+
+msgid "Direction"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Actor"
+msgstr ""
+
+msgid "Victim"
+msgstr ""
+
+msgid "Source"
+msgstr ""
+
+msgid "Confidence"
+msgstr ""
+
+msgid "Article"
+msgstr ""
+
+msgid "Aliases"
+msgstr ""
+
+msgid "MITRE ID"
+msgstr ""
+
+msgid "Attributed country"
+msgstr ""
+
+msgid "Incidents"
+msgstr ""
+
+msgid "No incidents recorded for this actor yet."
+msgstr ""
+
+msgid "TTP frequency"
+msgstr ""
+
+msgid "Count"
+msgstr ""
+
+msgid "Technique"
+msgstr ""
+
+msgid "No TTPs recorded."
+msgstr ""
+
+msgid "Victim sectors"
+msgstr ""
+
+msgid "Sector"
+msgstr ""
+
+msgid "(unknown)"
+msgstr ""
+
+msgid "No sectors recorded."
+msgstr ""
+
+msgid "Actors"
+msgstr ""
+
+msgid ""
+"China-attributed groups seeded from MITRE ATT&CK, plus any actor named in"
+" extracted reports."
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Last reported"
+msgstr ""
+
+msgid "Original"
+msgstr ""
+
+msgid "Published"
+msgstr ""
+
+msgid "Fetched"
+msgstr ""
+
+msgid "Relevance"
+msgstr ""
+
+msgid "Extraction"
+msgstr ""
+
+msgid "Actors mentioned"
+msgstr ""
+
+msgid "Incidents extracted from this article"
+msgstr ""
+
+msgid "None."
+msgstr ""
+
+msgid "Article text"
+msgstr ""
+
+msgid "CTI Tracker"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Trends"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Apply"
+msgstr ""
+
+msgid "Raw data (Datasette)"
+msgstr ""
+
+msgid "Unattributed"
+msgstr ""
+
+msgid "Occurred"
+msgstr ""
+
+msgid "Not stated"
+msgstr ""
+
+msgid "Victim country"
+msgstr ""
+
+msgid "Victim sector"
+msgstr ""
+
+msgid "TTPs"
+msgstr ""
+
+msgid "All directions"
+msgstr ""
+
+msgid "All countries"
+msgstr ""
+
+msgid "All sectors"
+msgstr ""
+
+msgid "All actors"
+msgstr ""
+
+msgid "Search title, summary or article text"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+#, python-format
+msgid "%(n)s incidents"
+msgstr ""
+
+msgid "No incidents match these filters."
+msgstr ""
+
+msgid "Previous"
+msgstr ""
+
+#, python-format
+msgid "Page %(page)s of %(pages)s"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "Articles"
+msgstr ""
+
+msgid "Candidates"
+msgstr ""
+
+msgid "New incidents today"
+msgstr ""
+
+msgid "No new incidents today."
+msgstr ""
+
+msgid "Candidate articles fetched today"
+msgstr ""
+
+msgid "No candidate articles fetched today."
+msgstr ""
+
+msgid "Incidents per month"
+msgstr ""
+
+msgid "Month"
+msgstr ""
+
+msgid "Table view"
+msgstr ""
+
+msgid "Direction share"
+msgstr ""
+
+msgid "Top victim sectors"
+msgstr ""
+
+msgid "Top TTPs"
+msgstr ""
+
