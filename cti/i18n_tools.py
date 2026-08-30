@@ -18,7 +18,7 @@ def generate_zh_tw(src_po: Path, dst_po: Path, config: str = "s2twp") -> int:
     if dst_po.exists():
         with open(dst_po, "rb") as f:
             for msg in read_po(f, locale="zh_TW"):
-                if msg.id and msg.string:
+                if msg.id and msg.string and not msg.fuzzy:
                     existing[msg.id] = msg.string
     with open(src_po, "rb") as f:
         catalog = read_po(f, locale="zh_CN")

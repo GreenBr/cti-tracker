@@ -179,7 +179,7 @@ msgid "Apply"
 msgstr "應用"
 
 msgid "Summaries and metadata only; follow the source link for the original article."
-msgstr "本站僅收錄摘要與後設資料；原文請透過來源連結訪問。"
+msgstr "本站僅收錄摘要與後設資料；原文請透過來源連結檢視。"
 
 msgid ""
 "MITRE ATT&CK® is a registered trademark of The MITRE Corporation. ATT&CK content used with "
@@ -220,7 +220,7 @@ msgid "All actors"
 msgstr "全部組織"
 
 msgid "Search incidents"
-msgstr "共 %(n)s 起事件"
+msgstr "搜尋事件"
 
 msgid "Search title, summary or article text"
 msgstr "搜尋標題、摘要或文章正文"
