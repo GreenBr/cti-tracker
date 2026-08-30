@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 from pathlib import Path
 
 import click
@@ -17,6 +18,7 @@ DEFAULT_MITRE_CACHE = ROOT / "data" / "enterprise-attack.json"
 DEFAULT_KEYWORDS = ROOT / "keywords.yaml"
 DEFAULT_PROMPT = ROOT / "prompts" / "extract.md"
 DEFAULT_SCHEMA = ROOT / "schema" / "extract.json"
+DEFAULT_METADATA = ROOT / "metadata.yaml"
 
 
 def load_sources(path: Path) -> list[dict]:
@@ -92,3 +94,19 @@ def extract_cmd(ctx, batch, limit, retry_failed, model, prompt_path, schema_path
                                     retry_failed=retry_failed, model=model, log=click.echo)
     click.echo(f"processed: {stats['processed']}  done: {stats['done']}  failed: {stats['failed']}  "
                f"incidents: +{stats['incidents']}  actors: +{stats['new_actors']}")
+
+
+@main.command()
+@click.option("--port", default=8001, show_default=True)
+@click.option("--metadata", "metadata_path", type=click.Path(path_type=Path), default=DEFAULT_METADATA, show_default=True)
+@click.pass_context
+def serve(ctx, port, metadata_path):
+    """Run Datasette on the CTI database."""
+    db_path = ctx.obj["db_path"]
+    conn = db.connect(db_path)
+    db.init_schema(conn)
+    conn.close()
+    cmd = ["datasette", str(db_path), "-m", str(metadata_path), "--port", str(port),
+           "--setting", "default_page_size", "50"]
+    click.echo("Open http://127.0.0.1:%d/  (dashboard: /-/dashboards/trends)" % port)
+    subprocess.run(cmd, check=False)

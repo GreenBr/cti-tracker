@@ -1,0 +1,106 @@
+title: CTI Tracker
+description: PRC-related cyber attack activity extracted from public reports and news
+databases:
+  cti:
+    tables:
+      articles:
+        fts_table: articles_fts
+        fts_pk: id
+        sort_desc: published_at
+        facets: [relevance, extract_status, lang, source_id]
+        label_column: title
+      sources:
+        label_column: name
+      actors:
+        label_column: canonical_name
+        sort: canonical_name
+      incidents:
+        sort_desc: reported_at
+        facets: [direction, victim_country, victim_sector, actor_id, confidence]
+        label_column: title
+      incident_ttps:
+        facets: [technique_id]
+    queries:
+      actor_profile:
+        title: Actor profile — incidents
+        sql: |-
+          select i.id, i.reported_at, i.occurred_at, i.title, i.direction, i.victim_country, i.victim_sector,
+                 i.confidence, i.article_id
+          from incidents i join actors a on a.id = i.actor_id
+          where lower(a.canonical_name) = lower(:actor)
+             or exists (select 1 from json_each(a.aliases) j where lower(j.value) = lower(:actor))
+          order by i.reported_at desc
+      actor_ttps:
+        title: Actor profile — TTP frequency
+        sql: |-
+          select t.technique_id, t.technique_name, count(*) as n
+          from incident_ttps t join incidents i on i.id = t.incident_id join actors a on a.id = i.actor_id
+          where lower(a.canonical_name) = lower(:actor)
+             or exists (select 1 from json_each(a.aliases) j where lower(j.value) = lower(:actor))
+          group by t.technique_id, t.technique_name order by n desc
+      actor_sectors:
+        title: Actor profile — victim sectors
+        sql: |-
+          select coalesce(i.victim_sector, '(unknown)') as sector, count(*) as n
+          from incidents i join actors a on a.id = i.actor_id
+          where lower(a.canonical_name) = lower(:actor)
+             or exists (select 1 from json_each(a.aliases) j where lower(j.value) = lower(:actor))
+          group by sector order by n desc
+      new_today:
+        title: New today — incidents and candidate articles
+        sql: |-
+          select 'incident' as kind, i.id, i.title, i.direction as detail, i.created_at as at, i.article_id
+          from incidents i where date(i.created_at) = date('now')
+          union all
+          select 'article', a.id, a.title, a.relevance, a.fetched_at, a.id
+          from articles a where date(a.fetched_at) = date('now') and a.relevance = 'candidate'
+          order by at desc
+plugins:
+  datasette-dashboards:
+    trends:
+      title: Trends
+      description: PRC-related incident trends
+      layout:
+        - [per-month, direction]
+        - [sectors, ttps]
+      charts:
+        per-month:
+          title: Incidents per month
+          db: cti
+          query: select substr(coalesce(occurred_at, reported_at),1,7) as month, count(*) as n from incidents group by month order by month
+          library: vega-lite
+          display:
+            mark: bar
+            encoding:
+              x: {field: month, type: ordinal}
+              y: {field: n, type: quantitative}
+        direction:
+          title: Direction share
+          db: cti
+          query: select direction, count(*) as n from incidents group by direction
+          library: vega-lite
+          display:
+            mark: arc
+            encoding:
+              theta: {field: n, type: quantitative}
+              color: {field: direction, type: nominal}
+        sectors:
+          title: Top victim sectors
+          db: cti
+          query: select coalesce(victim_sector,'(unknown)') as sector, count(*) as n from incidents group by sector order by n desc limit 10
+          library: vega-lite
+          display:
+            mark: bar
+            encoding:
+              y: {field: sector, type: nominal, sort: "-x"}
+              x: {field: n, type: quantitative}
+        ttps:
+          title: Top TTPs
+          db: cti
+          query: select technique_id || ' ' || coalesce(technique_name,'') as ttp, count(*) as n from incident_ttps group by ttp order by n desc limit 10
+          library: vega-lite
+          display:
+            mark: bar
+            encoding:
+              y: {field: ttp, type: nominal, sort: "-x"}
+              x: {field: n, type: quantitative}
