@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GopherWhisper · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Today</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>GopherWhisper</h1>
+<dl>
+  <dt>Aliases</dt><dd>GopherWhisper</dd>
+  <dt>MITRE ID</dt><dd>—</dd>
+  <dt>Attributed country</dt><dd>—</dd>
+</dl>
+
+
+<h2>Incidents (1)</h2>
+
+<table>
+  <thead><tr>
+    <th>Reported</th><th>Title</th><th>Direction</th>
+    
+    <th>Victim</th><th>Confidence</th><th>Source</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr data-direction="from_cn" data-country="MN" data-sector="government" data-actor="52" data-text="gopherwhisper campaign targeting mongolian government institutions eset research identified a new china-aligned apt group, dubbed gopherwhisper, that targets mongolian governmental institutions using various malware.">
+    <td class="muted">2026-04-23</td>
+    <td><a href="/en/incidents/4">GopherWhisper campaign targeting Mongolian government institutions</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    
+    <td>MN government</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/125">Article</a></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<div class="charts">
+  <div class="chart">
+    <h3>TTP frequency</h3>
+    <p class="empty">No TTPs recorded.</p>
+  </div>
+  <div class="chart">
+    <h3>Victim sectors</h3>
+    <table><thead><tr><th>Sector</th><th>Count</th></tr></thead><tbody>
+    <tr><td>government</td><td>1</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+</main>
+<footer>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+
+</body>
+</html>

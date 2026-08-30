@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incidents · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Today</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Incidents</h1>
+
+<div class="filters" id="cfilters">
+  <select data-key="direction" aria-label="Direction">
+    <option value="">All directions</option>
+    <option value="from_cn">From China (PRC-attributed actor)</option><option value="to_cn">Against China (target inside PRC)</option><option value="unclear">Unclear</option>
+  </select>
+  <select data-key="country" aria-label="Victim country">
+    <option value="">All countries</option>
+    <option value="DE">DE</option><option value="MN">MN</option><option value="PH">PH</option><option value="PK">PK</option><option value="US">US</option>
+  </select>
+  <select data-key="sector" aria-label="Victim sector">
+    <option value="">All sectors</option>
+    <option value="critical infrastructure">critical infrastructure</option><option value="gambling and government">gambling and government</option><option value="government">government</option><option value="government and critical infrastructure">government and critical infrastructure</option><option value="research">research</option>
+  </select>
+  <select data-key="actor" aria-label="Actor">
+    <option value="">All actors</option>
+    <option value="48">Earth Estries</option><option value="52">GopherWhisper</option><option value="50">LongNosedGoblin</option><option value="54">QTFY</option><option value="53">Shadow-Earth-053</option>
+  </select>
+  <input type="search" data-key="text" placeholder="Search incidents">
+</div>
+
+<p class="muted">10 incidents</p>
+
+<table>
+  <thead><tr>
+    <th>Reported</th><th>Title</th><th>Direction</th>
+    <th>Actor</th>
+    <th>Victim</th><th>Confidence</th><th>Source</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr data-direction="from_cn" data-country="PH" data-sector="research" data-actor="" data-text="chinese-speaking actor exploits owncloud flaw to breach philippine nuclear research body a chinese-speaking threat actor exploited cve-2023-49105, a critical authentication bypass vulnerability in owncloud, to compromise a nuclear research institution in the philippines and steal records. cisa subsequently added the vulnerability to its known exploited vulnerabilities catalog.">
+    <td class="muted">2026-08-28</td>
+    <td><a href="/en/incidents/10">Chinese-speaking actor exploits ownCloud flaw to breach Philippine nuclear research body</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td>—</td>
+    <td>PH research</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/237">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="DE" data-sector="" data-actor="" data-text="german companies report rising cyberattacks attributed to chinese and russian intelligence services a survey of the german private sector found that foreign intelligence services, particularly from china and russia, are increasingly behind cyberattacks on german companies. the article does not name specific threat actors, victims, or techniques.">
+    <td class="muted">2026-08-27</td>
+    <td><a href="/en/incidents/9">German companies report rising cyberattacks attributed to Chinese and Russian intelligence services</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td>—</td>
+    <td>DE </td>
+    <td>Low</td>
+    <td><a href="/en/articles/214">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="US" data-sector="critical infrastructure" data-actor="54" data-text="fbi disrupts qtfy infrastructure (qscan/qtrouter) used against u.s. organizations the u.s. department of justice announced the disruption of two hacking platforms, qscan and qtrouter, operated by a chinese state-sponsored threat actor known as qtfy, employed by nanjing xinjiuwei network technology company. the platforms were used to target critical infrastructure and other sensitive networks in the united states and steal data from u.s. organizations.">
+    <td class="muted">2026-08-26</td>
+    <td><a href="/en/incidents/8">FBI Disrupts QTFY Infrastructure (QScan/QTRouter) Used Against U.S. Organizations</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td><a href="/en/actors/54">QTFY</a></td>
+    <td>US critical infrastructure</td>
+    <td>High</td>
+    <td><a href="/en/articles/257">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="" data-actor="" data-text="chinese-speaking threat actor uses ai for autonomous vulnerability exploitation unit 42 reports a chinese-speaking threat actor combining autonomous ai-driven scanning across seven vulnerabilities with manual exploitation techniques in a cyberattack campaign.">
+    <td class="muted">2026-07-30</td>
+    <td><a href="/en/incidents/7">Chinese-Speaking Threat Actor Uses AI for Autonomous Vulnerability Exploitation</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td>—</td>
+    <td> </td>
+    <td>Medium</td>
+    <td><a href="/en/articles/35">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="PK" data-sector="government" data-actor="" data-text="chinese espionage operation targets pakistani police force a china-attributed espionage actor conducted an intrusion campaign against a pakistani law enforcement (police) organization, driven by prc interests in pakistan&#39;s internal security; a separate, unrelated india-linked espionage operation targeted the same organization.">
+    <td class="muted">2026-07-09</td>
+    <td><a href="/en/incidents/6">Chinese espionage operation targets Pakistani police force</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td>—</td>
+    <td>PK government</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/204">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="government and critical infrastructure" data-actor="53" data-text="shadow-earth-053 cyberespionage campaign via exchange exploitation a china-aligned threat group tracked as shadow-earth-053 is exploiting unpatched microsoft exchange vulnerabilities to conduct cyberespionage against government and critical infrastructure targets across asia and beyond.">
+    <td class="muted">2026-04-30</td>
+    <td><a href="/en/incidents/5">Shadow-Earth-053 cyberespionage campaign via Exchange exploitation</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td><a href="/en/actors/53">Shadow-Earth-053</a></td>
+    <td> government and critical infrastructure</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/319">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="MN" data-sector="government" data-actor="52" data-text="gopherwhisper campaign targeting mongolian government institutions eset research identified a new china-aligned apt group, dubbed gopherwhisper, that targets mongolian governmental institutions using various malware.">
+    <td class="muted">2026-04-23</td>
+    <td><a href="/en/incidents/4">GopherWhisper campaign targeting Mongolian government institutions</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td><a href="/en/actors/52">GopherWhisper</a></td>
+    <td>MN government</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/125">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="gambling and government" data-actor="" data-text="peckbirdy jscript c&amp;c framework used against gambling and government targets china-aligned apt groups have used peckbirdy, a versatile jscript-based command-and-control framework, to exploit living-off-the-land binaries (lolbins) across multiple environments and deliver advanced backdoors. targets include gambling industry organizations and government entities in asia.">
+    <td class="muted">2026-01-26</td>
+    <td><a href="/en/incidents/3">PeckBirdy JScript C&amp;C framework used against gambling and government targets</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td>—</td>
+    <td> gambling and government</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/353">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="government" data-actor="50" data-text="longnosedgoblin targets governmental institutions in southeast asia and japan via group policy abuse eset researchers identified a china-aligned apt group, tracked as longnosedgoblin, that abuses group policy to deploy cyberespionage tools across the networks of governmental institutions in southeast asia and japan.">
+    <td class="muted">2025-12-18</td>
+    <td><a href="/en/incidents/2">LongNosedGoblin targets governmental institutions in Southeast Asia and Japan via Group Policy abuse</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td><a href="/en/actors/50">LongNosedGoblin</a></td>
+    <td> government</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/171">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="" data-actor="48" data-text="premier pass-as-a-service collaboration between earth estries and earth naga trend micro research describes a collaborative infrastructure/tooling-sharing model, termed &#39;premier pass-as-a-service&#39;, used among china-aligned cyber espionage groups, exemplified by the recent activities of earth estries and earth naga.">
+    <td class="muted">2025-10-22</td>
+    <td><a href="/en/incidents/1">Premier Pass-as-a-Service collaboration between Earth Estries and Earth Naga</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td><a href="/en/actors/48">Earth Estries</a></td>
+    <td> </td>
+    <td>Medium</td>
+    <td><a href="/en/articles/389">Article</a></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+
+
+</main>
+<footer>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+
+
+<script>
+(function () {
+  const box = document.getElementById("cfilters"); if (!box) return;
+  const controls = box.querySelectorAll("[data-key]");
+  const rows = document.querySelectorAll("tbody tr[data-direction]");
+  function apply() {
+    const want = {};
+    controls.forEach(c => { want[c.dataset.key] = c.value.trim().toLowerCase(); });
+    rows.forEach(tr => {
+      let show = true;
+      for (const k of ["direction", "country", "sector", "actor"])
+        if (want[k] && (tr.dataset[k] || "").toLowerCase() !== want[k]) show = false;
+      if (want.text && !(tr.dataset.text || "").includes(want.text)) show = false;
+      tr.style.display = show ? "" : "none";
+    });
+  }
+  controls.forEach(c => { c.addEventListener("change", apply); c.addEventListener("input", apply); });
+})();
+</script>
+
+
+</body>
+</html>

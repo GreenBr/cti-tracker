@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LongNosedGoblin · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/zh_TW/">CTI Tracker</a>
+  <nav>
+    <a href="/zh_TW/">今日</a>
+    <a href="/zh_TW/incidents">事件</a>
+    <a href="/zh_TW/actors">攻擊組織</a>
+    <a href="/zh_TW/trends">趨勢</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">語言</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" >English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" selected>中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>LongNosedGoblin</h1>
+<dl>
+  <dt>別名</dt><dd>LongNosedGoblin</dd>
+  <dt>MITRE 編號</dt><dd>—</dd>
+  <dt>歸因國家</dt><dd>—</dd>
+</dl>
+
+
+<h2>事件 (1)</h2>
+
+<table>
+  <thead><tr>
+    <th>報導日期</th><th>標題</th><th>方向</th>
+    
+    <th>受害者</th><th>置信度</th><th>來源</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="government" data-actor="50" data-text="longnosedgoblin targets governmental institutions in southeast asia and japan via group policy abuse eset researchers identified a china-aligned apt group, tracked as longnosedgoblin, that abuses group policy to deploy cyberespionage tools across the networks of governmental institutions in southeast asia and japan.">
+    <td class="muted">2025-12-18</td>
+    <td><a href="/zh_TW/incidents/2">LongNosedGoblin targets governmental institutions in Southeast Asia and Japan via Group Policy abuse</a></td>
+    <td><span class="tag from_cn">來自中國（歸因於中國的攻擊組織）</span></td>
+    
+    <td> government</td>
+    <td>中</td>
+    <td><a href="/zh_TW/articles/171">文章</a></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<div class="charts">
+  <div class="chart">
+    <h3>TTP 頻次</h3>
+    <table><thead><tr><th>技術</th><th>數量</th></tr></thead><tbody>
+    <tr><td><a href="https://attack.mitre.org/techniques/T1484/001/">T1484.001</a> Domain or Tenant Policy Modification: Group Policy Modification</td><td>1</td></tr>
+    </tbody></table>
+  </div>
+  <div class="chart">
+    <h3>受害行業</h3>
+    <table><thead><tr><th>行業</th><th>數量</th></tr></thead><tbody>
+    <tr><td>government</td><td>1</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+</main>
+<footer>
+
+<p>本站僅收錄摘要與後設資料；原文請透過來源連結檢視。</p>
+<p>MITRE ATT&amp;CK® 是 The MITRE Corporation 的註冊商標；ATT&amp;CK 內容按署名要求使用。</p>
+
+</footer>
+
+</body>
+</html>

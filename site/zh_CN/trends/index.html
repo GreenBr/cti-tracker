@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>趋势 · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/zh_CN/">CTI Tracker</a>
+  <nav>
+    <a href="/zh_CN/">今日</a>
+    <a href="/zh_CN/incidents">事件</a>
+    <a href="/zh_CN/actors">攻击组织</a>
+    <a href="/zh_CN/trends">趋势</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">语言</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" >English</option>
+      
+      <option value="zh_CN" selected>中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>趋势</h1>
+<div class="charts viz-root" data-palette="#2a78d6,#eb6834,#1baf7a">
+  <div class="chart"><h3>每月事件数</h3><canvas id="c-month" height="220"></canvas>
+    <details><summary>表格视图</summary><table><thead><tr><th>月份</th><th>数量</th></tr></thead><tbody>
+    <tr><td>2025-10</td><td>1</td></tr><tr><td>2025-12</td><td>1</td></tr><tr><td>2026-01</td><td>1</td></tr><tr><td>2026-04</td><td>2</td></tr><tr><td>2026-07</td><td>2</td></tr><tr><td>2026-08</td><td>3</td></tr></tbody></table></details></div>
+  <div class="chart"><h3>方向占比</h3><canvas id="c-dir" height="220"></canvas>
+    <details><summary>表格视图</summary><table><thead><tr><th>方向</th><th>数量</th></tr></thead><tbody>
+    <tr><td>来自中国（归因于中国的攻击组织）</td><td>10</td></tr><tr><td>针对中国（目标位于中国境内）</td><td>0</td></tr><tr><td>不明</td><td>0</td></tr></tbody></table></details></div>
+  <div class="chart"><h3>受害行业 Top 10</h3><canvas id="c-sec" height="220"></canvas>
+    <details><summary>表格视图</summary><table><thead><tr><th>行业</th><th>数量</th></tr></thead><tbody>
+    <tr><td>government</td><td>3</td></tr><tr><td>critical infrastructure</td><td>1</td></tr><tr><td>gambling and government</td><td>1</td></tr><tr><td>government and critical infrastructure</td><td>1</td></tr><tr><td>research</td><td>1</td></tr></tbody></table></details></div>
+  <div class="chart"><h3>TTP Top 10</h3><canvas id="c-ttp" height="220"></canvas>
+    <details><summary>表格视图</summary><table><thead><tr><th>技术</th><th>数量</th></tr></thead><tbody>
+    <tr><td>T1190 Exploit Public-Facing Application</td><td>2</td></tr><tr><td>T1484.001 Domain or Tenant Policy Modification: Group Policy Modification</td><td>1</td></tr></tbody></table></details></div>
+</div>
+
+</main>
+<footer>
+
+<p>本站仅收录摘要与元数据；原文请通过来源链接访问。</p>
+<p>MITRE ATT&amp;CK® 是 The MITRE Corporation 的注册商标；ATT&amp;CK 内容按署名要求使用。</p>
+
+</footer>
+
+<script src="/static/vendor/chart.umd.js"></script>
+<script id="chart-data" type="application/json">{"per_month": [{"month": "2025-10", "n": 1}, {"month": "2025-12", "n": 1}, {"month": "2026-01", "n": 1}, {"month": "2026-04", "n": 2}, {"month": "2026-07", "n": 2}, {"month": "2026-08", "n": 3}], "direction": [{"direction": "from_cn", "n": 10, "label": "来自中国（归因于中国的攻击组织）"}, {"direction": "to_cn", "n": 0, "label": "针对中国（目标位于中国境内）"}, {"direction": "unclear", "n": 0, "label": "不明"}], "sectors": [{"sector": "government", "n": 3}, {"sector": "critical infrastructure", "n": 1}, {"sector": "gambling and government", "n": 1}, {"sector": "government and critical infrastructure", "n": 1}, {"sector": "research", "n": 1}], "ttps": [{"technique_id": "T1190", "technique_name": "Exploit Public-Facing Application", "n": 2}, {"technique_id": "T1484.001", "technique_name": "Domain or Tenant Policy Modification: Group Policy Modification", "n": 1}]}</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById("chart-data").textContent);
+  const dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const ink = dark ? "#c3c2b7" : "#52514e", grid = dark ? "#2a2e34" : "#e3e5e8";
+  const seq = dark ? "#3987e5" : "#2a78d6";                       // single-hue magnitude
+  const cat = dark ? ["#3987e5", "#d95926", "#199e70"] : ["#2a78d6", "#eb6834", "#1baf7a"]; // fixed slots 1-3
+  Chart.defaults.color = ink; Chart.defaults.borderColor = grid; Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
+  const base = (horizontal) => ({ responsive: true, indexAxis: horizontal ? "y" : "x",
+    plugins: { legend: { display: false } },
+    scales: { x: { grid: { display: horizontal }, ticks: { precision: 0 } }, y: { grid: { display: !horizontal }, ticks: { precision: 0 } } } });
+  const bar = (id, labels, data, colors, horizontal) => new Chart(document.getElementById(id), {
+    type: "bar", data: { labels, datasets: [{ data, backgroundColor: colors, borderRadius: 4, borderSkipped: "start", barThickness: 18 }] },
+    options: base(horizontal) });
+  bar("c-month", D.per_month.map(r => r.month), D.per_month.map(r => r.n), seq, false);
+  bar("c-dir", D.direction.map(r => r.label), D.direction.map(r => r.n), cat, true);
+  bar("c-sec", D.sectors.map(r => r.sector), D.sectors.map(r => r.n), seq, true);
+  bar("c-ttp", D.ttps.map(r => r.technique_id + " " + (r.technique_name || "")), D.ttps.map(r => r.n), seq, true);
+})();
+</script>
+
+</body>
+</html>
