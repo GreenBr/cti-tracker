@@ -16,6 +16,9 @@ from starlette_babel.contrib.jinja import configure_jinja_env
 from cti import db
 from cti.web import i18n, queries
 
+# Fixed refresh schedule (Windows Task Scheduler "CTI Tracker Daily"): daily at this local time.
+SCHEDULE = {"hour": 9, "minute": 0, "utc_offset_hours": 8, "label": "09:00 (UTC+8)"}
+
 HERE = Path(__file__).resolve().parent
 TEMPLATES_DIR = HERE / "templates"
 STATIC_DIR = HERE / "static"
@@ -25,7 +28,8 @@ def _templates(public: bool) -> Jinja2Templates:
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
     configure_jinja_env(env)
     env.globals.update({"enum_label": i18n.enum_label, "locale_choices": i18n.locale_choices,
-                        "current_locale_code": i18n.current_locale_code, "public_mode": public})
+                        "current_locale_code": i18n.current_locale_code, "public_mode": public,
+                        "SCHEDULE": SCHEDULE})
     env.filters["replace_param"] = _replace_param
     return Jinja2Templates(env=env)
 

@@ -53,13 +53,31 @@
 <footer>
 <p class="stamp">
 Data updated Aug 30, 2026, 1:44:18 PM
- · Page generated Aug 30, 2026, 9:38:11 PM
+ · Page generated Aug 31, 2026, 3:15:08 AM
+ · Updated daily at 09:00 (UTC+8)
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="next update in %(h)s h %(m)s min"></span>
 </p>
 
 <p>Summaries and metadata only; follow the source link for the original article.</p>
 <p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
 
 </footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
 
 <script src="/static/vendor/chart.umd.js"></script>
 <script id="chart-data" type="application/json">{"per_month": [{"month": "2025-10", "n": 1}, {"month": "2025-12", "n": 1}, {"month": "2026-01", "n": 1}, {"month": "2026-04", "n": 2}, {"month": "2026-07", "n": 2}, {"month": "2026-08", "n": 3}], "direction": [{"direction": "from_cn", "n": 10, "label": "From China (PRC-attributed actor)"}, {"direction": "to_cn", "n": 0, "label": "Against China (target inside PRC)"}, {"direction": "unclear", "n": 0, "label": "Unclear"}], "sectors": [{"sector": "government", "n": 3}, {"sector": "critical infrastructure", "n": 1}, {"sector": "gambling and government", "n": 1}, {"sector": "government and critical infrastructure", "n": 1}, {"sector": "research", "n": 1}], "ttps": [{"technique_id": "T1190", "technique_name": "Exploit Public-Facing Application", "n": 2}, {"technique_id": "T1484.001", "technique_name": "Domain or Tenant Policy Modification: Group Policy Modification", "n": 1}]}</script>

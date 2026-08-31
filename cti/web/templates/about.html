@@ -27,6 +27,9 @@
   <dt>{{ _("Page generated") }}</dt><dd>{{ data_status.generated|datetime }}</dd>
 </dl>
 
+<h2>{{ _("Update schedule") }}</h2>
+<p>{% trans t=SCHEDULE.label %}The pipeline runs automatically once a day, at a fixed time: {{ t }}. If the computer hosting it is off at that moment, that day's run is skipped and the site keeps the previous data.{% endtrans %}</p>
+
 <h2>{{ _("Reading the data") }}</h2>
 <p>{{ _("This site aggregates public reporting. Every claim carries the confidence its source stated, and should be checked against the linked original before being relied on. Coverage is only as good as the source list: Chinese-language sources are currently under-represented, so the \"against China\" direction is sparse.") }}</p>
 

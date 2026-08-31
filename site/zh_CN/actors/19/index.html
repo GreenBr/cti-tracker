@@ -61,13 +61,31 @@
 <footer>
 <p class="stamp">
 数据更新于 2026年8月30日 13:44:18
- · 页面生成于 2026年8月30日 21:38:12
+ · 页面生成于 2026年8月31日 03:15:09
+ · 每天 09:00 (UTC+8) 自动更新
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="距下次更新还有 %(h)s 小时 %(m)s 分"></span>
 </p>
 
 <p>本站仅收录摘要与元数据；原文请通过来源链接访问。</p>
 <p>MITRE ATT&amp;CK® 是 The MITRE Corporation 的注册商标；ATT&amp;CK 内容按署名要求使用。</p>
 
 </footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
 
 </body>
 </html>

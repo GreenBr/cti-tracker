@@ -119,3 +119,11 @@ def test_data_status_stamp_visible(client):
     assert "Last fetch: " in r.text and "Data updated " in r.text
     r = client.get("/?lang=zh_CN")
     assert "最近抓取：" in r.text
+
+
+def test_schedule_line_and_countdown_hook(client):
+    r = client.get("/")
+    assert "Updated daily at 09:00 (UTC+8)" in r.text
+    assert 'id="next-update"' in r.text and 'data-hour="9"' in r.text and 'data-offset="8"' in r.text
+    r = client.get("/about?lang=zh_CN")
+    assert "每天 09:00 (UTC+8) 自动更新" in r.text or "固定时间自动运行一次：09:00 (UTC+8)" in r.text

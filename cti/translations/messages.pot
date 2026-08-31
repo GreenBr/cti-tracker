@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cti-tracker VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-08-31 05:36+0800\n"
+"POT-Creation-Date: 2026-08-31 11:14+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,6 +160,16 @@ msgstr ""
 msgid "Page generated"
 msgstr ""
 
+msgid "Update schedule"
+msgstr ""
+
+#, python-format
+msgid ""
+"The pipeline runs automatically once a day, at a fixed time: %(t)s. If "
+"the computer hosting it is off at that moment, that day's run is skipped "
+"and the site keeps the previous data."
+msgstr ""
+
 msgid "Reading the data"
 msgstr ""
 
@@ -278,6 +288,14 @@ msgstr ""
 
 #, python-format
 msgid "Page generated %(d)s"
+msgstr ""
+
+#, python-format
+msgid "Updated daily at %(t)s"
+msgstr ""
+
+#, python-format
+msgid "next update in %(h)s h %(m)s min"
 msgstr ""
 
 msgid ""

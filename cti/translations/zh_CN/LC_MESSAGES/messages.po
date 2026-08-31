@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cti-tracker VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-08-31 05:36+0800\n"
+"POT-Creation-Date: 2026-08-31 11:14+0800\n"
 "PO-Revision-Date: 2026-08-30 22:31+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hans_CN\n"
@@ -160,6 +160,15 @@ msgstr "最近提取"
 msgid "Page generated"
 msgstr "页面生成时间"
 
+msgid "Update schedule"
+msgstr "更新排程"
+
+#, python-format
+msgid ""
+"The pipeline runs automatically once a day, at a fixed time: %(t)s. If the computer hosting it is"
+" off at that moment, that day's run is skipped and the site keeps the previous data."
+msgstr "管线每天在固定时间自动运行一次：%(t)s。若那一刻托管电脑处于关机状态，当天这次运行会被跳过，网站保持此前的数据。"
+
 msgid "Reading the data"
 msgstr "如何解读数据"
 
@@ -275,6 +284,14 @@ msgstr "数据更新于 %(d)s"
 #, python-format
 msgid "Page generated %(d)s"
 msgstr "页面生成于 %(d)s"
+
+#, python-format
+msgid "Updated daily at %(t)s"
+msgstr "每天 %(t)s 自动更新"
+
+#, python-format
+msgid "next update in %(h)s h %(m)s min"
+msgstr "距下次更新还有 %(h)s 小时 %(m)s 分"
 
 msgid "Summaries and metadata only; follow the source link for the original article."
 msgstr "本站仅收录摘要与元数据；原文请通过来源链接访问。"
