@@ -48,11 +48,16 @@ The exported site is the **public mode**: incident summaries and metadata only �
 
 ## Scheduled refresh (Windows Task Scheduler -> WSL)
 `scripts/daily.sh` runs fetch -> extract -> export -> push and logs to `data/daily.log`. Registered as a daily
-Windows scheduled task ("CTI Tracker Daily") so it runs even when WSL is idle, as long as the computer is on:
+Windows scheduled task ("CTI Tracker Daily") so it runs even when WSL is idle, as long as the computer is on.
+Register it via PowerShell — `schtasks /TR` mangles the wsl.exe arguments (the task then exits 0 without running anything):
 ```powershell
-schtasks /Create /TN "CTI Tracker Daily" /SC DAILY /ST 09:00 /TR "wsl.exe -d <distro> -- /home/brandon/repos/cti-tracker/scripts/daily.sh"
-schtasks /Delete /TN "CTI Tracker Daily"   # to remove
+$a = New-ScheduledTaskAction -Execute 'C:\Windows\System32\wsl.exe' -Argument '-d Ubuntu -e /home/brandon/repos/cti-tracker/scripts/daily.sh'
+$t = New-ScheduledTaskTrigger -Daily -At 09:00
+$s = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 2)
+Register-ScheduledTask -TaskName 'CTI Tracker Daily' -Action $a -Trigger $t -Settings $s
+Unregister-ScheduledTask -TaskName 'CTI Tracker Daily' -Confirm:$false   # to remove
 ```
+Missed runs (PC off/asleep at 09:00) fire as soon as the machine is next available (StartWhenAvailable).
 
 ## Tests
 `.venv/bin/pytest` — no network, no real `claude`.
