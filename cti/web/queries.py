@@ -18,16 +18,20 @@ def stats(conn) -> dict:
     }
 
 
-def new_today(conn) -> dict:
+def latest_update(conn) -> dict:
+    """The most recent update batch (never empty once data exists), not calendar-today."""
+    incident_date = conn.execute("SELECT date(max(created_at)) FROM incidents").fetchone()[0]
+    fetch_date = conn.execute(
+        "SELECT date(max(fetched_at)) FROM articles WHERE relevance='candidate'").fetchone()[0]
     incidents = _rows(conn, """
         SELECT i.id, i.title, i.direction, i.created_at, i.article_id, a.canonical_name AS actor
         FROM incidents i LEFT JOIN actors a ON a.id = i.actor_id
-        WHERE date(i.created_at) = date('now') ORDER BY i.created_at DESC""")
+        WHERE date(i.created_at) = ? ORDER BY i.created_at DESC""", (incident_date,))
     articles = _rows(conn, """
         SELECT ar.id, ar.title, ar.fetched_at, ar.extract_status, s.name AS source
         FROM articles ar JOIN sources s ON s.id = ar.source_id
-        WHERE date(ar.fetched_at) = date('now') AND ar.relevance = 'candidate' ORDER BY ar.fetched_at DESC""")
-    return {"incidents": incidents, "articles": articles}
+        WHERE date(ar.fetched_at) = ? AND ar.relevance = 'candidate' ORDER BY ar.fetched_at DESC""", (fetch_date,))
+    return {"incidents": incidents, "articles": articles, "incident_date": incident_date, "fetch_date": fetch_date}
 
 
 def actors(conn) -> list[dict]:

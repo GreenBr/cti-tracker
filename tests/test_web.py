@@ -29,8 +29,8 @@ def test_index_renders_english_by_default(client):
     r = client.get("/")
     assert r.status_code == 200
     assert "<html lang=\"en\"" in r.text
-    assert "New incidents today" in r.text
-    assert "APT41 spearphishing" in r.text  # incident created 'today' in fixture
+    assert "New incidents in the latest update" in r.text
+    assert "APT41 spearphishing" in r.text  # incident from the latest batch in fixture
 
 
 def test_lang_query_sets_cookie_and_is_remembered(client):
@@ -92,9 +92,9 @@ def test_trends_page_embeds_chart_data(client):
 
 
 def test_pages_render_translated_in_each_locale(client):
-    expect = {"zh_CN": ("今日新增事件", "来自中国", "攻击组织", "趋势"),
-              "zh_TW": ("今日新增事件", "來自中國", "攻擊組織", "趨勢"),
-              "en": ("New incidents today", "From China", "Actors", "Trends")}
+    expect = {"zh_CN": ("最近一次更新新增的事件", "来自中国", "攻击组织", "趋势"),
+              "zh_TW": ("最近一次更新新增的事件", "來自中國", "攻擊組織", "趨勢"),
+              "en": ("New incidents in the latest update", "From China", "Actors", "Trends")}
     for code, (today, direction, actors, trends) in expect.items():
         assert today in client.get(f"/?lang={code}").text, code
         assert direction in client.get(f"/incidents?lang={code}").text, code

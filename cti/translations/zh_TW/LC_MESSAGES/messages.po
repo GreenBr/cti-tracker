@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cti-tracker VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-08-31 11:14+0800\n"
+"POT-Creation-Date: 2026-08-31 11:22+0800\n"
 "PO-Revision-Date: 2026-08-30 22:31+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_TW\n"
@@ -265,8 +265,8 @@ msgstr "文章正文"
 msgid "CTI Tracker"
 msgstr "CTI Tracker"
 
-msgid "Today"
-msgstr "今日"
+msgid "Latest"
+msgstr "最新"
 
 msgid "Trends"
 msgstr "趨勢"
@@ -368,17 +368,19 @@ msgstr "最近抓取：%(d)s"
 msgid "Last extraction: %(d)s"
 msgstr "最近提取：%(d)s"
 
-msgid "New incidents today"
-msgstr "今日新增事件"
+#, python-format
+msgid "New incidents in the latest update (%(d)s)"
+msgstr "最近一次更新新增的事件（%(d)s）"
 
-msgid "No new incidents today."
-msgstr "今日沒有新增事件。"
+msgid "No incidents in the latest update."
+msgstr "最近一次更新沒有新增事件。"
 
-msgid "Candidate articles fetched today"
-msgstr "今日抓取的候選文章"
+#, python-format
+msgid "Candidate articles from the latest fetch (%(d)s)"
+msgstr "最近一次抓取的候選文章（%(d)s）"
 
-msgid "No candidate articles fetched today."
-msgstr "今日沒有抓取到候選文章。"
+msgid "No candidate articles in the latest fetch."
+msgstr "最近一次抓取沒有候選文章。"
 
 msgid "Incidents per month"
 msgstr "每月事件數"
@@ -397,4 +399,13 @@ msgstr "受害行業 Top 10"
 
 msgid "Top TTPs"
 msgstr "TTP Top 10"
+
+#~ msgid "Today"
+#~ msgstr "今日"
+
+#~ msgid "New incidents today"
+#~ msgstr "今日新增事件"
+
+#~ msgid "No new incidents today."
+#~ msgstr "今日没有新增事件。"
 

@@ -76,7 +76,7 @@ def create_app(db_path: Path, public: bool = False) -> FastAPI:
     @app.get("/")
     def index(request: Request):
         c = conn()
-        return render(request, "index.html", stats=queries.stats(c), today=queries.new_today(c))
+        return render(request, "index.html", stats=queries.stats(c), today=queries.latest_update(c))
 
     @app.get("/about")
     def about(request: Request):

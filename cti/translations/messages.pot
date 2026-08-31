@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cti-tracker VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-08-31 11:14+0800\n"
+"POT-Creation-Date: 2026-08-31 11:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -270,7 +270,7 @@ msgstr ""
 msgid "CTI Tracker"
 msgstr ""
 
-msgid "Today"
+msgid "Latest"
 msgstr ""
 
 msgid "Trends"
@@ -375,16 +375,18 @@ msgstr ""
 msgid "Last extraction: %(d)s"
 msgstr ""
 
-msgid "New incidents today"
+#, python-format
+msgid "New incidents in the latest update (%(d)s)"
 msgstr ""
 
-msgid "No new incidents today."
+msgid "No incidents in the latest update."
 msgstr ""
 
-msgid "Candidate articles fetched today"
+#, python-format
+msgid "Candidate articles from the latest fetch (%(d)s)"
 msgstr ""
 
-msgid "No candidate articles fetched today."
+msgid "No candidate articles in the latest fetch."
 msgstr ""
 
 msgid "Incidents per month"

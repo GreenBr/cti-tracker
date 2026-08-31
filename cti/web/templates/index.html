@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block title %}{{ _("Today") }}{% endblock %}
+{% block title %}{{ _("Latest") }}{% endblock %}
 {% block content %}
-<h1>{{ _("Today") }}</h1>
+<h1>{{ _("Latest") }}</h1>
 <p class="muted">
 {% if data_status.last_fetch %}{% trans d=data_status.last_fetch|datetime %}Last fetch: {{ d }}{% endtrans %}{% endif %}
 {% if data_status.last_extract %} · {% trans d=data_status.last_extract|datetime %}Last extraction: {{ d }}{% endtrans %}{% endif %}
@@ -13,7 +13,7 @@
   <div class="tile"><span class="n">{{ stats.actors|number }}</span><span class="l">{{ _("Actors") }}</span></div>
 </section>
 
-<h2>{{ _("New incidents today") }}</h2>
+<h2>{% trans d=today.incident_date or "—" %}New incidents in the latest update ({{ d }}){% endtrans %}</h2>
 {% if today.incidents %}
 <table>
   <thead><tr><th>{{ _("Title") }}</th><th>{{ _("Direction") }}</th><th>{{ _("Actor") }}</th><th>{{ _("Source") }}</th></tr></thead>
@@ -28,9 +28,9 @@
   {% endfor %}
   </tbody>
 </table>
-{% else %}<p class="empty">{{ _("No new incidents today.") }}</p>{% endif %}
+{% else %}<p class="empty">{{ _("No incidents in the latest update.") }}</p>{% endif %}
 
-<h2>{{ _("Candidate articles fetched today") }}</h2>
+<h2>{% trans d=today.fetch_date or "—" %}Candidate articles from the latest fetch ({{ d }}){% endtrans %}</h2>
 {% if today.articles %}
 <table>
   <thead><tr><th>{{ _("Title") }}</th><th>{{ _("Source") }}</th><th>{{ _("Extraction") }}</th></tr></thead>
@@ -44,5 +44,5 @@
   {% endfor %}
   </tbody>
 </table>
-{% else %}<p class="empty">{{ _("No candidate articles fetched today.") }}</p>{% endif %}
+{% else %}<p class="empty">{{ _("No candidate articles in the latest fetch.") }}</p>{% endif %}
 {% endblock %}
