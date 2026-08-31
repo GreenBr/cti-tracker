@@ -1,5 +1,7 @@
 # CTI Tracker v1 Implementation Plan
 
+> **STATUS: COMPLETE (2026-08-31).** Tasks 1-12 plus the static-export/publishing work all shipped; see repo CLAUDE.md for current state. This file is historical.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 >
 > **Execution decision for this project (Bo, 2026-08-30):** inline, directly by the main agent, TDD per task, no per-task subagent review loops.

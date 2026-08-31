@@ -268,3 +268,12 @@ tests/test_web.py, tests/test_i18n.py
 ### 13.6 测试 / Testing
 - `fastapi.testclient`:每页在三种语言下 200 且含该语言的页面标题;`?lang=zh_Hant` 设置 cookie 后后续请求生效;`/incidents?direction=to_cn` 只含该方向;`Accept-Language: zh-TW` 协商到 `zh_Hant`。
 - 目录完整性(机械化检查,缺译即失败):用 `babel.messages.pofile` 读取,断言 `zh_Hans`、`zh_Hant` 无空 `msgstr`、无 fuzzy,且 msgid 集合与 `messages.pot` 一致。
+
+## 14. 静态导出与发布 / Static export & publishing (2026-08-31 增补)
+
+- 决策:公开站 = **静态导出**(`cti export`,129 路由 × 3 语言),托管 Vercel(免费,连 GitHub 公开仓库,push 即部署)。动态 FastAPI 仅本地使用。
+- 公开模式(`create_app(public=True)`):不渲染文章全文(版权);页脚 MITRE ATT&CK 署名;语言切换与事件筛选改为客户端 JS;分页取消(全量单页)。
+- 首页语义:**最近一次更新批次**(max(fetched_at)/max(created_at) 所在日),不是日历今天——静态站在日期翻转后不得变空。
+- 页脚显示:数据更新时间、页面生成时间、固定排程(每天 09:00 UTC+8)与精确倒计时。
+- 排程:Windows Task Scheduler("CTI Tracker Daily",PowerShell 注册,StartWhenAvailable,允许电池);`scripts/daily.sh` 串全管线,有变化才 commit+push。
+- 仓库公开;`data/cti.db`(含全文)与 `data/daily.log` 不入库。
