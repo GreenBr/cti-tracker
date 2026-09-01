@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silver Fox · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Latest</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+    <a href="/en/about">About</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Silver Fox</h1>
+<dl>
+  <dt>Aliases</dt><dd>—</dd>
+  <dt>MITRE ID</dt><dd>—</dd>
+  <dt>Attributed country</dt><dd>—</dd>
+</dl>
+
+
+<h2>Incidents (3)</h2>
+
+<table>
+  <thead><tr>
+    <th>Reported</th><th>Title</th><th>Direction</th>
+    
+    <th>Victim</th><th>Confidence</th><th>Source</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="" data-actor="56" data-text="silver fox tax-themed campaign against organizations in india and russia kaspersky previously tracked silver fox running an earlier tax-themed campaign targeting organizations in india and russia, distinct from the qn wallpaper adware campaign.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/en/incidents/17">Silver Fox tax-themed campaign against organizations in India and Russia</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    
+    <td> </td>
+    <td>Medium</td>
+    <td><a href="/en/articles/440">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="JP" data-sector="manufacturing" data-actor="56" data-text="silver fox dll-sideloading campaign against a japanese manufacturer about five weeks before the qn wallpaper report, cato networks documented a silver fox campaign against a japanese manufacturer that abused legitimate signed applications for dll sideloading, consistent with the group&#39;s established toolkit.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/en/incidents/16">Silver Fox DLL-sideloading campaign against a Japanese manufacturer</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    
+    <td>JP manufacturing</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/440">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="" data-actor="56" data-text="silver fox distributes valleyrat via trojanized qn wallpaper adware using dll sideloading kaspersky analyzed an installer disguising the valleyrat (winos 4.0) backdoor as a modified copy of the legitimate chinese adware qn wallpaper. the installer sideloads a malicious libcef.dll into the signed qnwallpaper.exe process, disables windows defender, adds autorun persistence, self-elevates via runas, and marks its process as critical to resist termination; kaspersky assessed silver fox as the likely operator based on geography and payload.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/en/incidents/15">Silver Fox distributes ValleyRAT via trojanized QN Wallpaper adware using DLL sideloading</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    
+    <td> </td>
+    <td>Medium</td>
+    <td><a href="/en/articles/440">Article</a></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<div class="charts">
+  <div class="chart">
+    <h3>TTP frequency</h3>
+    <table><thead><tr><th>Technique</th><th>Count</th></tr></thead><tbody>
+    <tr><td><a href="https://attack.mitre.org/techniques/T1574/002/">T1574.002</a> Hijack Execution Flow: DLL Side-Loading</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1056/001/">T1056.001</a> Input Capture: Keylogging</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1113/">T1113</a> Screen Capture</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1115/">T1115</a> Clipboard Data</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1547/001/">T1547.001</a> Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1548/002/">T1548.002</a> Abuse Elevation Control Mechanism: Bypass User Account Control</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1562/001/">T1562.001</a> Impair Defenses: Disable or Modify Tools</td><td>1</td></tr>
+    </tbody></table>
+  </div>
+  <div class="chart">
+    <h3>Victim sectors</h3>
+    <table><thead><tr><th>Sector</th><th>Count</th></tr></thead><tbody>
+    <tr><td>(unknown)</td><td>2</td></tr><tr><td>manufacturing</td><td>1</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+</main>
+<footer>
+<p class="stamp">
+Data updated Sep 1, 2026, 5:25:05 AM
+ · Page generated Sep 1, 2026, 5:30:10 AM
+ · Updated daily at 09:00 (UTC+8)
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="next update in %(h)s h %(m)s min"></span>
+</p>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

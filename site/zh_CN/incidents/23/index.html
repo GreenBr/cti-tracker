@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ValleyRAT Delivered via Trojanized QN Wallpaper Installer · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/zh_CN/">CTI Tracker</a>
+  <nav>
+    <a href="/zh_CN/">最新</a>
+    <a href="/zh_CN/incidents">事件</a>
+    <a href="/zh_CN/actors">攻击组织</a>
+    <a href="/zh_CN/trends">趋势</a>
+    <a href="/zh_CN/about">关于</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">语言</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" >English</option>
+      
+      <option value="zh_CN" selected>中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>ValleyRAT Delivered via Trojanized QN Wallpaper Installer</h1>
+<p><span class="tag unclear">不明</span>
+   <span class="muted">置信度: 低</span></p>
+<p>A malicious installer disguised as adware deployed a modified version of the Chinese desktop wallpaper management tool QN Wallpaper, which performed DLL sideloading and dropped a persistence file into the Startup folder to ultimately launch the ValleyRAT malware.</p>
+<dl>
+  <dt>攻击组织</dt><dd>未归因</dd>
+  <dt>发生时间</dt><dd>未说明</dd>
+  <dt>报道日期</dt><dd>2026-08-31</dd>
+  <dt>受害国家</dt><dd>—</dd>
+  <dt>受害行业</dt><dd>—</dd>
+  <dt>TTP</dt><dd><a href="https://attack.mitre.org/techniques/T1547/001/">T1547.001</a> Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder, <a href="https://attack.mitre.org/techniques/T1574/002/">T1574.002</a> Hijack Execution Flow: DLL Side-Loading</dd>
+  <dt>来源</dt><dd><a href="/zh_CN/articles/439">⚡ Weekly Recap: Chinese Spy Proxy, AI Agents Go Off-Task, Router Backdoors and More</a> · <a href="https://thehackernews.com/2026/08/weekly-recap-chinese-spy-proxy-ai.html" rel="noopener">原文</a></dd>
+</dl>
+
+</main>
+<footer>
+<p class="stamp">
+数据更新于 2026年9月1日 05:25:05
+ · 页面生成于 2026年9月1日 05:30:12
+ · 每天 09:00 (UTC+8) 自动更新
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="距下次更新还有 %(h)s 小时 %(m)s 分"></span>
+</p>
+
+<p>本站仅收录摘要与元数据；原文请通过来源链接访问。</p>
+<p>MITRE ATT&amp;CK® 是 The MITRE Corporation 的注册商标；ATT&amp;CK 内容按署名要求使用。</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

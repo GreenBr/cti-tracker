@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fire Ant expands campaign to Cisco IOS XR routers, TACACS servers, and Linux hosts · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/zh_CN/">CTI Tracker</a>
+  <nav>
+    <a href="/zh_CN/">最新</a>
+    <a href="/zh_CN/incidents">事件</a>
+    <a href="/zh_CN/actors">攻击组织</a>
+    <a href="/zh_CN/trends">趋势</a>
+    <a href="/zh_CN/about">关于</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">语言</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" >English</option>
+      
+      <option value="zh_CN" selected>中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Fire Ant expands campaign to Cisco IOS XR routers, TACACS servers, and Linux hosts</h1>
+<p><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span>
+   <span class="muted">置信度: 中</span></p>
+<p>China-nexus actor Fire Ant expanded a long-running intrusion beyond VMware ESXi/vCenter to compromise Cisco IOS XR routers, TACACS authentication servers, and Linux management hosts, deploying new tools TacTap (a tac_plus library-injection credential collector) and BridgeAgent (a Zabbix-masquerading backdoor) alongside Medusa/REPTILE rootkits to capture traffic, steal credentials, and suppress logging. Sygnia assessed strong but inconclusive overlap with UNC3886, and found limited scanning/probing (not confirmed compromise) against connected critical infrastructure.</p>
+<dl>
+  <dt>攻击组织</dt><dd><a href="/zh_CN/actors/55">Fire Ant</a></dd>
+  <dt>发生时间</dt><dd>2026</dd>
+  <dt>报道日期</dt><dd>2026-08-31</dd>
+  <dt>受害国家</dt><dd>—</dd>
+  <dt>受害行业</dt><dd>critical infrastructure</dd>
+  <dt>TTP</dt><dd><a href="https://attack.mitre.org/techniques/T1014/">T1014</a> Rootkit, <a href="https://attack.mitre.org/techniques/T1036/005/">T1036.005</a> Masquerading: Match Legitimate Name or Location, <a href="https://attack.mitre.org/techniques/T1070/002/">T1070.002</a> Indicator Removal: Clear Linux or Mac System Logs, <a href="https://attack.mitre.org/techniques/T1071/001/">T1071.001</a> Application Layer Protocol: Web Protocols, <a href="https://attack.mitre.org/techniques/T1543/002/">T1543.002</a> Create or Modify System Process: Systemd Service, <a href="https://attack.mitre.org/techniques/T1556/">T1556</a> Modify Authentication Process, <a href="https://attack.mitre.org/techniques/T1562/001/">T1562.001</a> Impair Defenses: Disable or Modify Tools, <a href="https://attack.mitre.org/techniques/T1572/">T1572</a> Protocol Tunneling</dd>
+  <dt>来源</dt><dd><a href="/zh_CN/articles/443">China-Linked Fire Ant Hijacks Cisco Routers to Steal Credentials and Blind Security Logs</a> · <a href="https://thehackernews.com/2026/08/china-linked-fire-ant-hijacks-cisco.html" rel="noopener">原文</a></dd>
+</dl>
+
+</main>
+<footer>
+<p class="stamp">
+数据更新于 2026年9月1日 05:25:05
+ · 页面生成于 2026年9月1日 05:30:12
+ · 每天 09:00 (UTC+8) 自动更新
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="距下次更新还有 %(h)s 小时 %(m)s 分"></span>
+</p>
+
+<p>本站仅收录摘要与元数据；原文请通过来源链接访问。</p>
+<p>MITRE ATT&amp;CK® 是 The MITRE Corporation 的注册商标；ATT&amp;CK 内容按署名要求使用。</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

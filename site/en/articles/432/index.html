@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>31th August – Threat Intelligence Report · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Latest</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+    <a href="/en/about">About</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>31th August – Threat Intelligence Report</h1>
+<dl>
+  <dt>Source</dt><dd>Check Point Research · Vendor report · <a href="https://research.checkpoint.com/2026/31th-august-threat-intelligence-report/" rel="noopener">Original</a></dd>
+  <dt>Published</dt><dd>2026-08-31</dd>
+  <dt>Fetched</dt><dd>2026-09-01</dd>
+  <dt>Relevance</dt><dd>Candidate</dd>
+  <dt>Extraction</dt><dd><span class="tag done">Done</span></dd>
+  <dt>Actors mentioned</dt><dd><a href="/en/actors/54">QTFY</a></dd>
+</dl>
+<h2>Incidents extracted from this article</h2>
+
+<table>
+  <thead><tr>
+    <th>Reported</th><th>Title</th><th>Direction</th>
+    <th>Actor</th>
+    <th>Victim</th><th>Confidence</th><th>Source</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr data-direction="from_cn" data-country="US" data-sector="critical infrastructure" data-actor="54" data-text="us disrupts qtfy&#39;s qscan and qtrouter platforms targeting critical infrastructure u.s. authorities disrupted qscan and qtrouter, two platforms operated by china-linked group qtfy to target u.s. critical infrastructure and government networks. qscan infected internet-connected devices, while qtrouter used compromised systems to conceal the origin of intrusions targeting agencies including nasa, the federal reserve, and the department of energy.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/en/incidents/18">US disrupts QTFY&#39;s QScan and QTRouter platforms targeting critical infrastructure</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td><a href="/en/actors/54">QTFY</a></td>
+    <td>US critical infrastructure</td>
+    <td>High</td>
+    <td><a href="/en/articles/432">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="PH" data-sector="critical infrastructure" data-actor="" data-text="chinese actor exploits owncloud/wordpress flaws to breach philippine nuclear and naval-linked organizations a chinese threat actor exploited known owncloud and wordpress vulnerabilities to compromise sensitive organizations in the philippines, including a nuclear research agency and a marine engineering contractor supporting the philippine navy. the attackers obtained reactor-related records, employee information, and credentials.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/en/incidents/19">Chinese actor exploits ownCloud/WordPress flaws to breach Philippine nuclear and naval-linked organizations</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td>—</td>
+    <td>PH critical infrastructure</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/432">Article</a></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+<h2>Article text</h2>
+<article class="body"></article>
+
+</main>
+<footer>
+<p class="stamp">
+Data updated Sep 1, 2026, 5:25:05 AM
+ · Page generated Sep 1, 2026, 5:30:11 AM
+ · Updated daily at 09:00 (UTC+8)
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="next update in %(h)s h %(m)s min"></span>
+</p>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

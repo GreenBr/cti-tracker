@@ -42,20 +42,20 @@
   </select>
   <select data-key="country" aria-label="受害国家">
     <option value="">全部国家</option>
-    <option value="DE">DE</option><option value="MN">MN</option><option value="PH">PH</option><option value="PK">PK</option><option value="US">US</option>
+    <option value="DE">DE</option><option value="JP">JP</option><option value="MN">MN</option><option value="PH">PH</option><option value="PK">PK</option><option value="US">US</option>
   </select>
   <select data-key="sector" aria-label="受害行业">
     <option value="">全部行业</option>
-    <option value="critical infrastructure">critical infrastructure</option><option value="gambling and government">gambling and government</option><option value="government">government</option><option value="government and critical infrastructure">government and critical infrastructure</option><option value="research">research</option>
+    <option value="critical infrastructure">critical infrastructure</option><option value="gambling and government">gambling and government</option><option value="government">government</option><option value="government and critical infrastructure">government and critical infrastructure</option><option value="manufacturing">manufacturing</option><option value="research">research</option><option value="telecommunications">telecommunications</option>
   </select>
   <select data-key="actor" aria-label="攻击组织">
     <option value="">全部组织</option>
-    <option value="48">Earth Estries</option><option value="52">GopherWhisper</option><option value="50">LongNosedGoblin</option><option value="54">QTFY</option><option value="53">Shadow-Earth-053</option>
+    <option value="48">Earth Estries</option><option value="55">Fire Ant</option><option value="52">GopherWhisper</option><option value="50">LongNosedGoblin</option><option value="54">QTFY</option><option value="36">Salt Typhoon</option><option value="53">Shadow-Earth-053</option><option value="56">Silver Fox</option>
   </select>
   <input type="search" data-key="text" placeholder="搜索事件">
 </div>
 
-<p class="muted">共 10 起事件</p>
+<p class="muted">共 23 起事件</p>
 
 <table>
   <thead><tr>
@@ -64,6 +64,136 @@
     <th>受害者</th><th>置信度</th><th>来源</th>
   </tr></thead>
   <tbody>
+  
+  <tr data-direction="unclear" data-country="" data-sector="" data-actor="" data-text="valleyrat delivered via trojanized qn wallpaper installer a malicious installer disguised as adware deployed a modified version of the chinese desktop wallpaper management tool qn wallpaper, which performed dll sideloading and dropped a persistence file into the startup folder to ultimately launch the valleyrat malware.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/23">ValleyRAT Delivered via Trojanized QN Wallpaper Installer</a></td>
+    <td><span class="tag unclear">不明</span></td>
+    <td>—</td>
+    <td> </td>
+    <td>低</td>
+    <td><a href="/zh_CN/articles/439">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="critical infrastructure" data-actor="55" data-text="fire ant (unc3886) expands to trusted network infrastructure in 2026 the china-linked threat actor fire ant (aka unc3886) compromised routers (including cisco ios xr), tacacs servers, authentication systems, and linux management hosts to maintain covert access, collect credentials and traffic, and pivot into connected high-value and third-party environments. the group deployed the medusa rootkit, custom ssh backdoors, zabbix-masquerading malware (bridgeagent), and a tacacs credential-collection tool (tactap), while suppressing router logging and manipulating command output and host logs to evade detection.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/22">Fire Ant (UNC3886) Expands to Trusted Network Infrastructure in 2026</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td><a href="/zh_CN/actors/55">Fire Ant</a></td>
+    <td> critical infrastructure</td>
+    <td>高</td>
+    <td><a href="/zh_CN/articles/439">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="" data-actor="" data-text="chinese-made zbt routers found with speakingstone and darklantern backdoors firmware analysis of zbt deep orange 3g/4g/lte routers uncovered two previously unknown backdoors, speakingstone and darklantern, in addition to a prior backdoor called endlessdoors found across at least 21 firmware images from the chinese vendor. the implants phone home to zbt cloud/chinese c2 infrastructure over udp and allow unauthenticated remote command execution on the wan interface.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/21">Chinese-Made ZBT Routers Found with SPEAKINGSTONE and DARKLANTERN Backdoors</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td>—</td>
+    <td> </td>
+    <td>高</td>
+    <td><a href="/zh_CN/articles/439">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="US" data-sector="critical infrastructure" data-actor="54" data-text="fbi disrupts qtfy chinese cyber espionage proxy network the fbi disrupted infrastructure tied to a technical quartermaster known as qtfy (referred to as qtyf in the article), which sold reconnaissance, proxy management, and operational routing capabilities via its qscan and qtrouter frameworks to support chinese cyber espionage operations against u.s. critical infrastructure. qtfy is linked to china-based nanjing xinjiuwei network technology company.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/20">FBI Disrupts QTFY Chinese Cyber Espionage Proxy Network</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td><a href="/zh_CN/actors/54">QTFY</a></td>
+    <td>US critical infrastructure</td>
+    <td>高</td>
+    <td><a href="/zh_CN/articles/439">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="PH" data-sector="critical infrastructure" data-actor="" data-text="chinese actor exploits owncloud/wordpress flaws to breach philippine nuclear and naval-linked organizations a chinese threat actor exploited known owncloud and wordpress vulnerabilities to compromise sensitive organizations in the philippines, including a nuclear research agency and a marine engineering contractor supporting the philippine navy. the attackers obtained reactor-related records, employee information, and credentials.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/19">Chinese actor exploits ownCloud/WordPress flaws to breach Philippine nuclear and naval-linked organizations</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td>—</td>
+    <td>PH critical infrastructure</td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/432">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="US" data-sector="critical infrastructure" data-actor="54" data-text="us disrupts qtfy&#39;s qscan and qtrouter platforms targeting critical infrastructure u.s. authorities disrupted qscan and qtrouter, two platforms operated by china-linked group qtfy to target u.s. critical infrastructure and government networks. qscan infected internet-connected devices, while qtrouter used compromised systems to conceal the origin of intrusions targeting agencies including nasa, the federal reserve, and the department of energy.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/18">US disrupts QTFY&#39;s QScan and QTRouter platforms targeting critical infrastructure</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td><a href="/zh_CN/actors/54">QTFY</a></td>
+    <td>US critical infrastructure</td>
+    <td>高</td>
+    <td><a href="/zh_CN/articles/432">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="" data-actor="56" data-text="silver fox tax-themed campaign against organizations in india and russia kaspersky previously tracked silver fox running an earlier tax-themed campaign targeting organizations in india and russia, distinct from the qn wallpaper adware campaign.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/17">Silver Fox tax-themed campaign against organizations in India and Russia</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td><a href="/zh_CN/actors/56">Silver Fox</a></td>
+    <td> </td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/440">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="JP" data-sector="manufacturing" data-actor="56" data-text="silver fox dll-sideloading campaign against a japanese manufacturer about five weeks before the qn wallpaper report, cato networks documented a silver fox campaign against a japanese manufacturer that abused legitimate signed applications for dll sideloading, consistent with the group&#39;s established toolkit.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/16">Silver Fox DLL-sideloading campaign against a Japanese manufacturer</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td><a href="/zh_CN/actors/56">Silver Fox</a></td>
+    <td>JP manufacturing</td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/440">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="" data-actor="56" data-text="silver fox distributes valleyrat via trojanized qn wallpaper adware using dll sideloading kaspersky analyzed an installer disguising the valleyrat (winos 4.0) backdoor as a modified copy of the legitimate chinese adware qn wallpaper. the installer sideloads a malicious libcef.dll into the signed qnwallpaper.exe process, disables windows defender, adds autorun persistence, self-elevates via runas, and marks its process as critical to resist termination; kaspersky assessed silver fox as the likely operator based on geography and payload.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/15">Silver Fox distributes ValleyRAT via trojanized QN Wallpaper adware using DLL sideloading</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td><a href="/zh_CN/actors/56">Silver Fox</a></td>
+    <td> </td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/440">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="telecommunications" data-actor="36" data-text="salt typhoon collects tacacs+ traffic from compromised telecom routers a cisa-led joint advisory published in august 2025 attributed to salt typhoon the collection of router and tacacs+ traffic to harvest administrator credentials across compromised telecommunications networks, activity the current fire ant report describes as parallel tradecraft.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/14">Salt Typhoon collects TACACS+ traffic from compromised telecom routers</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td><a href="/zh_CN/actors/36">Salt Typhoon</a></td>
+    <td> telecommunications</td>
+    <td>高</td>
+    <td><a href="/zh_CN/articles/443">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="critical infrastructure" data-actor="55" data-text="fire ant expands campaign to cisco ios xr routers, tacacs servers, and linux hosts china-nexus actor fire ant expanded a long-running intrusion beyond vmware esxi/vcenter to compromise cisco ios xr routers, tacacs authentication servers, and linux management hosts, deploying new tools tactap (a tac_plus library-injection credential collector) and bridgeagent (a zabbix-masquerading backdoor) alongside medusa/reptile rootkits to capture traffic, steal credentials, and suppress logging. sygnia assessed strong but inconclusive overlap with unc3886, and found limited scanning/probing (not confirmed compromise) against connected critical infrastructure.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/13">Fire Ant expands campaign to Cisco IOS XR routers, TACACS servers, and Linux hosts</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td><a href="/zh_CN/actors/55">Fire Ant</a></td>
+    <td> critical infrastructure</td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/443">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="US" data-sector="government" data-actor="54" data-text="qtfy attempted intrusion into nasa via pulse secure vpn vulnerability in 2019, qtfy attempted to breach the national aeronautics and space administration by exploiting cve-2019-11510, a critical vulnerability in pulse secure vpn.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/12">QTFY attempted intrusion into NASA via Pulse Secure VPN vulnerability</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td><a href="/zh_CN/actors/54">QTFY</a></td>
+    <td>US government</td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/444">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="US" data-sector="critical infrastructure" data-actor="54" data-text="qtfy campaign targeting u.s. federal agencies and critical infrastructure via orb proxy network qtfy, a china-based technical quartermaster affiliated with the ministry of state security, used its qscan vulnerability-scanning platform and qtrouter obfuscation network to target u.s. federal agencies (nasa, federal reserve, doe, doj, hhs, nih, u.s. senate) as well as hospitals, telecom operators, power companies, financial institutions, and defense contractors. the fbi seized domains tied to qscan and qtrouter (qtproxy[.]xyz, qt-proxy[.]org, qt-team[.]com) to disrupt the operation.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/11">QTFY campaign targeting U.S. federal agencies and critical infrastructure via ORB proxy network</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    <td><a href="/zh_CN/actors/54">QTFY</a></td>
+    <td>US critical infrastructure</td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/444">文章</a></td>
+  </tr>
   
   <tr data-direction="from_cn" data-country="PH" data-sector="research" data-actor="" data-text="chinese-speaking actor exploits owncloud flaw to breach philippine nuclear research body a chinese-speaking threat actor exploited cve-2023-49105, a critical authentication bypass vulnerability in owncloud, to compromise a nuclear research institution in the philippines and steal records. cisa subsequently added the vulnerability to its known exploited vulnerabilities catalog.">
     <td class="muted">2026-08-28</td>
@@ -174,8 +304,8 @@
 </main>
 <footer>
 <p class="stamp">
-数据更新于 2026年8月31日 03:46:27
- · 页面生成于 2026年8月31日 03:48:15
+数据更新于 2026年9月1日 05:25:05
+ · 页面生成于 2026年9月1日 05:30:11
  · 每天 09:00 (UTC+8) 自动更新
  <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
        data-template="距下次更新还有 %(h)s 小时 %(m)s 分"></span>

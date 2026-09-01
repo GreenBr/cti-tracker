@@ -41,7 +41,7 @@
 </dl>
 
 
-<h2>Incidents (1)</h2>
+<h2>Incidents (5)</h2>
 
 <table>
   <thead><tr>
@@ -50,6 +50,46 @@
     <th>Victim</th><th>Confidence</th><th>Source</th>
   </tr></thead>
   <tbody>
+  
+  <tr data-direction="from_cn" data-country="US" data-sector="critical infrastructure" data-actor="54" data-text="fbi disrupts qtfy chinese cyber espionage proxy network the fbi disrupted infrastructure tied to a technical quartermaster known as qtfy (referred to as qtyf in the article), which sold reconnaissance, proxy management, and operational routing capabilities via its qscan and qtrouter frameworks to support chinese cyber espionage operations against u.s. critical infrastructure. qtfy is linked to china-based nanjing xinjiuwei network technology company.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/en/incidents/20">FBI Disrupts QTFY Chinese Cyber Espionage Proxy Network</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    
+    <td>US critical infrastructure</td>
+    <td>High</td>
+    <td><a href="/en/articles/439">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="US" data-sector="critical infrastructure" data-actor="54" data-text="us disrupts qtfy&#39;s qscan and qtrouter platforms targeting critical infrastructure u.s. authorities disrupted qscan and qtrouter, two platforms operated by china-linked group qtfy to target u.s. critical infrastructure and government networks. qscan infected internet-connected devices, while qtrouter used compromised systems to conceal the origin of intrusions targeting agencies including nasa, the federal reserve, and the department of energy.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/en/incidents/18">US disrupts QTFY&#39;s QScan and QTRouter platforms targeting critical infrastructure</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    
+    <td>US critical infrastructure</td>
+    <td>High</td>
+    <td><a href="/en/articles/432">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="US" data-sector="government" data-actor="54" data-text="qtfy attempted intrusion into nasa via pulse secure vpn vulnerability in 2019, qtfy attempted to breach the national aeronautics and space administration by exploiting cve-2019-11510, a critical vulnerability in pulse secure vpn.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/en/incidents/12">QTFY attempted intrusion into NASA via Pulse Secure VPN vulnerability</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    
+    <td>US government</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/444">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="US" data-sector="critical infrastructure" data-actor="54" data-text="qtfy campaign targeting u.s. federal agencies and critical infrastructure via orb proxy network qtfy, a china-based technical quartermaster affiliated with the ministry of state security, used its qscan vulnerability-scanning platform and qtrouter obfuscation network to target u.s. federal agencies (nasa, federal reserve, doe, doj, hhs, nih, u.s. senate) as well as hospitals, telecom operators, power companies, financial institutions, and defense contractors. the fbi seized domains tied to qscan and qtrouter (qtproxy[.]xyz, qt-proxy[.]org, qt-team[.]com) to disrupt the operation.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/en/incidents/11">QTFY campaign targeting U.S. federal agencies and critical infrastructure via ORB proxy network</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    
+    <td>US critical infrastructure</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/444">Article</a></td>
+  </tr>
   
   <tr data-direction="from_cn" data-country="US" data-sector="critical infrastructure" data-actor="54" data-text="fbi disrupts qtfy infrastructure (qscan/qtrouter) used against u.s. organizations the u.s. department of justice announced the disruption of two hacking platforms, qscan and qtrouter, operated by a chinese state-sponsored threat actor known as qtfy, employed by nanjing xinjiuwei network technology company. the platforms were used to target critical infrastructure and other sensitive networks in the united states and steal data from u.s. organizations.">
     <td class="muted">2026-08-26</td>
@@ -68,12 +108,14 @@
 <div class="charts">
   <div class="chart">
     <h3>TTP frequency</h3>
-    <p class="empty">No TTPs recorded.</p>
+    <table><thead><tr><th>Technique</th><th>Count</th></tr></thead><tbody>
+    <tr><td><a href="https://attack.mitre.org/techniques/T1090/">T1090</a> Proxy</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1090/003/">T1090.003</a> Proxy: Multi-hop Proxy</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1190/">T1190</a> Exploit Public-Facing Application</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1584/005/">T1584.005</a> Compromise Infrastructure: Botnet</td><td>1</td></tr>
+    </tbody></table>
   </div>
   <div class="chart">
     <h3>Victim sectors</h3>
     <table><thead><tr><th>Sector</th><th>Count</th></tr></thead><tbody>
-    <tr><td>critical infrastructure</td><td>1</td></tr>
+    <tr><td>critical infrastructure</td><td>4</td></tr><tr><td>government</td><td>1</td></tr>
     </tbody></table>
   </div>
 </div>
@@ -81,8 +123,8 @@
 </main>
 <footer>
 <p class="stamp">
-Data updated Aug 31, 2026, 3:46:27 AM
- · Page generated Aug 31, 2026, 3:48:15 AM
+Data updated Sep 1, 2026, 5:25:05 AM
+ · Page generated Sep 1, 2026, 5:30:10 AM
  · Updated daily at 09:00 (UTC+8)
  <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
        data-template="next update in %(h)s h %(m)s min"></span>

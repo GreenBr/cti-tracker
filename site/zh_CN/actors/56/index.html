@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silver Fox · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/zh_CN/">CTI Tracker</a>
+  <nav>
+    <a href="/zh_CN/">最新</a>
+    <a href="/zh_CN/incidents">事件</a>
+    <a href="/zh_CN/actors">攻击组织</a>
+    <a href="/zh_CN/trends">趋势</a>
+    <a href="/zh_CN/about">关于</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">语言</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" >English</option>
+      
+      <option value="zh_CN" selected>中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Silver Fox</h1>
+<dl>
+  <dt>别名</dt><dd>—</dd>
+  <dt>MITRE 编号</dt><dd>—</dd>
+  <dt>归因国家</dt><dd>—</dd>
+</dl>
+
+
+<h2>事件 (3)</h2>
+
+<table>
+  <thead><tr>
+    <th>报道日期</th><th>标题</th><th>方向</th>
+    
+    <th>受害者</th><th>置信度</th><th>来源</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="" data-actor="56" data-text="silver fox tax-themed campaign against organizations in india and russia kaspersky previously tracked silver fox running an earlier tax-themed campaign targeting organizations in india and russia, distinct from the qn wallpaper adware campaign.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/17">Silver Fox tax-themed campaign against organizations in India and Russia</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    
+    <td> </td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/440">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="JP" data-sector="manufacturing" data-actor="56" data-text="silver fox dll-sideloading campaign against a japanese manufacturer about five weeks before the qn wallpaper report, cato networks documented a silver fox campaign against a japanese manufacturer that abused legitimate signed applications for dll sideloading, consistent with the group&#39;s established toolkit.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/16">Silver Fox DLL-sideloading campaign against a Japanese manufacturer</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    
+    <td>JP manufacturing</td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/440">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="" data-actor="56" data-text="silver fox distributes valleyrat via trojanized qn wallpaper adware using dll sideloading kaspersky analyzed an installer disguising the valleyrat (winos 4.0) backdoor as a modified copy of the legitimate chinese adware qn wallpaper. the installer sideloads a malicious libcef.dll into the signed qnwallpaper.exe process, disables windows defender, adds autorun persistence, self-elevates via runas, and marks its process as critical to resist termination; kaspersky assessed silver fox as the likely operator based on geography and payload.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_CN/incidents/15">Silver Fox distributes ValleyRAT via trojanized QN Wallpaper adware using DLL sideloading</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    
+    <td> </td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/440">文章</a></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<div class="charts">
+  <div class="chart">
+    <h3>TTP 频次</h3>
+    <table><thead><tr><th>技术</th><th>数量</th></tr></thead><tbody>
+    <tr><td><a href="https://attack.mitre.org/techniques/T1574/002/">T1574.002</a> Hijack Execution Flow: DLL Side-Loading</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1056/001/">T1056.001</a> Input Capture: Keylogging</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1113/">T1113</a> Screen Capture</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1115/">T1115</a> Clipboard Data</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1547/001/">T1547.001</a> Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1548/002/">T1548.002</a> Abuse Elevation Control Mechanism: Bypass User Account Control</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1562/001/">T1562.001</a> Impair Defenses: Disable or Modify Tools</td><td>1</td></tr>
+    </tbody></table>
+  </div>
+  <div class="chart">
+    <h3>受害行业</h3>
+    <table><thead><tr><th>行业</th><th>数量</th></tr></thead><tbody>
+    <tr><td>（未知）</td><td>2</td></tr><tr><td>manufacturing</td><td>1</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+</main>
+<footer>
+<p class="stamp">
+数据更新于 2026年9月1日 05:25:05
+ · 页面生成于 2026年9月1日 05:30:12
+ · 每天 09:00 (UTC+8) 自动更新
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="距下次更新还有 %(h)s 小时 %(m)s 分"></span>
+</p>
+
+<p>本站仅收录摘要与元数据；原文请通过来源链接访问。</p>
+<p>MITRE ATT&amp;CK® 是 The MITRE Corporation 的注册商标；ATT&amp;CK 内容按署名要求使用。</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

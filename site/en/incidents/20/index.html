@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FBI Disrupts QTFY Chinese Cyber Espionage Proxy Network · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Latest</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+    <a href="/en/about">About</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>FBI Disrupts QTFY Chinese Cyber Espionage Proxy Network</h1>
+<p><span class="tag from_cn">From China (PRC-attributed actor)</span>
+   <span class="muted">Confidence: High</span></p>
+<p>The FBI disrupted infrastructure tied to a technical quartermaster known as QTFY (referred to as QTYF in the article), which sold reconnaissance, proxy management, and operational routing capabilities via its QScan and QTRouter frameworks to support Chinese cyber espionage operations against U.S. critical infrastructure. QTFY is linked to China-based Nanjing Xinjiuwei Network Technology Company.</p>
+<dl>
+  <dt>Actor</dt><dd><a href="/en/actors/54">QTFY</a></dd>
+  <dt>Occurred</dt><dd>2026-08</dd>
+  <dt>Reported</dt><dd>2026-08-31</dd>
+  <dt>Victim country</dt><dd>US</dd>
+  <dt>Victim sector</dt><dd>critical infrastructure</dd>
+  <dt>TTPs</dt><dd><a href="https://attack.mitre.org/techniques/T1090/">T1090</a> Proxy</dd>
+  <dt>Source</dt><dd><a href="/en/articles/439">⚡ Weekly Recap: Chinese Spy Proxy, AI Agents Go Off-Task, Router Backdoors and More</a> · <a href="https://thehackernews.com/2026/08/weekly-recap-chinese-spy-proxy-ai.html" rel="noopener">Original</a></dd>
+</dl>
+
+</main>
+<footer>
+<p class="stamp">
+Data updated Sep 1, 2026, 5:25:05 AM
+ · Page generated Sep 1, 2026, 5:30:10 AM
+ · Updated daily at 09:00 (UTC+8)
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="next update in %(h)s h %(m)s min"></span>
+</p>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fire Ant · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/zh_TW/">CTI Tracker</a>
+  <nav>
+    <a href="/zh_TW/">最新</a>
+    <a href="/zh_TW/incidents">事件</a>
+    <a href="/zh_TW/actors">攻擊組織</a>
+    <a href="/zh_TW/trends">趨勢</a>
+    <a href="/zh_TW/about">關於</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">語言</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" >English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" selected>中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Fire Ant</h1>
+<dl>
+  <dt>別名</dt><dd>Fire Ant</dd>
+  <dt>MITRE 編號</dt><dd>—</dd>
+  <dt>歸因國家</dt><dd>—</dd>
+</dl>
+
+
+<h2>事件 (2)</h2>
+
+<table>
+  <thead><tr>
+    <th>報導日期</th><th>標題</th><th>方向</th>
+    
+    <th>受害者</th><th>置信度</th><th>來源</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="critical infrastructure" data-actor="55" data-text="fire ant (unc3886) expands to trusted network infrastructure in 2026 the china-linked threat actor fire ant (aka unc3886) compromised routers (including cisco ios xr), tacacs servers, authentication systems, and linux management hosts to maintain covert access, collect credentials and traffic, and pivot into connected high-value and third-party environments. the group deployed the medusa rootkit, custom ssh backdoors, zabbix-masquerading malware (bridgeagent), and a tacacs credential-collection tool (tactap), while suppressing router logging and manipulating command output and host logs to evade detection.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_TW/incidents/22">Fire Ant (UNC3886) Expands to Trusted Network Infrastructure in 2026</a></td>
+    <td><span class="tag from_cn">來自中國（歸因於中國的攻擊組織）</span></td>
+    
+    <td> critical infrastructure</td>
+    <td>高</td>
+    <td><a href="/zh_TW/articles/439">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="critical infrastructure" data-actor="55" data-text="fire ant expands campaign to cisco ios xr routers, tacacs servers, and linux hosts china-nexus actor fire ant expanded a long-running intrusion beyond vmware esxi/vcenter to compromise cisco ios xr routers, tacacs authentication servers, and linux management hosts, deploying new tools tactap (a tac_plus library-injection credential collector) and bridgeagent (a zabbix-masquerading backdoor) alongside medusa/reptile rootkits to capture traffic, steal credentials, and suppress logging. sygnia assessed strong but inconclusive overlap with unc3886, and found limited scanning/probing (not confirmed compromise) against connected critical infrastructure.">
+    <td class="muted">2026-08-31</td>
+    <td><a href="/zh_TW/incidents/13">Fire Ant expands campaign to Cisco IOS XR routers, TACACS servers, and Linux hosts</a></td>
+    <td><span class="tag from_cn">來自中國（歸因於中國的攻擊組織）</span></td>
+    
+    <td> critical infrastructure</td>
+    <td>中</td>
+    <td><a href="/zh_TW/articles/443">文章</a></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<div class="charts">
+  <div class="chart">
+    <h3>TTP 頻次</h3>
+    <table><thead><tr><th>技術</th><th>數量</th></tr></thead><tbody>
+    <tr><td><a href="https://attack.mitre.org/techniques/T1014/">T1014</a> Rootkit</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1021/004/">T1021.004</a> Remote Services: SSH</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1036/005/">T1036.005</a> Masquerading: Match Legitimate Name or Location</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1070/">T1070</a> Indicator Removal</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1070/002/">T1070.002</a> Indicator Removal: Clear Linux or Mac System Logs</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1071/001/">T1071.001</a> Application Layer Protocol: Web Protocols</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1543/002/">T1543.002</a> Create or Modify System Process: Systemd Service</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1556/">T1556</a> Modify Authentication Process</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1562/001/">T1562.001</a> Impair Defenses: Disable or Modify Tools</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1572/">T1572</a> Protocol Tunneling</td><td>1</td></tr>
+    </tbody></table>
+  </div>
+  <div class="chart">
+    <h3>受害行業</h3>
+    <table><thead><tr><th>行業</th><th>數量</th></tr></thead><tbody>
+    <tr><td>critical infrastructure</td><td>2</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+</main>
+<footer>
+<p class="stamp">
+資料更新於 2026年9月1日 清晨5:25:05
+ · 頁面生成於 2026年9月1日 清晨5:30:14
+ · 每天 09:00 (UTC+8) 自動更新
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="距下次更新還有 %(h)s 小時 %(m)s 分"></span>
+</p>
+
+<p>本站僅收錄摘要與後設資料；原文請透過來源連結檢視。</p>
+<p>MITRE ATT&amp;CK® 是 The MITRE Corporation 的註冊商標；ATT&amp;CK 內容按署名要求使用。</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>
