@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nearly 22,000 Microsoft Exchange servers vulnerable to hijack attacks · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Latest</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+    <a href="/en/about">About</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Nearly 22,000 Microsoft Exchange servers vulnerable to hijack attacks</h1>
+<dl>
+  <dt>Source</dt><dd>BleepingComputer · News · <a href="https://www.bleepingcomputer.com/news/security/nearly-22-000-microsoft-exchange-servers-vulnerable-to-hijack-attacks/" rel="noopener">Original</a></dd>
+  <dt>Published</dt><dd>2026-09-01</dd>
+  <dt>Fetched</dt><dd>2026-09-02</dd>
+  <dt>Relevance</dt><dd>Candidate</dd>
+  <dt>Extraction</dt><dd><span class="tag failed">Failed</span> <span class="muted">claude exit 1: {&#34;duration_api_ms&#34;:0,&#34;stop_reason&#34;:&#34;stop_sequence&#34;,&#34;session_id&#34;:&#34;97df87db-2564-4ce5-84f5-3d588728404d&#34;,&#34;total_cost_usd&#34;:0,&#34;usage&#34;:{&#34;output_tokens_details&#34;:{&#34;thinking_tokens&#34;:0},&#34;input_tokens&#34;:0,&#34;cache_creation_input_tokens&#34;:0,&#34;cache_read_input_tokens&#34;:0,&#34;output_tokens&#34;:0,&#34;server_tool_use&#34;:{&#34;web_search_requests&#34;:0,&#34;web_fetch_requests&#34;:0},&#34;service_tier&#34;:&#34;standard&#34;,&#34;cache_creation&#34;:{&#34;ephemeral_1h_input_tokens&#34;:0,&#34;ephemeral_5m_input_tokens&#34;:0},&#34;inference_geo&#34;:&#34;&#34;,&#34;iterations&#34;:[],&#34;speed&#34;:&#34;standard&#34;},&#34;</span></dd>
+  
+</dl>
+<h2>Incidents extracted from this article</h2>
+<p class="empty">None.</p>
+<h2>Article text</h2>
+<article class="body"></article>
+
+</main>
+<footer>
+<p class="stamp">
+Data updated Sep 2, 2026, 1:01:09 AM
+ · Page generated Sep 2, 2026, 1:04:04 AM
+ · Updated daily at 09:00 (UTC+8)
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="next update in %(h)s h %(m)s min"></span>
+</p>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>
