@@ -41,7 +41,7 @@
 </dl>
 
 
-<h2>Incidents (3)</h2>
+<h2>Incidents (5)</h2>
 
 <table>
   <thead><tr>
@@ -50,6 +50,26 @@
     <th>Victim</th><th>Confidence</th><th>Source</th>
   </tr></thead>
   <tbody>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="" data-actor="56" data-text="qn wallpaper dll sideloading chain delivers valleyrat (silver fox) kaspersky detailed a malicious installer that deploys a trojanized version of the legitimate chinese adware tool qn wallpaper to perform dll sideloading and deliver the valleyrat backdoor, which captures keystrokes and clipboard contents and resists termination. kaspersky attributed the activity to silver fox, describing it as motivated by both cyber espionage and financial gain and targeting organizations across multiple countries.">
+    <td class="muted">2026-09-02</td>
+    <td><a href="/en/incidents/29">QN Wallpaper DLL sideloading chain delivers ValleyRAT (Silver Fox)</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    
+    <td> </td>
+    <td>Medium</td>
+    <td><a href="/en/articles/503">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="CN" data-sector="" data-actor="56" data-text="fake software installer campaign linked to silver fox disables windows update and weakens defender microsoft identified an active campaign using spoofed vendor download sites (e.g. fake microsoft edge, baidu, kaspersky, diskgenius pages hosted on .com.cn/.hl.cn domains) to distribute malicious installers that disable windows update services, weaken microsoft defender, delete shadow copies, and establish c2 on non-standard ports. microsoft assessed with moderate confidence that the activity is consistent with the chinese threat cluster silver fox, which typically delivers gh0st rat and valleyrat, and victims were primarily china-based operations of multinational organizations and chinese-speaking users across healthcare, manufacturing, gaming, technology, logistics, government, and education sectors.">
+    <td class="muted">2026-09-02</td>
+    <td><a href="/en/incidents/28">Fake software installer campaign linked to Silver Fox disables Windows Update and weakens Defender</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    
+    <td>CN </td>
+    <td>Medium</td>
+    <td><a href="/en/articles/503">Article</a></td>
+  </tr>
   
   <tr data-direction="from_cn" data-country="" data-sector="" data-actor="56" data-text="silver fox tax-themed campaign against organizations in india and russia kaspersky previously tracked silver fox running an earlier tax-themed campaign targeting organizations in india and russia, distinct from the qn wallpaper adware campaign.">
     <td class="muted">2026-08-31</td>
@@ -89,13 +109,13 @@
   <div class="chart">
     <h3>TTP frequency</h3>
     <table><thead><tr><th>Technique</th><th>Count</th></tr></thead><tbody>
-    <tr><td><a href="https://attack.mitre.org/techniques/T1574/002/">T1574.002</a> Hijack Execution Flow: DLL Side-Loading</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1056/001/">T1056.001</a> Input Capture: Keylogging</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1113/">T1113</a> Screen Capture</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1115/">T1115</a> Clipboard Data</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1547/001/">T1547.001</a> Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1548/002/">T1548.002</a> Abuse Elevation Control Mechanism: Bypass User Account Control</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1562/001/">T1562.001</a> Impair Defenses: Disable or Modify Tools</td><td>1</td></tr>
+    <tr><td><a href="https://attack.mitre.org/techniques/T1574/002/">T1574.002</a> Hijack Execution Flow: DLL Side-Loading</td><td>3</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1056/001/">T1056.001</a> Input Capture: Keylogging</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1115/">T1115</a> Clipboard Data</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1562/001/">T1562.001</a> Impair Defenses: Disable or Modify Tools</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1036/">T1036</a> Masquerading</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1053/005/">T1053.005</a> Scheduled Task/Job: Scheduled Task</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1113/">T1113</a> Screen Capture</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1204/002/">T1204.002</a> User Execution: Malicious File</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1222/">T1222</a> File and Directory Permissions Modification</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1489/">T1489</a> Service Stop</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1490/">T1490</a> Inhibit System Recovery</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1547/001/">T1547.001</a> Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1548/002/">T1548.002</a> Abuse Elevation Control Mechanism: Bypass User Account Control</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1571/">T1571</a> Non-Standard Port</td><td>1</td></tr>
     </tbody></table>
   </div>
   <div class="chart">
     <h3>Victim sectors</h3>
     <table><thead><tr><th>Sector</th><th>Count</th></tr></thead><tbody>
-    <tr><td>(unknown)</td><td>2</td></tr><tr><td>manufacturing</td><td>1</td></tr>
+    <tr><td>(unknown)</td><td>4</td></tr><tr><td>manufacturing</td><td>1</td></tr>
     </tbody></table>
   </div>
 </div>
@@ -103,8 +123,8 @@
 </main>
 <footer>
 <p class="stamp">
-Data updated Sep 2, 2026, 1:01:09 AM
- · Page generated Sep 2, 2026, 1:04:02 AM
+Data updated Sep 3, 2026, 7:23:55 AM
+ · Page generated Sep 3, 2026, 7:30:15 AM
  · Updated daily at 09:00 (UTC+8)
  <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
        data-template="next update in %(h)s h %(m)s min"></span>

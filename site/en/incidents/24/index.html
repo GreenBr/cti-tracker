@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chinese-speaking actor (Earth Berberoka-linked) hijacks Brazilian government sites for SEO fraud and phishing · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Latest</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+    <a href="/en/about">About</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Chinese-speaking actor (Earth Berberoka-linked) hijacks Brazilian government sites for SEO fraud and phishing</h1>
+<p><span class="tag from_cn">From China (PRC-attributed actor)</span>
+   <span class="muted">Confidence: Medium</span></p>
+<p>Since mid-2025, a Chinese-speaking cybercrime group whose tradecraft links it to Earth Berberoka has compromised dozens of Brazilian websites, most of them .gov.br federal, state and municipal government domains, and installed custom Apache modules (opsproxy and a second RC4-configured content-injection module) that transparently proxy visitors to attacker-hosted phishing pages impersonating Google Play, Microsoft Store and Amazon, primarily promoting gambling/betting content. The group deploys a broader Linux toolkit including a Go downloader (DownPro), a setuid privilege-escalation backdoor (chuser), a credential stealer, and a Go-based reconnaissance/scanning agent (cam-agent); installer scripts, backdoor help text and phishing-page CSS comments contain Chinese-language strings.</p>
+<dl>
+  <dt>Actor</dt><dd><a href="/en/actors/57">Earth Berberoka</a></dd>
+  <dt>Occurred</dt><dd>2025</dd>
+  <dt>Reported</dt><dd>2026-09-02</dd>
+  <dt>Victim country</dt><dd>BR</dd>
+  <dt>Victim sector</dt><dd>government</dd>
+  <dt>TTPs</dt><dd><a href="https://attack.mitre.org/techniques/T1027/">T1027</a> Obfuscated Files or Information, <a href="https://attack.mitre.org/techniques/T1036/005/">T1036.005</a> Masquerading: Match Legitimate Name or Location, <a href="https://attack.mitre.org/techniques/T1070/006/">T1070.006</a> Indicator Removal: Timestomp, <a href="https://attack.mitre.org/techniques/T1090/">T1090</a> Proxy, <a href="https://attack.mitre.org/techniques/T1105/">T1105</a> Ingress Tool Transfer, <a href="https://attack.mitre.org/techniques/T1140/">T1140</a> Deobfuscate/Decode Files or Information, <a href="https://attack.mitre.org/techniques/T1548/001/">T1548.001</a> Abuse Elevation Control Mechanism: Setuid and Setgid, <a href="https://attack.mitre.org/techniques/T1584/001/">T1584.001</a> Compromise Infrastructure: Domains, <a href="https://attack.mitre.org/techniques/T1584/004/">T1584.004</a> Compromise Infrastructure: Server</dd>
+  <dt>Source</dt><dd><a href="/en/articles/485">Gaming the system: how a Chinese-speaking actor turned Brazilian government sites into an SEO weapon</a> · <a href="https://research.checkpoint.com/2026/gaming-the-system-how-a-chinese-speaking-actor-turned-brazilian-government-sites-into-an-seo-weapon/" rel="noopener">Original</a></dd>
+</dl>
+
+</main>
+<footer>
+<p class="stamp">
+Data updated Sep 3, 2026, 7:23:55 AM
+ · Page generated Sep 3, 2026, 7:30:15 AM
+ · Updated daily at 09:00 (UTC+8)
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="next update in %(h)s h %(m)s min"></span>
+</p>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

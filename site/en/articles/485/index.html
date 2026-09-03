@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gaming the system: how a Chinese-speaking actor turned Brazilian government sites into an SEO weapon · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Latest</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+    <a href="/en/about">About</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Gaming the system: how a Chinese-speaking actor turned Brazilian government sites into an SEO weapon</h1>
+<dl>
+  <dt>Source</dt><dd>Check Point Research · Vendor report · <a href="https://research.checkpoint.com/2026/gaming-the-system-how-a-chinese-speaking-actor-turned-brazilian-government-sites-into-an-seo-weapon/" rel="noopener">Original</a></dd>
+  <dt>Published</dt><dd>2026-09-02</dd>
+  <dt>Fetched</dt><dd>2026-09-03</dd>
+  <dt>Relevance</dt><dd>Candidate</dd>
+  <dt>Extraction</dt><dd><span class="tag done">Done</span></dd>
+  <dt>Actors mentioned</dt><dd><a href="/en/actors/57">Earth Berberoka</a></dd>
+</dl>
+<h2>Incidents extracted from this article</h2>
+
+<table>
+  <thead><tr>
+    <th>Reported</th><th>Title</th><th>Direction</th>
+    <th>Actor</th>
+    <th>Victim</th><th>Confidence</th><th>Source</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr data-direction="from_cn" data-country="BR" data-sector="government" data-actor="57" data-text="chinese-speaking actor (earth berberoka-linked) hijacks brazilian government sites for seo fraud and phishing since mid-2025, a chinese-speaking cybercrime group whose tradecraft links it to earth berberoka has compromised dozens of brazilian websites, most of them .gov.br federal, state and municipal government domains, and installed custom apache modules (opsproxy and a second rc4-configured content-injection module) that transparently proxy visitors to attacker-hosted phishing pages impersonating google play, microsoft store and amazon, primarily promoting gambling/betting content. the group deploys a broader linux toolkit including a go downloader (downpro), a setuid privilege-escalation backdoor (chuser), a credential stealer, and a go-based reconnaissance/scanning agent (cam-agent); installer scripts, backdoor help text and phishing-page css comments contain chinese-language strings.">
+    <td class="muted">2026-09-02</td>
+    <td><a href="/en/incidents/24">Chinese-speaking actor (Earth Berberoka-linked) hijacks Brazilian government sites for SEO fraud and phishing</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td><a href="/en/actors/57">Earth Berberoka</a></td>
+    <td>BR government</td>
+    <td>Medium</td>
+    <td><a href="/en/articles/485">Article</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="VN" data-sector="" data-actor="57" data-text="same actor runs a parallel vietnamese phishing network the same chinese-speaking group that targeted brazilian government sites also operates a second phishing network built for vietnamese victims, reusing the same infrastructure style and app-store-impersonation phishing templates; related templates localized in spanish and english were also observed, indicating the operation is being scaled beyond brazil.">
+    <td class="muted">2026-09-02</td>
+    <td><a href="/en/incidents/25">Same actor runs a parallel Vietnamese phishing network</a></td>
+    <td><span class="tag from_cn">From China (PRC-attributed actor)</span></td>
+    <td><a href="/en/actors/57">Earth Berberoka</a></td>
+    <td>VN </td>
+    <td>Low</td>
+    <td><a href="/en/articles/485">Article</a></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+<h2>Article text</h2>
+<article class="body"></article>
+
+</main>
+<footer>
+<p class="stamp">
+Data updated Sep 3, 2026, 7:23:55 AM
+ · Page generated Sep 3, 2026, 7:30:16 AM
+ · Updated daily at 09:00 (UTC+8)
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="next update in %(h)s h %(m)s min"></span>
+</p>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

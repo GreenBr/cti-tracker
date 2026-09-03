@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Earth Berberoka · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/zh_CN/">CTI Tracker</a>
+  <nav>
+    <a href="/zh_CN/">最新</a>
+    <a href="/zh_CN/incidents">事件</a>
+    <a href="/zh_CN/actors">攻击组织</a>
+    <a href="/zh_CN/trends">趋势</a>
+    <a href="/zh_CN/about">关于</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">语言</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" >English</option>
+      
+      <option value="zh_CN" selected>中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Earth Berberoka</h1>
+<dl>
+  <dt>别名</dt><dd>Earth Berberoka</dd>
+  <dt>MITRE 编号</dt><dd>—</dd>
+  <dt>归因国家</dt><dd>—</dd>
+</dl>
+
+
+<h2>事件 (3)</h2>
+
+<table>
+  <thead><tr>
+    <th>报道日期</th><th>标题</th><th>方向</th>
+    
+    <th>受害者</th><th>置信度</th><th>来源</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr data-direction="from_cn" data-country="BR" data-sector="government" data-actor="57" data-text="gambling goblin (earth berberoka) hijacks brazilian government apache servers for gambling seo fraud a chinese-speaking cybercrime cluster tracked by check point as gambling goblin, and linked to the actor earth berberoka, has since mid-2025 installed malicious apache modules on compromised brazilian government and educational web servers, reverse-proxying visitors to gambling/betting phishing pages disguised as app stores to manipulate search rankings. the group deployed tools including the downpro downloader, alphaagent backdoor, orat, a 3snake-based ssh/sudo credential stealer, an ssh brute-forcer, and a go-based reconnaissance/scanning agent.">
+    <td class="muted">2026-09-02</td>
+    <td><a href="/zh_CN/incidents/26">Gambling Goblin (Earth Berberoka) hijacks Brazilian government Apache servers for gambling SEO fraud</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    
+    <td>BR government</td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/505">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="VN" data-sector="" data-actor="57" data-text="same actor runs a parallel vietnamese phishing network the same chinese-speaking group that targeted brazilian government sites also operates a second phishing network built for vietnamese victims, reusing the same infrastructure style and app-store-impersonation phishing templates; related templates localized in spanish and english were also observed, indicating the operation is being scaled beyond brazil.">
+    <td class="muted">2026-09-02</td>
+    <td><a href="/zh_CN/incidents/25">Same actor runs a parallel Vietnamese phishing network</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    
+    <td>VN </td>
+    <td>低</td>
+    <td><a href="/zh_CN/articles/485">文章</a></td>
+  </tr>
+  
+  <tr data-direction="from_cn" data-country="BR" data-sector="government" data-actor="57" data-text="chinese-speaking actor (earth berberoka-linked) hijacks brazilian government sites for seo fraud and phishing since mid-2025, a chinese-speaking cybercrime group whose tradecraft links it to earth berberoka has compromised dozens of brazilian websites, most of them .gov.br federal, state and municipal government domains, and installed custom apache modules (opsproxy and a second rc4-configured content-injection module) that transparently proxy visitors to attacker-hosted phishing pages impersonating google play, microsoft store and amazon, primarily promoting gambling/betting content. the group deploys a broader linux toolkit including a go downloader (downpro), a setuid privilege-escalation backdoor (chuser), a credential stealer, and a go-based reconnaissance/scanning agent (cam-agent); installer scripts, backdoor help text and phishing-page css comments contain chinese-language strings.">
+    <td class="muted">2026-09-02</td>
+    <td><a href="/zh_CN/incidents/24">Chinese-speaking actor (Earth Berberoka-linked) hijacks Brazilian government sites for SEO fraud and phishing</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    
+    <td>BR government</td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/485">文章</a></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<div class="charts">
+  <div class="chart">
+    <h3>TTP 频次</h3>
+    <table><thead><tr><th>技术</th><th>数量</th></tr></thead><tbody>
+    <tr><td><a href="https://attack.mitre.org/techniques/T1584/004/">T1584.004</a> Compromise Infrastructure: Server</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1003/">T1003</a> OS Credential Dumping</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1027/">T1027</a> Obfuscated Files or Information</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1036/005/">T1036.005</a> Masquerading: Match Legitimate Name or Location</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1070/006/">T1070.006</a> Indicator Removal: Timestomp</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1090/">T1090</a> Proxy</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1105/">T1105</a> Ingress Tool Transfer</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1110/">T1110</a> Brute Force</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1140/">T1140</a> Deobfuscate/Decode Files or Information</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1548/001/">T1548.001</a> Abuse Elevation Control Mechanism: Setuid and Setgid</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1584/001/">T1584.001</a> Compromise Infrastructure: Domains</td><td>1</td></tr>
+    </tbody></table>
+  </div>
+  <div class="chart">
+    <h3>受害行业</h3>
+    <table><thead><tr><th>行业</th><th>数量</th></tr></thead><tbody>
+    <tr><td>government</td><td>2</td></tr><tr><td>（未知）</td><td>1</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+</main>
+<footer>
+<p class="stamp">
+数据更新于 2026年9月3日 07:23:55
+ · 页面生成于 2026年9月3日 07:30:17
+ · 每天 09:00 (UTC+8) 自动更新
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="距下次更新还有 %(h)s 小时 %(m)s 分"></span>
+</p>
+
+<p>本站仅收录摘要与元数据；原文请通过来源链接访问。</p>
+<p>MITRE ATT&amp;CK® 是 The MITRE Corporation 的注册商标；ATT&amp;CK 内容按署名要求使用。</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

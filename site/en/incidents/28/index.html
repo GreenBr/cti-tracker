@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fake software installer campaign linked to Silver Fox disables Windows Update and weakens Defender · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Latest</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+    <a href="/en/about">About</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Fake software installer campaign linked to Silver Fox disables Windows Update and weakens Defender</h1>
+<p><span class="tag from_cn">From China (PRC-attributed actor)</span>
+   <span class="muted">Confidence: Medium</span></p>
+<p>Microsoft identified an active campaign using spoofed vendor download sites (e.g. fake Microsoft Edge, Baidu, Kaspersky, DiskGenius pages hosted on .com.cn/.hl.cn domains) to distribute malicious installers that disable Windows Update services, weaken Microsoft Defender, delete shadow copies, and establish C2 on non-standard ports. Microsoft assessed with moderate confidence that the activity is consistent with the Chinese threat cluster Silver Fox, which typically delivers Gh0st RAT and ValleyRAT, and victims were primarily China-based operations of multinational organizations and Chinese-speaking users across healthcare, manufacturing, gaming, technology, logistics, government, and education sectors.</p>
+<dl>
+  <dt>Actor</dt><dd><a href="/en/actors/56">Silver Fox</a></dd>
+  <dt>Occurred</dt><dd>Not stated</dd>
+  <dt>Reported</dt><dd>2026-09-02</dd>
+  <dt>Victim country</dt><dd>CN</dd>
+  <dt>Victim sector</dt><dd>—</dd>
+  <dt>TTPs</dt><dd><a href="https://attack.mitre.org/techniques/T1036/">T1036</a> Masquerading, <a href="https://attack.mitre.org/techniques/T1053/005/">T1053.005</a> Scheduled Task/Job: Scheduled Task, <a href="https://attack.mitre.org/techniques/T1204/002/">T1204.002</a> User Execution: Malicious File, <a href="https://attack.mitre.org/techniques/T1222/">T1222</a> File and Directory Permissions Modification, <a href="https://attack.mitre.org/techniques/T1489/">T1489</a> Service Stop, <a href="https://attack.mitre.org/techniques/T1490/">T1490</a> Inhibit System Recovery, <a href="https://attack.mitre.org/techniques/T1562/001/">T1562.001</a> Impair Defenses: Disable or Modify Tools, <a href="https://attack.mitre.org/techniques/T1571/">T1571</a> Non-Standard Port</dd>
+  <dt>Source</dt><dd><a href="/en/articles/503">Fake Software Installers Disable Windows Update and Weaken Microsoft Defender</a> · <a href="https://thehackernews.com/2026/09/fake-software-installers-disable.html" rel="noopener">Original</a></dd>
+</dl>
+
+</main>
+<footer>
+<p class="stamp">
+Data updated Sep 3, 2026, 7:23:55 AM
+ · Page generated Sep 3, 2026, 7:30:15 AM
+ · Updated daily at 09:00 (UTC+8)
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="next update in %(h)s h %(m)s min"></span>
+</p>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>
