@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attackers Expose Ongoing AI Tool Use Targeting Organizations in Latin America · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Latest</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+    <a href="/en/about">About</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Attackers Expose Ongoing AI Tool Use Targeting Organizations in Latin America</h1>
+<dl>
+  <dt>Source</dt><dd>Unit 42 · Vendor report · <a href="https://unit42.paloaltonetworks.com/ai-tool-use-targeting-latam-orgs/" rel="noopener">Original</a></dd>
+  <dt>Published</dt><dd>2026-09-03</dd>
+  <dt>Fetched</dt><dd>2026-09-04</dd>
+  <dt>Relevance</dt><dd>Candidate</dd>
+  <dt>Extraction</dt><dd><span class="tag done">Done</span></dd>
+  
+</dl>
+<h2>Incidents extracted from this article</h2>
+<p class="empty">None.</p>
+<h2>Article text</h2>
+<article class="body"></article>
+
+</main>
+<footer>
+<p class="stamp">
+Data updated Sep 4, 2026, 1:00:48 AM
+ · Page generated Sep 4, 2026, 1:04:07 AM
+ · Updated daily at 09:00 (UTC+8)
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="next update in %(h)s h %(m)s min"></span>
+</p>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

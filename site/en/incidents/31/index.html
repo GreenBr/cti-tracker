@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fire Ant implants on Cisco IOS XR routers used for stealth, packet capture, and exfiltration · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/en/">CTI Tracker</a>
+  <nav>
+    <a href="/en/">Latest</a>
+    <a href="/en/incidents">Incidents</a>
+    <a href="/en/actors">Actors</a>
+    <a href="/en/trends">Trends</a>
+    <a href="/en/about">About</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">Language</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" selected>English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" >中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>Fire Ant implants on Cisco IOS XR routers used for stealth, packet capture, and exfiltration</h1>
+<p><span class="tag from_cn">From China (PRC-attributed actor)</span>
+   <span class="muted">Confidence: Medium</span></p>
+<p>Sygnia reported that the China-nexus threat actor Fire Ant deployed purpose-built implants on Cisco IOS XR routers that suppressed syslog delivery, filtered show command output, and maintained a hidden GRE tunnel. The actor captured router packet traffic, exfiltrated it to external FTP servers, and conducted connection attempts and port scans against connected systems tied to critical infrastructure; Sygnia did not determine the initial access vector.</p>
+<dl>
+  <dt>Actor</dt><dd><a href="/en/actors/55">Fire Ant</a></dd>
+  <dt>Occurred</dt><dd>Not stated</dd>
+  <dt>Reported</dt><dd>2026-09-03</dd>
+  <dt>Victim country</dt><dd>—</dd>
+  <dt>Victim sector</dt><dd>critical infrastructure</dd>
+  <dt>TTPs</dt><dd><a href="https://attack.mitre.org/techniques/T1040/">T1040</a> Network Sniffing, <a href="https://attack.mitre.org/techniques/T1046/">T1046</a> Network Service Scanning, <a href="https://attack.mitre.org/techniques/T1048/">T1048</a> Exfiltration Over Alternative Protocol, <a href="https://attack.mitre.org/techniques/T1572/">T1572</a> Protocol Tunneling</dd>
+  <dt>Source</dt><dd><a href="/en/articles/535">Critical Cisco Nexus 9000 Flaw Lets Unauthenticated Remote Attackers Run Code as Root</a> · <a href="https://thehackernews.com/2026/09/critical-cisco-nexus-9000-flaw-lets.html" rel="noopener">Original</a></dd>
+</dl>
+
+</main>
+<footer>
+<p class="stamp">
+Data updated Sep 4, 2026, 1:00:48 AM
+ · Page generated Sep 4, 2026, 1:04:06 AM
+ · Updated daily at 09:00 (UTC+8)
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="next update in %(h)s h %(m)s min"></span>
+</p>
+
+<p>Summaries and metadata only; follow the source link for the original article.</p>
+<p>MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content used with attribution.</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>

@@ -41,7 +41,7 @@
 </dl>
 
 
-<h2>事件 (2)</h2>
+<h2>事件 (3)</h2>
 
 <table>
   <thead><tr>
@@ -50,6 +50,16 @@
     <th>受害者</th><th>置信度</th><th>来源</th>
   </tr></thead>
   <tbody>
+  
+  <tr data-direction="from_cn" data-country="" data-sector="critical infrastructure" data-actor="55" data-text="fire ant implants on cisco ios xr routers used for stealth, packet capture, and exfiltration sygnia reported that the china-nexus threat actor fire ant deployed purpose-built implants on cisco ios xr routers that suppressed syslog delivery, filtered show command output, and maintained a hidden gre tunnel. the actor captured router packet traffic, exfiltrated it to external ftp servers, and conducted connection attempts and port scans against connected systems tied to critical infrastructure; sygnia did not determine the initial access vector.">
+    <td class="muted">2026-09-03</td>
+    <td><a href="/zh_CN/incidents/31">Fire Ant implants on Cisco IOS XR routers used for stealth, packet capture, and exfiltration</a></td>
+    <td><span class="tag from_cn">来自中国（归因于中国的攻击组织）</span></td>
+    
+    <td> critical infrastructure</td>
+    <td>中</td>
+    <td><a href="/zh_CN/articles/535">文章</a></td>
+  </tr>
   
   <tr data-direction="from_cn" data-country="" data-sector="critical infrastructure" data-actor="55" data-text="fire ant (unc3886) expands to trusted network infrastructure in 2026 the china-linked threat actor fire ant (aka unc3886) compromised routers (including cisco ios xr), tacacs servers, authentication systems, and linux management hosts to maintain covert access, collect credentials and traffic, and pivot into connected high-value and third-party environments. the group deployed the medusa rootkit, custom ssh backdoors, zabbix-masquerading malware (bridgeagent), and a tacacs credential-collection tool (tactap), while suppressing router logging and manipulating command output and host logs to evade detection.">
     <td class="muted">2026-08-31</td>
@@ -79,13 +89,13 @@
   <div class="chart">
     <h3>TTP 频次</h3>
     <table><thead><tr><th>技术</th><th>数量</th></tr></thead><tbody>
-    <tr><td><a href="https://attack.mitre.org/techniques/T1014/">T1014</a> Rootkit</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1021/004/">T1021.004</a> Remote Services: SSH</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1036/005/">T1036.005</a> Masquerading: Match Legitimate Name or Location</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1070/">T1070</a> Indicator Removal</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1070/002/">T1070.002</a> Indicator Removal: Clear Linux or Mac System Logs</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1071/001/">T1071.001</a> Application Layer Protocol: Web Protocols</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1543/002/">T1543.002</a> Create or Modify System Process: Systemd Service</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1556/">T1556</a> Modify Authentication Process</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1562/001/">T1562.001</a> Impair Defenses: Disable or Modify Tools</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1572/">T1572</a> Protocol Tunneling</td><td>1</td></tr>
+    <tr><td><a href="https://attack.mitre.org/techniques/T1014/">T1014</a> Rootkit</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1572/">T1572</a> Protocol Tunneling</td><td>2</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1021/004/">T1021.004</a> Remote Services: SSH</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1036/005/">T1036.005</a> Masquerading: Match Legitimate Name or Location</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1040/">T1040</a> Network Sniffing</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1046/">T1046</a> Network Service Scanning</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1048/">T1048</a> Exfiltration Over Alternative Protocol</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1070/">T1070</a> Indicator Removal</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1070/002/">T1070.002</a> Indicator Removal: Clear Linux or Mac System Logs</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1071/001/">T1071.001</a> Application Layer Protocol: Web Protocols</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1543/002/">T1543.002</a> Create or Modify System Process: Systemd Service</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1556/">T1556</a> Modify Authentication Process</td><td>1</td></tr><tr><td><a href="https://attack.mitre.org/techniques/T1562/001/">T1562.001</a> Impair Defenses: Disable or Modify Tools</td><td>1</td></tr>
     </tbody></table>
   </div>
   <div class="chart">
     <h3>受害行业</h3>
     <table><thead><tr><th>行业</th><th>数量</th></tr></thead><tbody>
-    <tr><td>critical infrastructure</td><td>2</td></tr>
+    <tr><td>critical infrastructure</td><td>3</td></tr>
     </tbody></table>
   </div>
 </div>
@@ -93,8 +103,8 @@
 </main>
 <footer>
 <p class="stamp">
-数据更新于 2026年9月3日 07:23:55
- · 页面生成于 2026年9月3日 07:30:17
+数据更新于 2026年9月4日 01:00:48
+ · 页面生成于 2026年9月4日 01:04:08
  · 每天 09:00 (UTC+8) 自动更新
  <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
        data-template="距下次更新还有 %(h)s 小时 %(m)s 分"></span>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>US Becomes Top Target in RMM Phishing Campaign Spanning 46 Countries · CTI Tracker</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/zh_TW/">CTI Tracker</a>
+  <nav>
+    <a href="/zh_TW/">最新</a>
+    <a href="/zh_TW/incidents">事件</a>
+    <a href="/zh_TW/actors">攻擊組織</a>
+    <a href="/zh_TW/trends">趨勢</a>
+    <a href="/zh_TW/about">關於</a>
+  </nav>
+  
+  <div class="lang">
+    <label for="lang">語言</label>
+    <select id="lang" onchange="var p=location.pathname.split('/');p[1]=this.value;location.href=p.join('/');">
+      
+      <option value="en" >English</option>
+      
+      <option value="zh_CN" >中文 (简体)</option>
+      
+      <option value="zh_TW" selected>中文 (繁體)</option>
+      
+    </select>
+  </div>
+  
+</header>
+<main>
+
+<h1>US Becomes Top Target in RMM Phishing Campaign Spanning 46 Countries</h1>
+<dl>
+  <dt>來源</dt><dd>The Hacker News · 新聞 · <a href="https://thehackernews.com/2026/09/us-becomes-top-target-in-rmm-phishing.html" rel="noopener">原文</a></dd>
+  <dt>發布日期</dt><dd>2026-09-03</dd>
+  <dt>抓取日期</dt><dd>2026-09-04</dd>
+  <dt>相關性</dt><dd>候選</dd>
+  <dt>提取狀態</dt><dd><span class="tag done">已完成</span></dd>
+  
+</dl>
+<h2>從本文提取的事件</h2>
+<p class="empty">無。</p>
+<h2>文章正文</h2>
+<article class="body"></article>
+
+</main>
+<footer>
+<p class="stamp">
+資料更新於 2026年9月4日 凌晨1:00:48
+ · 頁面生成於 2026年9月4日 凌晨1:04:14
+ · 每天 09:00 (UTC+8) 自動更新
+ <span id="next-update" data-hour="9" data-minute="0" data-offset="8"
+       data-template="距下次更新還有 %(h)s 小時 %(m)s 分"></span>
+</p>
+
+<p>本站僅收錄摘要與後設資料；原文請透過來源連結檢視。</p>
+<p>MITRE ATT&amp;CK® 是 The MITRE Corporation 的註冊商標；ATT&amp;CK 內容按署名要求使用。</p>
+
+</footer>
+<script>
+(function () {
+  const el = document.getElementById("next-update"); if (!el) return;
+  function tick() {
+    const h = +el.dataset.hour, m = +el.dataset.minute, off = +el.dataset.offset;
+    const next = new Date();
+    next.setUTCHours(h - off, m, 0, 0);                       // today's run, in UTC
+    if (next <= new Date()) next.setUTCDate(next.getUTCDate() + 1);
+    const mins = Math.round((next - new Date()) / 60000);
+    el.textContent = "(" + el.dataset.template
+      .replace("%(h)s", Math.floor(mins / 60)).replace("%(m)s", mins % 60) + ")";
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+
+</body>
+</html>
